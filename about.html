@@ -1,300 +1,310 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>About - Fathi Arasy</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script>
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About Me - Rasya Zildan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            dark: '#131313',
-            light: '#ececec',
-            accent: '#d4ff00',
-            graytext: '#888888'
-          },
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
+            sans: ['Hanken Grotesk', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              light: '#f5f5f5',
+              dark: '#111111',
+              accent: '#d4ff00',
+              text: '#333333',
+              muted: '#666666'
+            }
           }
         }
       }
     }
   </script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-      background-color: #ececec;
-      color: #131313;
+<style data-purpose="custom-animations">
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
     }
-    .dark-section {
-      background-color: #131313;
-      color: #ececec;
-    }
-    .glass-blob {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(212,255,0,0.15) 0%, rgba(255,255,255,0) 70%);
-      filter: blur(40px);
-      z-index: -1;
-      border-radius: 50%;
-    }
-    .journey-line {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, #d4ff00 0%, #d4ff00 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 100%);
-      transform: translateX(-50%);
+    .animate-marquee {
+      animation: marquee 20s linear infinite;
     }
     .marquee-container {
       overflow: hidden;
       white-space: nowrap;
       position: relative;
-      width: 100vw;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
     }
     .marquee-content {
       display: inline-block;
-      animation: marquee 20s linear infinite;
+      padding-left: 100%;
+      animation: marquee 30s linear infinite;
     }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .big-text {
-      font-size: clamp(5rem, 15vw, 20rem);
-      line-height: 0.8;
-      font-weight: 800;
-      letter-spacing: -0.05em;
-    }
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .chip { font-family: monospace; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border: 1px solid rgba(0,0,0,0.2); border-radius: 9999px; display: inline-block; }
-    .dark-section .chip { border-color: rgba(255,255,255,0.2); color: #fff; }
   </style>
 </head>
-<body class="antialiased selection:bg-accent selection:text-dark">
+<body class="bg-brand-light text-brand-text font-sans antialiased">
 <!-- BEGIN: Navigation -->
-<nav class="fixed top-0 left-0 w-full px-8 py-6 flex justify-between items-center z-50 mix-blend-difference text-white">
-<div class="logo w-12 h-12">
-<a href="index.html">
-<img alt="Logo" class="w-full h-full object-contain filter invert hover:opacity-80 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-RiwITWpn_hWmb7JQ2MuhLpzZr35mccUZ3WKgxQ1bYIO_YbxK-XUmQMh6xXIm-L-gquh6eQe7Kzkozm27DD-Pl7A5x38FXr82jdfvCFNg8kO17IIJ3FeVbJjtIhxesKl8WIV2_P2W7vCZgEAPfmY4lG8gxHcVUgxHCxYpFxf5amWXv2U4sWr8QcPsNRA5MssSFWCqX7vZmPpkjez_qTYlpvtSDs2vJmn6YNs-5ql08n_yxZy6or8VX6FGKtC1mXA1UfR9E1FZAepQzw">
-</a>
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 mix-blend-difference text-white">
+<div class="text-2xl font-bold tracking-tighter"><a href="#" class="block w-10 h-10 hover:opacity-80 transition-opacity"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ofCQWujowd3tpsSmNFteNvsSfS64SZ98oHIhBra-c6qYKAI-dapAQ2xShxRNnlxrpKappWUxvcaFRHx4cS25O7BZzvbRxztKXXNPJbUd2p4Wnq5S2ZLOdH3BW4ROKJyFKfwbJsYVBjE7a2UOez_hkSAj_R4AXWNInBKQ_6tPmei4ge1tObMANazVTQI3XRRfz2Qhpsl75yK1Mg0znKvUOt4x4-8M8lZtorxoJBy3T4FXdAYFi6PioqqIvrFvXQwf9bzd07XaWVc" alt="Logo" class="w-full h-full object-contain invert"></a></div>
+<div class="hidden md:flex items-center gap-8 text-sm font-medium">
+<a class="hover:opacity-70 transition-opacity" href="index.html">Home</a>
+<a class="hover:opacity-70 transition-opacity" href="about.html">About</a>
+<a class="hover:opacity-70 transition-opacity" href="projects.html">Works</a>
+<div class="flex items-center gap-2">
+<a class="bg-white text-black px-5 py-2.5 rounded-full hover:bg-opacity-90 transition-all" href="mailto:arasyfathi@gmail.com">Contact</a>
+<button class="bg-white text-black p-2.5 rounded-full hover:bg-opacity-90 transition-all">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+</button>
 </div>
-<div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-<a class="hover:text-accent transition-colors" href="index.html">Home</a>
-<a class="hover:text-accent transition-colors" href="about.html">About</a>
-<a class="hover:text-accent transition-colors" href="projects.html">Works</a>
-</div>
-<div class="flex items-center space-x-4">
-<a class="px-6 py-2 rounded-full border border-white hover:bg-white hover:text-black transition-colors text-sm font-medium" href="mailto:arasyfathi@gmail.com">Contact</a>
 </div>
 </nav>
 <!-- END: Navigation -->
-
-<!-- BEGIN: Profile & Stats -->
-<section class="py-32 px-8 max-w-7xl mx-auto mt-20 relative">
-<div class="reveal flex flex-col md:flex-row items-center gap-16 mb-24">
-<div class="w-full md:w-1/2">
-<h3 class="text-3xl md:text-5xl font-light leading-tight mb-6">
-          Engineering smart, automated solutions through precise hardware integration and IoT.
-        </h3>
-<p class="text-gray-600 text-lg leading-relaxed">
-          Every project I develop starts with a deep understanding of technical challenges, translating them into reliable, automated hardware solutions. From designing circuit logic and PLC integration to developing fully monitored IoT ecosystems using ESP32, I focus on building systems that are highly responsive and efficient. Furthermore, my active background in organizational public relations equips me to effectively communicate complex engineering concepts and collaborate seamlessly within any team.
-        </p>
-</div>
-<div class="w-full md:w-1/2 flex justify-center">
-<img alt="Fathi Arasy Profile" class="w-full max-w-md object-cover rounded-3xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-UGLVX1z3oHzoguSHCokUf4cGkJunjmxL95aY3UKto_7kIOd9GN7ZWdnbwZMECPE5ytaAwxmEpguCqd6s3XqUzlhRXwyyQZzGWKKBAeEqiWr5jTgpXOhM230Klv6qqlg8-OLju7HweKuzel3WDjBC4eUFyFUqai6oA2-I8Thd-WLCWfL-j7eiDCv_qRHZDCEFMLV695YsF2EubClNIJOfj9NYpf9tmlflU0tJBjTSKEuRntCxyYypAWAg2PjukWgSt03WKJO8dcUT4g">
-</div>
-</div>
-<div class="reveal delay-1 grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-gray-300 pt-16">
-<div><p class="text-sm text-gray-500 uppercase tracking-widest mb-4">ORG. ROLES</p><p class="text-5xl md:text-7xl font-light">4<span class="text-gray-400">+</span></p></div>
-<div><p class="text-sm text-gray-500 uppercase tracking-widest mb-4">PROTOTYPES</p><p class="text-5xl md:text-7xl font-light">4<span class="text-gray-400">+</span></p></div>
-<div><p class="text-sm text-gray-500 uppercase tracking-widest mb-4">AI MODEL</p><p class="text-3xl md:text-4xl font-light mt-4">YOLOv8</p></div>
-<div><p class="text-sm text-gray-500 uppercase tracking-widest mb-4">IoT SYSTEMS</p><p class="text-3xl md:text-4xl font-light mt-4">Real-Time</p></div>
+<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1920px] mx-auto overflow-hidden">
+<!-- BEGIN: Hero Section -->
+<section class="mb-32">
+<h1 class="text-[10vw] leading-none font-light tracking-tight mb-12">About Me</h1>
+<div class="max-w-4xl text-xl md:text-2xl font-light text-brand-muted leading-relaxed">
+<p class=""><span data-path-to-node="4,0,0" class="">I'm an Electrical Engineering student who enjoys building physical and digital systems that genuinely solve real-world problems</span><span data-path-to-node="4,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="4,0,2" class="">. Most of my work sits at the intersection of the Internet of Things (IoT), hardware automation, and artificial intelligence</span><span data-path-to-node="4,0,3"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="4,0,4" class="">. I like taking ideas from the first concept all the way to a functional prototype—whether that means designing precise circuit logic, programming microcontrollers, or structuring reliable real-time web dashboards</span><span data-path-to-node="4,0,5"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="4,0,6" class="">. I focus heavily on tangible results. In past projects, I've built automated waste sorting systems, AI image classifiers, and real-time environmental monitoring tools that streamline data acquisition</span><span data-path-to-node="4,0,7"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="4,0,8" class="">. My goal is always the same: to create smart, scalable, and efficient engineering solutions that make an impact.</span></p>
 </div>
 </section>
-<!-- END: Profile & Stats -->
-
-<!-- BEGIN: Expertise Section -->
-<section class="bg-gray-100 py-24 px-8 border-t border-gray-200">
-<div class="max-w-7xl mx-auto">
-<h2 class="reveal text-4xl md:text-6xl font-light mb-20 max-w-3xl">
-        Transforming engineering concepts into smart, automated solutions.
-      </h2>
-<div class="reveal delay-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Service 1 -->
-<div class="bg-white p-8 border border-gray-200 hover:bg-gray-50 transition-colors">
-<div class="flex justify-between items-start mb-12">
-<div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><line x1="9" x2="9" y1="3" y2="21"></line></svg></div>
-<span class="text-xs text-gray-400">01</span>
+<!-- END: Hero Section -->
+<!-- BEGIN: Marquee Section -->
+<!-- END: Marquee Section -->
+<!-- BEGIN: Biography Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-32">
+<div class="space-y-8 text-lg text-brand-muted font-light leading-relaxed">
+<p class=""><span data-path-to-node="7,0,0" class="">I am an engineer who bridges the gap between physical hardware and intelligent software</span><span data-path-to-node="7,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="7,0,2" class="">. With hands-on experience building IoT-powered monitoring systems, precise automated mechanisms, and AI-driven web applications, I specialize in solving complex engineering challenges while delivering robust and efficient technical systems</span><span data-path-to-node="7,0,3"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="7,0,4" class="">.</span></p>
+<p class=""><span data-path-to-node="9,0,0" class="">My approach combines rigorous hardware design with modern software integration. Whether it's implementing precise sensor readings with MPU-6050 and DHT22, developing automation control logic using PLCs, or architecting real-time monitoring dashboards with ESP32 and Flask servers, I consistently deliver reliable prototypes that merge mechanical actuation with intelligent data processing</span><span data-path-to-node="9,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="9,0,2" class="">.</span></p>
+<p class=""><span data-path-to-node="11,0,0" class="">What sets me apart is my ability to work across both the technical stack and team dynamics. Beyond programming in C and Python, deploying AI models, and wiring circuits, I have a strong background in Public Relations and R&amp;D</span><span data-path-to-node="11,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="11,0,2" class="">. I don't just write code or build hardware—I communicate complex engineering concepts effectively, build strategic organizational partnerships, and lead projects that drive meaningful innovation</span><span data-path-to-node="11,0,3"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="11,0,4" class="">.</span></p>
 </div>
-<h4 class="text-xl font-medium mb-4">IoT System Development</h4>
-<p class="text-gray-500 text-sm leading-relaxed">Developing interconnected ecosystems using microcontrollers like ESP32 and platforms like Blynk for real-time remote monitoring and control.</p>
-</div>
-<!-- Service 2 -->
-<div class="bg-gray-200 p-8 border border-gray-200">
-<div class="flex justify-between items-start mb-12">
-<div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><rect height="7" width="7" x="3" y="3"></rect><rect height="7" width="7" x="14" y="3"></rect><rect height="7" width="7" x="14" y="14"></rect><rect height="7" width="7" x="3" y="14"></rect></svg></div>
-<span class="text-xs text-gray-400">02</span>
-</div>
-<h4 class="text-xl font-medium mb-4">Hardware &amp; Sensor Integration</h4>
-<p class="text-gray-500 text-sm leading-relaxed">Building precise detection and actuation systems by integrating complex sensors (e.g., MPU-6050), encoders, and mechanical actuators for dynamic instruments.</p>
-</div>
-<!-- Service 3 -->
-<div class="bg-white p-8 border border-gray-200 hover:bg-gray-50 transition-colors">
-<div class="flex justify-between items-start mb-12">
-<div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M12 2l9 4.9V17L12 22l-9-4.9V6.9z"></path></svg></div>
-<span class="text-xs text-gray-400">03</span>
-</div>
-<h4 class="text-xl font-medium mb-4">Automation &amp; Control Logic</h4>
-<p class="text-gray-500 text-sm leading-relaxed">Programming responsive automated systems and control logic—spanning from Arduino environments to Programmable Logic Controllers (PLC)—using C and Python.</p>
-</div>
-<!-- Service 4 -->
-<div class="bg-white p-8 border border-gray-200 hover:bg-gray-50 transition-colors">
-<div class="flex justify-between items-start mb-12">
-<div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center"><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><circle cx="12" cy="5" r="3"></circle><line x1="12" x2="12" y1="22" y2="8"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg></div>
-<span class="text-xs text-gray-400">04</span>
-</div>
-<h4 class="text-xl font-medium mb-4">Public Relations &amp; R&amp;D</h4>
-<p class="text-gray-500 text-sm leading-relaxed">Managing organizational communications, driving technology-focused research, and collaborating effectively to build strategic partnerships.</p>
-</div>
-</div>
+<div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden bg-gray-200">
+<!-- Placeholder for portrait -->
+<img alt="Rasya Zildan Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-UGLVX1z3oHzoguSHCokUf4cGkJunjmxL95aY3UKto_7kIOd9GN7ZWdnbwZMECPE5ytaAwxmEpguCqd6s3XqUzlhRXwyyQZzGWKKBAeEqiWr5jTgpXOhM230Klv6qqlg8-OLju7HweKuzel3WDjBC4eUFyFUqai6oA2-I8Thd-WLCWfL-j7eiDCv_qRHZDCEFMLV695YsF2EubClNIJOfj9NYpf9tmlflU0tJBjTSKEuRntCxyYypAWAg2PjukWgSt03WKJO8dcUT4g">
 </div>
 </section>
-<!-- END: Expertise Section -->
-
-<!-- BEGIN: Journey Section -->
-<section class="dark-section relative py-32 px-8 overflow-hidden">
-<div class="max-w-4xl mx-auto text-center relative z-10 mb-32">
-<h2 class="reveal text-4xl md:text-6xl font-light leading-tight">Explore my journey and the experiences that shape my engineering career.</h2>
+<!-- END: Biography Section -->
+<!-- BEGIN: Core Services -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-gray-300 pt-12 mb-32">
+<div>
+<div class="text-sm text-brand-muted mb-4">01</div>
+<h3 class="text-2xl font-semibold mb-4">IoT System Architecture</h3>
+<p class="text-brand-muted font-light leading-relaxed"><span data-path-to-node="5,0,0" class="">I architect end-to-end solutions connecting physical environments to digital platforms</span><span data-path-to-node="5,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="5,0,2" class="">. From configuring ESP32 microcontrollers and sensor data acquisition to building real-time Flask backends and interactive web dashboards, I ensure seamless and reliable remote monitoring</span><span data-path-to-node="5,0,3"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="5,0,4" class="">.</span></p>
 </div>
-<div class="relative max-w-5xl mx-auto pb-10">
-<div class="journey-line"></div>
-<!-- Item 1 -->
-<div class="reveal flex items-center justify-between w-full mb-32 relative z-10">
-<div class="w-5/12 text-right pr-12">
-<h3 class="text-3xl md:text-4xl font-semibold mb-2">Telkom University</h3>
-<p class="text-xl text-gray-400 mb-4">Electrical Engineering Student</p>
-<p class="text-gray-500 text-sm">AUG 2024 - PRESENT</p>
-<p class="text-gray-400 mt-6 text-sm">Building a strong foundation in automation, IoT, and hardware logic programming while actively participating in technology-driven projects.</p>
+<div>
+<div class="text-sm text-brand-muted mb-4">02</div>
+<h3 class="text-2xl font-semibold mb-4">Automation &amp; Control Logic</h3>
+<p class="text-brand-muted font-light leading-relaxed"><span data-path-to-node="7,0,0" class="">I specialize in creating responsive automated systems. Whether it is integrating MPU-6050 sensors for dynamic orientation, controlling DC motor actuators, or exploring industrial Programmable Logic Controller (PLC) logic, I focus on mechanical precision and system stability</span><span data-path-to-node="7,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="7,0,2" class="">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c3558283784=""></sources-carousel-inline></p>
 </div>
-<div class="w-2/12 flex justify-center"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_10px_#d4ff00]"></div></div>
-<div class="w-5/12 pl-12"></div>
+<div>
+<div class="text-sm text-brand-muted mb-4">03</div>
+<h3 class="text-2xl font-semibold mb-4">AI &amp; Web Integration</h3>
+<p class="text-brand-muted font-light leading-relaxed"><span data-path-to-node="9,0,0" class="">I expand hardware capabilities by integrating machine learning into practical web applications. From building Deep Learning image classifiers for waste management to designing user interfaces that display prediction results and confidence scores, I create systems that are intelligent and accessible</span><span data-path-to-node="9,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="9,0,2" class="">.</span></p>
 </div>
-<!-- Item 2 -->
-<div class="reveal delay-1 flex items-center justify-between w-full mb-32 relative z-10">
-<div class="w-5/12 pr-12"></div>
-<div class="w-2/12 flex justify-center"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_10px_#d4ff00]"></div></div>
-<div class="w-5/12 pl-12">
-<h3 class="text-3xl md:text-4xl font-semibold mb-2">IMV Laboratory</h3>
-<p class="text-xl text-gray-400 mb-4">Early Selection Qualifier</p>
-<p class="text-gray-500 text-sm">2025 - CAMPUS RECRUITMENT</p>
-<p class="text-gray-400 mt-6 text-sm">Passed the initial selection stage for IMV Laboratory (Imaging and Machine Vision) at Telkom University, specializing in computer vision.</p>
+</section>
+<!-- END: Core Services -->
+<!-- BEGIN: Proven Impact -->
+<section class="mb-32">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-semibold mb-4">Proven Impact</h2>
+<p class="text-xl text-brand-muted font-light">Throughout my career, I've delivered measurable results that matter</p>
 </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-brand-dark text-white p-8 rounded-2xl">
+<div class="text-5xl font-bold mb-4">Real-Time</div>
+<h4 class="text-lg font-semibold mb-2">Telemetry Monitoring</h4>
+<p class="text-sm text-gray-400 font-light"><span data-path-to-node="14,2,0,0" class="">Capturing and transmitting continuous environmental sensor data with precise intervals using ESP32 and HTTP POST protocols</span><span data-path-to-node="14,2,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="14,2,0,2" class="">.</span></p>
 </div>
-<!-- Item 3 -->
-<div class="reveal flex items-center justify-between w-full mb-32 relative z-10">
-<div class="w-5/12 text-right pr-12">
-<h3 class="text-3xl md:text-4xl font-semibold mb-2">Electo Value Environment</h3>
-<p class="text-xl text-gray-400 mb-4">Research &amp; Development Staff</p>
-<p class="text-gray-500 text-sm">JAN 2024 - DEC 2024</p>
-<p class="text-gray-400 mt-6 text-sm">Conducted research and development for environmental tech innovations, evaluating system requirements, and designing technology project concepts.</p>
+<div class="bg-brand-dark text-white p-8 rounded-2xl">
+<div class="text-5xl font-bold mb-4">Auto<br>mated</div>
+<h4 class="text-lg font-semibold mb-2">Hardware Actuation</h4>
+<p class="text-sm text-gray-400 font-light"><span data-path-to-node="16,2,0,0" class="">Reducing manual intervention by developing smart systems like automated waste sorters and sensor-driven mechanisms</span><span data-path-to-node="16,2,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="16,2,0,2" class="">.</span></p>
 </div>
-<div class="w-2/12 flex justify-center"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_10px_#d4ff00]"></div></div>
-<div class="w-5/12 pl-12"></div>
+<div class="bg-brand-dark text-white p-8 rounded-2xl">
+<div class="text-5xl font-bold mb-4">4+</div>
+<h4 class="text-lg font-semibold mb-2">Engineering Prototypes</h4>
+<p class="text-sm text-gray-400 font-light"><span data-path-to-node="18,2,0,0" class="">Successfully designed and deployed diverse systems, including IoT dashboards, mechanical instruments, and AI web classifiers</span><span data-path-to-node="18,2,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="18,2,0,2" class="">.</span></p>
 </div>
-<!-- Item 4 -->
-<div class="reveal delay-1 flex items-center justify-between w-full relative z-10">
-<div class="w-5/12 pr-12"></div>
-<div class="w-2/12 flex justify-center"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_10px_#d4ff00]"></div></div>
-<div class="w-5/12 pl-12">
-<h3 class="text-3xl md:text-4xl font-semibold mb-2">KMTE</h3>
-<p class="text-xl text-gray-400 mb-4">Public Relations Staff</p>
-<p class="text-gray-500 text-sm">2026 - 2027</p>
-<p class="text-gray-400 mt-6 text-sm">Building strategic external partnerships and managing official communications to support the Electrical Engineering student organization's initiatives.</p>
-</div>
+<div class="bg-brand-dark text-white p-8 rounded-2xl">
+<div class="text-5xl font-bold mb-4">3+</div>
+<h4 class="text-lg font-semibold mb-2">Leadership &amp; PR Roles</h4>
+<p class="text-sm text-gray-400 font-light"><span data-path-to-node="20,2,0,0" class="">Years of active contribution in managing public relations, team coordination, and strategic technology R&amp;D initiatives</span><span data-path-to-node="20,2,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="20,2,0,2" class="">.</span></p>
 </div>
 </div>
 </section>
-<!-- END: Journey Section -->
+<!-- END: Proven Impact -->
+<!-- BEGIN: Technology Arsenal -->
+<section class="mb-32">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-semibold mb-4">Technology Arsenal</h2>
+<p class="text-xl text-brand-muted font-light">A comprehensive toolkit for building smart hardware, IoT ecosystems, and automated systems.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Category -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Programming Languages</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">C</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Python</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">JavaScript</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Next.js</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Node.js</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">HTML/CSS</span>
 
+</div>
+</div>
+<!-- Category -->
+<div>
+<h4 class="text-lg font-semibold mb-6">AI &amp; Machine Learning</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">OpenAI API</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">TensorFlow/Keras</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">OpenCV</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">PyTorch</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Deep Learning</span>
+</div>
+</div>
+<!-- Category -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Hardware &amp; Microcontrollers</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">esp32</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Arduino</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Mechanical Actuators</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">PLC Systems</span>
+
+
+</div>
+</div>
+<!-- Category -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Sensors &amp; Components</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">DHT22</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">MPU- 6050</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Encoders</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">DC Motors</span>
+
+
+
+</div>
+</div>
+<!-- Category -->
+<div>
+<h4 class="text-lg font-semibold mb-6"><b data-path-to-node="13" data-index-in-node="0">IoT &amp; Networking</b></h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Blynk Platform</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">HTTP POST/REST API</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">ngrok</span>
+
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">JSON</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Hugging Face</span>
+
+
+</div>
+</div>
+<!-- Category -->
+<div>
+<h4 class="text-lg font-semibold mb-6">Web &amp; Dashboard</h4>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Flask</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Chart.js</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Tailwind CSS</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Vercel</span>
+<span class="px-4 py-2 bg-white rounded-full text-sm shadow-sm border border-gray-100">Framer Motion</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Technology Arsenal -->
+<!-- BEGIN: CTA Section -->
+<section class="bg-brand-dark text-white rounded-3xl p-12 md:p-24 text-center mb-24">
+<h2 class="text-3xl md:text-5xl font-semibold mb-6">Ready to Build Something Exceptional?</h2>
+<p class="text-lg md:text-xl text-gray-400 font-light max-w-3xl mx-auto mb-10"><span data-path-to-node="22,0,0" class="">Whether you need a real-time IoT monitoring system, an automated hardware mechanism, or an AI-driven web application, I bring the engineering expertise to make it happen</span><span data-path-to-node="22,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="22,0,2" class="">. Let's discuss how we can integrate physical sensors and smart software into reliable, production-ready solutions that drive real results</span><span data-path-to-node="22,0,3"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="22,0,4" class="">.</span></p>
+</section><section class="relative h-[400px] flex items-center justify-center -mx-24 mb-32 overflow-hidden pointer-events-none"><div class="absolute w-[150%] bg-brand-dark text-white py-6 transform -rotate-6 marquee-container border-y border-white/10">
+<div class="flex animate-marquee whitespace-nowrap">
+<div class="flex items-center gap-12 px-6 text-4xl md:text-6xl font-bold tracking-tighter uppercase">
+<span class="">UI &amp; UX DESIGNER</span>
+<span class="text-brand-accent">✦</span>
+<span class="">FULL-STACK DEVELOPER</span>
+<span class="text-brand-accent">✦</span>
+<span class="">CREATIVE CODER</span>
+<span class="text-brand-accent">✦</span>
+</div>
+<div class="flex items-center gap-12 px-6 text-4xl md:text-6xl font-bold tracking-tighter uppercase">
+<span class="">UI &amp; UX DESIGNER</span>
+<span class="text-brand-accent">✦</span>
+<span class="">FULL-STACK DEVELOPER</span>
+<span class="text-brand-accent">✦</span>
+<span class="">CREATIVE CODER</span>
+<span class="text-brand-accent">✦</span>
+</div>
+</div>
+</div>
+<div class="absolute w-[150%] bg-brand-dark text-white py-6 transform rotate-6 marquee-container border-y border-white/10">
+<div class="flex animate-marquee whitespace-nowrap" style="animation-direction: reverse;">
+<div class="flex items-center gap-12 px-6 text-4xl md:text-6xl font-bold tracking-tighter uppercase">
+<span class="">INNOVATIVE SOLUTIONS</span>
+<span class="text-brand-accent">✦</span>
+<span class="">SCALABLE ARCHITECTURE</span>
+<span class="text-brand-accent">✦</span>
+<span class="">USER-CENTRIC DESIGN</span>
+<span class="text-brand-accent">✦</span>
+</div>
+<div class="flex items-center gap-12 px-6 text-4xl md:text-6xl font-bold tracking-tighter uppercase">
+<span class="">INNOVATIVE SOLUTIONS</span>
+<span class="text-brand-accent">✦</span>
+<span class="">SCALABLE ARCHITECTURE</span>
+<span class="text-brand-accent">✦</span>
+<span class="">USER-CENTRIC DESIGN</span>
+<span class="text-brand-accent">✦</span>
+</div>
+</div>
+</div></section>
+<!-- END: CTA Section -->
+</main>
 <!-- BEGIN: Footer -->
-<footer class="dark-section pt-24 pb-8 px-8 relative overflow-hidden mt-auto">
-<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between mb-32 z-10 relative">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full md:w-1/2">
+<footer class="bg-[#1a1a1a] text-white pt-20 pb-10 px-6 md:px-12 lg:px-24">
+<div class="max-w-[1920px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 mb-32">
 <div>
-<p class="text-gray-500 text-xs tracking-widest mb-6">LINKS</p>
-<ul class="space-y-3 text-sm">
-<li><a class="hover:text-accent transition-colors" href="index.html">Home</a></li>
-<li><a class="hover:text-accent transition-colors" href="projects.html">Work</a></li>
-<li><a class="hover:text-accent transition-colors" href="about.html">About</a></li>
+<h5 class="text-xs tracking-widest text-gray-500 mb-6 uppercase">Links</h5>
+<ul class="space-y-4 text-sm">
+<li class=""><a class="hover:text-brand-accent transition-colors" href="index.html">Home</a></li>
+<li class=""><a class="hover:text-brand-accent transition-colors" href="projects.html">Work</a></li>
+<li class=""><a class="hover:text-brand-accent transition-colors" href="about.html">About</a></li>
+<li class=""><a class="hover:text-brand-accent transition-colors" href="mailto:arasyfathi@gmail.com">Contact</a></li>
 </ul>
 </div>
 <div>
-<p class="text-gray-500 text-xs tracking-widest mb-6">SOCIALS</p>
-<ul class="space-y-3 text-sm">
-<li><a class="hover:text-accent transition-colors" href="mailto:arasyfathi@gmail.com">Email</a></li>
-<li><a class="hover:text-accent transition-colors" href="https://linkedin.com">Linkedin</a></li>
-<li><a class="hover:text-accent transition-colors" href="#">Whatsapp</a></li>
-<li><a class="hover:text-accent transition-colors" href="https://github.com/arasyfathi/portofolio">Github</a></li>
+<h5 class="text-xs tracking-widest text-gray-500 mb-6 uppercase">Socials</h5>
+<ul class="space-y-4 text-sm">
+<li class=""><a class="hover:text-brand-accent transition-colors" href="mailto:arasyfathi@gmail.com">Email</a></li>
+<li class=""><a class="hover:text-brand-accent transition-colors" href="https://linkedin.com">Linkedin</a></li>
+<li class=""><a class="hover:text-brand-accent transition-colors" href="#">Whatsapp</a></li>
+<li class=""><a class="hover:text-brand-accent transition-colors" href="https://github.com/arasyfathi/portofolio">Github</a></li>
 </ul>
 </div>
 <div>
-<p class="text-gray-500 text-xs tracking-widest mb-6">LOCAL TIME</p>
-<p class="text-sm" id="local-time-display">UTC+7</p>
+<h5 class="text-xs tracking-widest text-gray-500 mb-6 uppercase">Local Time</h5>
+<p class="text-sm">4:52 PM UTC+7</p>
 </div>
 <div>
-<p class="text-gray-500 text-xs tracking-widest mb-6">VERSION</p>
+<h5 class="text-xs tracking-widest text-gray-500 mb-6 uppercase">Version</h5>
 <p class="text-sm">2026 © Edition</p>
 </div>
 </div>
-<div class="mt-12 md:mt-0 flex flex-col gap-4 text-sm font-light w-full md:w-auto">
-<a class="px-6 py-3 border border-gray-700 rounded-full text-center hover:border-accent hover:text-accent transition-colors" href="tel:+6282272099066">+6282272099066</a>
-<a class="px-6 py-3 border border-gray-700 rounded-full text-center hover:border-accent hover:text-accent transition-colors" href="mailto:arasyfathi@gmail.com">arasyfathi@gmail.com</a>
-</div>
-</div>
-<div class="w-full text-center mt-auto z-0">
-<h1 class="big-text text-white opacity-90 select-none">FATHI</h1>
+<div class="max-w-[1920px] mx-auto text-center">
+<h2 class="text-[15vw] font-bold tracking-tighter leading-none text-white">FATHI</h2>
 </div>
 </footer>
 <!-- END: Footer -->
-<script>
-  // Reveal on scroll
-  const ro = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-  
-  // Live local time
-  function updateTime() { 
-    const el = document.getElementById('local-time-display'); 
-    if (el) {
-      const now = new Date();
-      let hours = now.getHours();
-      let minutes = now.getMinutes();
-      const ampm = hours >= 12 ? 'PM' : 'AM';
-      hours = hours % 12;
-      hours = hours ? hours : 12; 
-      minutes = minutes < 10 ? '0'+minutes : minutes;
-      el.textContent = hours + ':' + minutes + ' ' + ampm + ' UTC+7'; 
-    }
-  }
-  updateTime(); setInterval(updateTime, 30000);
-</script>
-</body>
-</html>
+
+
+
+
+
+
+</body></html>
