@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fathi Arasy &mdash; Electrical Engineer &amp; IoT Specialist</title>
+  <meta name="description" content="Portfolio of Muhamad Fathi Arasy - Electrical Engineering student at Telkom University specializing in IoT, hardware automation, and AI-driven web applications.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#131313;--surface:#1a1a1a;--surface-high:#222222;--border:rgba(255,255,255,0.08);--primary:#d4ff00;--on-surface:#e5e2e1;--muted:#888888;--container-max:1280px;--gutter:24px;--section-gap:120px;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;scroll-padding-top:80px;}
+    body{background-color:var(--bg);color:var(--on-surface);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+    ::-webkit-scrollbar{width:4px;}
+    ::-webkit-scrollbar-track{background:var(--bg);}
+    ::-webkit-scrollbar-thumb{background:var(--primary);border-radius:9999px;}
+    ::selection{background:var(--primary);color:#131313;}
+    h1,h2,h3,h4,h5{font-family:'Hanken Grotesk',sans-serif;letter-spacing:-0.03em;line-height:1.1;}
+    .container{max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter);}
+    section{padding-top:var(--section-gap);padding-bottom:var(--section-gap);}
+    .text-primary{color:var(--primary);}
+    .chip{font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(212,255,0,.4);border-radius:9999px;background:rgba(212,255,0,.07);color:var(--primary);display:inline-block;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#131313;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:.9rem;padding:14px 28px;border-radius:9999px;border:none;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .3s;}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 24px rgba(212,255,0,.35);}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--on-surface);font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:.9rem;padding:13px 26px;border-radius:9999px;border:1px solid rgba(255,255,255,.2);cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s;}
+    .btn-ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.4);}
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px var(--gutter);display:flex;align-items:center;justify-content:space-between;transition:background .4s;}
+    nav.scrolled{background:rgba(19,19,19,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+    .nav-logo{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-.04em;color:var(--primary);text-decoration:none;}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+    .nav-links a{font-family:'Hanken Grotesk',sans-serif;font-size:.875rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s;}
+    .nav-links a:hover{color:var(--on-surface);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--on-surface);border-radius:2px;transition:transform .3s;}
+    @media(max-width:768px){.nav-links,.nav-desktop-cta{display:none;}.hamburger{display:flex;}}
+    .mobile-nav{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .3s;}
+    .mobile-nav.open{opacity:1;pointer-events:all;}
+    .mobile-nav a{font-family:'Hanken Grotesk',sans-serif;font-size:2.5rem;font-weight:700;color:var(--on-surface);text-decoration:none;transition:color .2s;}
+    .mobile-nav a:hover{color:var(--primary);}
+    /* HERO */
+    #hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:100px;padding-bottom:80px;position:relative;overflow:hidden;}
+    #hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 40%,transparent 100%);pointer-events:none;}
+    .hero-glow{position:absolute;width:700px;height:500px;background:radial-gradient(ellipse,rgba(212,255,0,.12) 0%,transparent 70%);filter:blur(60px);top:50%;left:50%;transform:translate(-50%,-60%);pointer-events:none;animation:pulseGlow 6s ease-in-out infinite alternate;}
+    @keyframes pulseGlow{from{opacity:.6;transform:translate(-50%,-60%) scale(1);}to{opacity:1;transform:translate(-50%,-55%) scale(1.08);}}
+    .hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--primary);margin-bottom:24px;display:flex;align-items:center;gap:10px;justify-content:center;}
+    .hero-eyebrow::before,.hero-eyebrow::after{content:'';display:inline-block;width:32px;height:1px;background:var(--primary);}
+    .hero-title{font-size:clamp(3.5rem,11vw,9rem);font-weight:800;letter-spacing:-.05em;line-height:.9;margin-bottom:28px;font-family:'Hanken Grotesk',sans-serif;}
+    .hero-title .accent-word{color:var(--primary);}
+    .hero-subtitle{font-size:clamp(1rem,2vw,1.25rem);color:var(--muted);max-width:560px;margin:0 auto 48px;font-weight:400;line-height:1.75;}
+    .hero-ctas{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;}
+    .social-sidebar{position:fixed;left:28px;bottom:40px;display:flex;flex-direction:column;align-items:center;gap:20px;z-index:50;}
+    .social-sidebar::after{content:'';display:block;width:1px;height:80px;background:linear-gradient(to bottom,var(--muted),transparent);margin-top:8px;}
+    .social-sidebar a{color:var(--muted);transition:color .2s,transform .2s;text-decoration:none;}
+    .social-sidebar a:hover{color:var(--primary);transform:translateX(4px);}
+    .social-sidebar svg{width:18px;height:18px;fill:currentColor;}
+    .scroll-indicator{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;}
+    .scroll-indicator span{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
+    .scroll-dot{width:6px;height:6px;border-radius:50%;background:var(--primary);animation:scrollBounce 1.6s ease-in-out infinite;}
+    @keyframes scrollBounce{0%,100%{transform:translateY(0);opacity:.5;}50%{transform:translateY(8px);opacity:1;}}
+    @media(max-width:768px){.social-sidebar{display:none;}}
+    /* INTRO */
+    #intro{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 0;}
+    .intro-text{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(1.4rem,3vw,2.25rem);font-weight:400;line-height:1.55;color:var(--on-surface);max-width:900px;}
+    .intro-text strong{color:var(--primary);font-weight:700;}
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+    @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px;}}
+    .about-section-label{display:flex;align-items:center;gap:12px;margin-bottom:32px;}
+    .about-section-label span{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);}
+    .about-section-label::before{content:'';display:block;width:40px;height:1px;background:var(--primary);}
+    .about-bio p{font-size:1.05rem;color:var(--muted);line-height:1.85;margin-bottom:20px;}
+    .about-portrait-wrap{position:relative;}
+    .about-portrait-wrap::before{content:'';position:absolute;inset:-2px;border-radius:14px;background:linear-gradient(135deg,rgba(212,255,0,.4) 0%,transparent 60%);z-index:0;}
+    .about-portrait{position:relative;z-index:1;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block;filter:grayscale(20%);transition:filter .4s;}
+    .about-portrait:hover{filter:grayscale(0%);}
+    .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:48px;}
+    .stat-item{padding:28px 24px;background:var(--surface);text-align:center;transition:background .2s;}
+    .stat-item:hover{background:var(--surface-high);}
+    .stat-item+.stat-item{border-left:1px solid var(--border);}
+    .stat-number{font-family:'Hanken Grotesk',sans-serif;font-size:2.25rem;font-weight:800;color:var(--primary);display:block;}
+    .stat-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px;display:block;}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:var(--section-gap);}
+    @media(max-width:768px){.services-grid{grid-template-columns:1fr;}}
+    .service-card{padding:36px 28px;background:var(--surface);transition:background .25s;}
+    .service-card+.service-card{border-left:1px solid var(--border);}
+    @media(max-width:768px){.service-card+.service-card{border-left:none;border-top:1px solid var(--border);}}
+    .service-card:hover{background:rgba(212,255,0,.03);}
+    .service-num{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--primary);letter-spacing:.1em;margin-bottom:20px;display:block;}
+    .service-card h3{font-size:1.15rem;font-weight:600;margin-bottom:12px;color:var(--on-surface);}
+    .service-card p{font-size:.875rem;color:var(--muted);line-height:1.75;}
+    /* MARQUEE */
+    #marquee-section{padding:0;position:relative;height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--bg);}
+    @keyframes marquee-fwd{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+    @keyframes marquee-rev{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
+    .ribbon{position:absolute;width:150%;left:-25%;padding:22px 0;background:#0e0e0e;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;white-space:nowrap;box-shadow:0 8px 40px rgba(0,0,0,.6);}
+    .ribbon-1{transform:rotate(5deg);z-index:10;}
+    .ribbon-2{transform:rotate(-5deg);z-index:20;}
+    .ribbon-track{display:inline-flex;align-items:center;white-space:nowrap;}
+    .ribbon-1 .ribbon-track{animation:marquee-fwd 18s linear infinite;}
+    .ribbon-2 .ribbon-track{animation:marquee-rev 18s linear infinite;}
+    .ribbon-item{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(1.5rem,4vw,3rem);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;color:var(--on-surface);padding:0 40px;display:inline-flex;align-items:center;gap:32px;}
+    .ribbon-star{color:var(--primary);font-size:1.2em;flex-shrink:0;}
+    /* SKILLS */
+    #skills{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+    .skills-layout{display:grid;grid-template-columns:300px 1fr;gap:80px;}
+    @media(max-width:900px){.skills-layout{grid-template-columns:1fr;gap:48px;}}
+    .skills-intro p{color:var(--muted);line-height:1.75;font-size:.95rem;margin-top:16px;}
+    .skills-categories{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
+    @media(max-width:640px){.skills-categories{grid-template-columns:1fr;}}
+    .skill-category h4{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:16px;}
+    .chip-cloud{display:flex;flex-wrap:wrap;gap:8px;}
+    /* WORKS */
+    .works-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:24px;}
+    .works-section-label{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:48px;}
+    .project-list{border-top:1px solid var(--border);}
+    .project-row{position:relative;display:flex;align-items:center;justify-content:space-between;padding:28px 0;border-bottom:1px solid var(--border);cursor:pointer;overflow:hidden;background:transparent;transition:background .4s ease;}
+    .project-row:hover{background:#080808;}
+    .project-row-left{z-index:10;transition:opacity .25s .05s;}
+    .project-row-right{z-index:10;text-align:right;transition:opacity .25s .05s;}
+    .project-row:hover .project-row-left,.project-row:hover .project-row-right{opacity:0;}
+    .project-row h3{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(1.1rem,2.5vw,1.75rem);font-weight:600;letter-spacing:-.02em;color:var(--on-surface);text-transform:uppercase;}
+    .project-row p{font-size:.85rem;color:var(--muted);margin-top:4px;}
+    .project-type{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+    .project-hover-ribbon{position:absolute;inset:0;z-index:30;transform:translateX(-100%);transition:transform .5s cubic-bezier(.65,0,.35,1);display:flex;align-items:center;overflow:hidden;pointer-events:none;}
+    .project-row:hover .project-hover-ribbon{transform:translateX(0);}
+    .project-hover-track{display:inline-flex;align-items:center;white-space:nowrap;font-family:'Hanken Grotesk',sans-serif;font-size:1.75rem;font-weight:700;text-transform:uppercase;letter-spacing:-.02em;color:white;}
+    .project-row:nth-child(odd) .project-hover-track{animation:marquee-fwd 12s linear infinite;}
+    .project-row:nth-child(even) .project-hover-track{animation:marquee-rev 12s linear infinite;}
+    .project-hover-track span{padding:0 32px;}
+    .project-hover-track img{width:64px;height:40px;object-fit:cover;border-radius:6px;border:1px solid rgba(255,255,255,.15);flex-shrink:0;}
+    .exp-section{margin-top:80px;}
+    /* JOURNEY */
+    #journey{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+    .journey-header{text-align:center;margin-bottom:80px;}
+    .timeline{position:relative;max-width:800px;margin:0 auto;}
+    .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--primary) 0%,rgba(212,255,0,.15) 100%);transform:translateX(-50%);}
+    .timeline-item{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:64px;position:relative;}
+    .timeline-item:last-child{margin-bottom:0;}
+    .timeline-dot{position:absolute;left:50%;top:8px;transform:translateX(-50%);width:12px;height:12px;background:var(--primary);border-radius:50%;box-shadow:0 0 16px rgba(212,255,0,.6);z-index:2;}
+    .tl-content{width:calc(50% - 32px);}
+    .tl-content.left{text-align:right;}
+    .tl-content.right{margin-left:calc(50% + 32px);}
+    .tl-year{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:8px;}
+    .tl-content h3{font-size:clamp(1.1rem,2vw,1.5rem);font-weight:700;color:var(--on-surface);margin-bottom:4px;}
+    .tl-role{font-size:.875rem;color:var(--primary);margin-bottom:10px;}
+    .tl-content p{font-size:.825rem;color:var(--muted);line-height:1.7;}
+    @media(max-width:640px){.timeline::before{left:20px;}.timeline-item{flex-direction:column;gap:8px;}.timeline-dot{left:20px;}.tl-content{width:100%;text-align:left!important;margin-left:48px!important;}}
+    /* IMPACT */
+    .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+    @media(max-width:900px){.impact-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:480px){.impact-grid{grid-template-columns:1fr;}}
+    .impact-card{padding:40px 32px;background:var(--surface);transition:background .2s;position:relative;overflow:hidden;}
+    .impact-card+.impact-card{border-left:1px solid var(--border);}
+    @media(max-width:900px){.impact-card:nth-child(2n+1){border-left:none;}.impact-card:nth-child(n+3){border-top:1px solid var(--border);}}
+    .impact-card:hover{background:rgba(212,255,0,.04);}
+    .impact-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+    .impact-card:hover::after{transform:scaleX(1);}
+    .impact-number{font-family:'Hanken Grotesk',sans-serif;font-size:2.5rem;font-weight:800;color:var(--primary);display:block;margin-bottom:10px;}
+    .impact-card h4{font-size:.9rem;font-weight:600;color:var(--on-surface);margin-bottom:8px;}
+    .impact-card p{font-size:.8rem;color:var(--muted);line-height:1.65;}
+    /* CTA */
+    .cta-box{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:80px 48px;position:relative;overflow:hidden;text-align:center;}
+    .cta-box::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(212,255,0,.12) 0%,transparent 70%);pointer-events:none;filter:blur(40px);}
+    .cta-box p{color:var(--muted);margin:16px auto 40px;max-width:560px;font-size:1.05rem;}
+    .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    /* FOOTER */
+    footer{background:#0a0a0a;border-top:1px solid var(--border);padding:72px var(--gutter) 32px;}
+    .footer-inner{max-width:var(--container-max);margin:0 auto;}
+    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:80px;}
+    @media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr;}}
+    @media(max-width:480px){.footer-top{grid-template-columns:1fr;}}
+    .footer-brand p{font-size:.875rem;color:var(--muted);line-height:1.75;margin-top:16px;max-width:280px;}
+    .footer-col h5{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
+    .footer-col ul{list-style:none;}
+    .footer-col ul li{margin-bottom:10px;}
+    .footer-col ul a{font-size:.875rem;color:var(--on-surface);text-decoration:none;transition:color .2s;}
+    .footer-col ul a:hover{color:var(--primary);}
+    .footer-contact-links{display:flex;flex-direction:column;gap:8px;margin-top:20px;}
+    .footer-contact-links a{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:9999px;padding:8px 16px;transition:border-color .2s,color .2s;}
+    .footer-contact-links a:hover{border-color:var(--primary);color:var(--primary);}
+    .footer-wordmark{text-align:center;padding-top:48px;border-top:1px solid var(--border);}
+    .footer-wordmark h2{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(5rem,18vw,16rem);font-weight:800;letter-spacing:-.05em;line-height:.85;color:rgba(255,255,255,.07);user-select:none;}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid var(--border);flex-wrap:wrap;gap:12px;margin-top:32px;}
+    .footer-bottom p{font-size:.8rem;color:var(--muted);}
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .delay-1{transition-delay:.1s;}.delay-2{transition-delay:.2s;}.delay-3{transition-delay:.3s;}
+    /* headline helpers */
+    .headline-lg{font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-.03em;}
+    .headline-md{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:600;}
+    .label-mono{font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">FA.</a>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#works">Works</a></li>
+    <li><a href="#journey">Journey</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <a href="mailto:arasyfathi@gmail.com" class="btn-ghost nav-desktop-cta" style="padding:10px 20px;font-size:.8rem;">Contact &#x2197;</a>
+    <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#hero"    onclick="closeMobileNav()">Home</a>
+  <a href="#about"   onclick="closeMobileNav()">About</a>
+  <a href="#works"   onclick="closeMobileNav()">Works</a>
+  <a href="#journey" onclick="closeMobileNav()">Journey</a>
+  <a href="mailto:arasyfathi@gmail.com" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- SOCIAL SIDEBAR -->
+<aside class="social-sidebar" aria-label="Social links">
+  <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+  </a>
+  <a href="https://github.com" target="_blank" aria-label="GitHub">
+    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+  </a>
+</aside>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="container" style="position:relative;z-index:5;">
+    <p class="hero-eyebrow reveal">Available for opportunities</p>
+    <h1 class="hero-title reveal delay-1">Electrical<br><span class="accent-word">Engineer.</span></h1>
+    <p class="hero-subtitle reveal delay-2">IoT specialist &amp; hardware engineer building smart, automated, and AI-integrated systems &mdash; from circuits to cloud.</p>
+    <div class="hero-ctas reveal delay-3">
+      <a href="#works" class="btn-primary">View My Work &#x2193;</a>
+      <a href="#about" class="btn-ghost">About Me</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-dot"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div id="intro">
+  <div class="container">
+    <p class="intro-text reveal">I&rsquo;m <strong>Fathi Arasy</strong> &mdash; an Electrical Engineering student at Telkom University who bridges <strong>physical hardware</strong> and <strong>intelligent software</strong>. My work lives at the intersection of IoT, hardware automation, and AI-driven web applications.</p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-section-label reveal"><span>About Me</span></div>
+    <div class="about-grid">
+      <div class="about-bio">
+        <h2 class="headline-lg reveal" style="margin-bottom:28px;">Building smart systems that make a real impact.</h2>
+        <div class="reveal delay-1">
+          <p>I&rsquo;m an Electrical Engineering student who enjoys building physical and digital systems that genuinely solve real-world problems. Most of my work sits at the intersection of the Internet of Things (IoT), hardware automation, and artificial intelligence.</p>
+          <p>I like taking ideas from the first concept all the way to a functional prototype &mdash; whether that means designing precise circuit logic, programming microcontrollers, or structuring reliable real-time web dashboards.</p>
+          <p>In past projects, I&rsquo;ve built automated waste sorting systems, AI image classifiers, and real-time environmental monitoring tools. My goal is always the same: smart, scalable, and efficient engineering solutions that make an impact.</p>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:36px;" class="reveal delay-2">
+          <a href="mailto:arasyfathi@gmail.com" class="btn-primary">Get in touch &#x2197;</a>
+        </div>
+      </div>
+      <div class="about-portrait-wrap reveal delay-2">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-UGLVX1z3oHzoguSHCokUf4cGkJunjmxL95aY3UKto_7kIOd9GN7ZWdnbwZMECPE5ytaAwxmEpguCqd6s3XqUzlhRXwyyQZzGWKKBAeEqiWr5jTgpXOhM230Klv6qqlg8-OLju7HweKuzel3WDjBC4eUFyFUqai6oA2-I8Thd-WLCWfL-j7eiDCv_qRHZDCEFMLV695YsF2EubClNIJOfj9NYpf9tmlflU0tJBjTSKEuRntCxyYypAWAg2PjukWgSt03WKJO8dcUT4g" alt="Fathi Arasy portrait" class="about-portrait">
+      </div>
+    </div>
+    <div class="stats-row reveal">
+      <div class="stat-item"><span class="stat-number">4+</span><span class="stat-label">Prototypes Built</span></div>
+      <div class="stat-item"><span class="stat-number">3+</span><span class="stat-label">Leadership Roles</span></div>
+      <div class="stat-item"><span class="stat-number">Real&#8209;Time</span><span class="stat-label">IoT Systems</span></div>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card"><span class="service-num">01</span><h3>IoT System Architecture</h3><p>End-to-end solutions connecting physical environments to digital platforms &mdash; from ESP32 sensor nodes to Blynk.Console &amp; Blynk.cloud dashboards, as well as custom real-time Flask web dashboards with REST APIs.</p></div>
+      <div class="service-card"><span class="service-num">02</span><h3>Automation &amp; Control Logic</h3><p>Responsive automated systems integrating MPU-6050 sensors, DC motor actuators, and industrial PLC logic. Mechanical precision meets software intelligence.</p></div>
+      <div class="service-card"><span class="service-num">03</span><h3>AI &amp; Web Integration</h3><p>Trained YOLOv8 object detection models for real-world waste classification (SmartWaste). Built prediction dashboards and web interfaces powered by Flask, delivering accurate AI inference results with confidence scores.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE / CROSSING RIBBONS -->
+<div id="marquee-section" aria-hidden="true">
+  <div class="ribbon ribbon-1">
+    <div class="ribbon-track">
+      <span class="ribbon-item">Smart IoT Solutions <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">Hardware Engineering <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">Automated Systems <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">AI Integration <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">Smart IoT Solutions <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">Hardware Engineering <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">Automated Systems <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">AI Integration <span class="ribbon-star">&#x2726;</span></span>
+    </div>
+  </div>
+  <div class="ribbon ribbon-2">
+    <div class="ribbon-track">
+      <span class="ribbon-item">Intelligent Sensors <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">Real-Time Monitoring <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">Scalable Architecture <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">Embedded Systems <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">Intelligent Sensors <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">Real-Time Monitoring <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">Scalable Architecture <span class="ribbon-star">&#x2726;</span></span>
+      <span class="ribbon-item">Embedded Systems <span class="ribbon-star">&#x2726;</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- WORKS -->
+<section id="works">
+  <div class="container">
+    <div class="works-header reveal">
+      <div>
+        <p class="label-mono text-primary" style="margin-bottom:12px;">Selected Projects</p>
+        <h2 class="headline-lg">Projects &amp; Experience</h2>
+      </div>
+      <a href="#" class="btn-ghost">All Projects &#x2197;</a>
+    </div>
+    <p class="works-section-label reveal">Projects</p>
+    <div class="project-list reveal">
+      <div class="project-row">
+        <div class="project-row-left"><h3>IoTDash: Real-Time Environment Monitoring</h3><p>ESP32 &middot; Blynk.cloud &middot; Flask &middot; DHT22 &middot; HTTP POST &middot; Chart.js</p></div>
+        <div class="project-row-right"><span class="project-type">IoT &amp; Dashboard</span></div>
+        <div class="project-hover-ribbon"><div class="project-hover-track">
+          <span>IOTDASH: REAL-TIME ENVIRONMENT MONITORING <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266804/tpad_jycrwr.jpg" alt=""></span>
+          <span>IOTDASH: REAL-TIME ENVIRONMENT MONITORING <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266804/tpad_jycrwr.jpg" alt=""></span>
+          <span>IOTDASH: REAL-TIME ENVIRONMENT MONITORING <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266804/tpad_jycrwr.jpg" alt=""></span>
+          <span>IOTDASH: REAL-TIME ENVIRONMENT MONITORING <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266804/tpad_jycrwr.jpg" alt=""></span>
+        </div></div>
+      </div>
+      <div class="project-row">
+        <div class="project-row-left"><h3>SmartWaste AI Classification System</h3><p>YOLOv8 &middot; Python &middot; OpenCV &middot; Flask &middot; Web UI</p></div>
+        <div class="project-row-right"><span class="project-type">AI / Deep Learning</span></div>
+        <div class="project-hover-ribbon"><div class="project-hover-track">
+          <span>SMARTWASTE AI CLASSIFICATION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMARTWASTE_AI_CLASSIFICATION_SYSTEM_qxwz4m.jpg" alt=""></span>
+          <span>SMARTWASTE AI CLASSIFICATION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMARTWASTE_AI_CLASSIFICATION_SYSTEM_qxwz4m.jpg" alt=""></span>
+          <span>SMARTWASTE AI CLASSIFICATION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMARTWASTE_AI_CLASSIFICATION_SYSTEM_qxwz4m.jpg" alt=""></span>
+          <span>SMARTWASTE AI CLASSIFICATION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMARTWASTE_AI_CLASSIFICATION_SYSTEM_qxwz4m.jpg" alt=""></span>
+        </div></div>
+      </div>
+      <div class="project-row">
+        <div class="project-row-left"><h3>Smart Dustbin IoT &amp; Blynk Dashboard</h3><p>ESP32 &middot; Blynk.Console &middot; Blynk.cloud &middot; Ultrasonic Sensor &middot; Servo Motor</p></div>
+        <div class="project-row-right"><span class="project-type">IoT &amp; Dashboard</span></div>
+        <div class="project-hover-ribbon"><div class="project-hover-track">
+          <span>SMART DUSTBIN IOT AUTOMATION <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMART_DUSTBIN_IOT_AUTOMATION_cv4va8.jpg" alt=""></span>
+          <span>SMART DUSTBIN IOT AUTOMATION <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMART_DUSTBIN_IOT_AUTOMATION_cv4va8.jpg" alt=""></span>
+          <span>SMART DUSTBIN IOT AUTOMATION <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMART_DUSTBIN_IOT_AUTOMATION_cv4va8.jpg" alt=""></span>
+          <span>SMART DUSTBIN IOT AUTOMATION <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMART_DUSTBIN_IOT_AUTOMATION_cv4va8.jpg" alt=""></span>
+        </div></div>
+      </div>
+      <div class="project-row">
+        <div class="project-row-left"><h3>Dynamic Orientation Detection System</h3><p>MPU-6050 &middot; Arduino &middot; DC Motors &middot; Encoders</p></div>
+        <div class="project-row-right"><span class="project-type">Sensor / Control</span></div>
+        <div class="project-hover-ribbon"><div class="project-hover-track">
+          <span>DYNAMIC ORIENTATION DETECTION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/rover1_bnz7tv.jpg" alt=""></span>
+          <span>DYNAMIC ORIENTATION DETECTION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/rover1_bnz7tv.jpg" alt=""></span>
+          <span>DYNAMIC ORIENTATION DETECTION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/rover1_bnz7tv.jpg" alt=""></span>
+          <span>DYNAMIC ORIENTATION DETECTION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/rover1_bnz7tv.jpg" alt=""></span>
+        </div></div>
+      </div>
+    </div>
+    <div class="exp-section">
+      <p class="works-section-label reveal" style="margin-top:0;">Organizational Experience</p>
+      <div class="project-list reveal">
+        <div class="project-row">
+          <div class="project-row-left"><h3>Staf Public Relation &ndash; KMTE</h3><p>Strategic communication and student engagement</p></div>
+          <div class="project-row-right"><span class="project-type">2026 &ndash; 2027</span></div>
+          <div class="project-hover-ribbon"><div class="project-hover-track">
+            <span>STAF PUBLIC RELATION &ndash; KMTE <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/pr_sriilz.jpg" alt=""></span>
+            <span>STAF PUBLIC RELATION &ndash; KMTE <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/pr_sriilz.jpg" alt=""></span>
+            <span>STAF PUBLIC RELATION &ndash; KMTE <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/pr_sriilz.jpg" alt=""></span>
+            <span>STAF PUBLIC RELATION &ndash; KMTE <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/pr_sriilz.jpg" alt=""></span>
+          </div></div>
+        </div>
+        <div class="project-row">
+          <div class="project-row-left"><h3>Wakadiv 1 Humas &ndash; Serasi</h3><p>Leadership in public relations and community management</p></div>
+          <div class="project-row-right"><span class="project-type">2025 &ndash; 2026</span></div>
+          <div class="project-hover-ribbon"><div class="project-hover-track">
+            <span>WAKADIV 1 HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/wakadiv_qcrz0p.jpg" alt=""></span>
+            <span>WAKADIV 1 HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/wakadiv_qcrz0p.jpg" alt=""></span>
+            <span>WAKADIV 1 HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/wakadiv_qcrz0p.jpg" alt=""></span>
+            <span>WAKADIV 1 HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/wakadiv_qcrz0p.jpg" alt=""></span>
+          </div></div>
+        </div>
+        <div class="project-row">
+          <div class="project-row-left"><h3>Staf R&amp;D &ndash; Electo Value Env.</h3><p>Innovation and technical development research</p></div>
+          <div class="project-row-right"><span class="project-type">2024</span></div>
+          <div class="project-hover-ribbon"><div class="project-hover-track">
+            <span>STAF RESEARCH &amp; DEVELOPMENT <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266387/rnd_mlap0x.jpg" alt=""></span>
+            <span>STAF RESEARCH &amp; DEVELOPMENT <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266387/rnd_mlap0x.jpg" alt=""></span>
+            <span>STAF RESEARCH &amp; DEVELOPMENT <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266387/rnd_mlap0x.jpg" alt=""></span>
+            <span>STAF RESEARCH &amp; DEVELOPMENT <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266387/rnd_mlap0x.jpg" alt=""></span>
+          </div></div>
+        </div>
+        <div class="project-row">
+          <div class="project-row-left"><h3>Staf Humas &ndash; Serasi</h3><p>Managing organizational communication channels</p></div>
+          <div class="project-row-right"><span class="project-type">2024 &ndash; 2025</span></div>
+          <div class="project-hover-ribbon"><div class="project-hover-track">
+            <span>STAF HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264591/staf_dl3eex.jpg" alt=""></span>
+            <span>STAF HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264591/staf_dl3eex.jpg" alt=""></span>
+            <span>STAF HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264591/staf_dl3eex.jpg" alt=""></span>
+            <span>STAF HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264591/staf_dl3eex.jpg" alt=""></span>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="skills-layout">
+      <div class="skills-intro">
+        <div class="about-section-label reveal"><span>Skills</span></div>
+        <h2 class="headline-md reveal delay-1">Technology Arsenal</h2>
+        <p class="reveal delay-2">A comprehensive toolkit for building smart hardware, IoT ecosystems, and AI-integrated systems.</p>
+      </div>
+      <div class="skills-categories reveal delay-1">
+        <div class="skill-category"><h4>Programming Languages</h4><div class="chip-cloud"><span class="chip">C</span><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">HTML/CSS</span></div></div>
+        <div class="skill-category"><h4>AI &amp; Machine Learning</h4><div class="chip-cloud"><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">OpenCV</span><span class="chip">PyTorch</span><span class="chip">OpenAI API</span><span class="chip">Hugging Face</span></div></div>
+        <div class="skill-category"><h4>Hardware &amp; Microcontrollers</h4><div class="chip-cloud"><span class="chip">ESP32</span><span class="chip">Arduino</span><span class="chip">PLC Systems</span><span class="chip">Actuators</span></div></div>
+        <div class="skill-category"><h4>Sensors &amp; Components</h4><div class="chip-cloud"><span class="chip">DHT22</span><span class="chip">MPU-6050</span><span class="chip">Encoders</span><span class="chip">DC Motors</span><span class="chip">Ultrasonic</span></div></div>
+        <div class="skill-category"><h4>IoT &amp; Networking</h4><div class="chip-cloud"><span class="chip">Blynk</span><span class="chip">HTTP REST</span><span class="chip">ngrok</span><span class="chip">JSON</span><span class="chip">MQTT</span></div></div>
+        <div class="skill-category"><h4>Web &amp; Dashboard</h4><div class="chip-cloud"><span class="chip">Flask</span><span class="chip">Chart.js</span><span class="chip">Tailwind CSS</span><span class="chip">Vercel</span><span class="chip">Framer Motion</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="container">
+    <div class="about-section-label reveal"><span>Proven Impact</span></div>
+    <h2 class="headline-lg reveal delay-1" style="margin-bottom:48px;">Measurable results<br>that matter.</h2>
+    <div class="impact-grid reveal delay-2">
+      <div class="impact-card"><span class="impact-number">Real&#8209;Time</span><h4>Telemetry Monitoring</h4><p>Continuous environmental sensor data captured and transmitted with precise intervals using ESP32 and HTTP POST protocols.</p></div>
+      <div class="impact-card"><span class="impact-number">Auto&#8209;<br>mated</span><h4>Hardware Actuation</h4><p>Reducing manual intervention by developing smart systems like automated waste sorters and sensor-driven mechanisms.</p></div>
+      <div class="impact-card"><span class="impact-number">4+</span><h4>Engineering Prototypes</h4><p>Designed and deployed diverse systems including IoT dashboards, mechanical instruments, and AI web classifiers.</p></div>
+      <div class="impact-card"><span class="impact-number">3+</span><h4>Leadership &amp; PR Roles</h4><p>Years of active contribution in managing public relations, team coordination, and strategic technology R&amp;D initiatives.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="container">
+    <div class="journey-header">
+      <div class="about-section-label reveal" style="justify-content:center;"><span>Journey</span></div>
+      <h2 class="headline-lg reveal delay-1">Experiences that<br>shaped my career.</h2>
+      <p class="reveal delay-2" style="color:var(--muted);margin-top:16px;">From student labs to real-world engineering challenges.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="tl-content left reveal"><p class="tl-year">Aug 2024 &ndash; Present</p><h3>Telkom University</h3><p class="tl-role">Electrical Engineering Student</p><p>Pursuing a Bachelor&rsquo;s degree in Electrical Engineering, building strong fundamentals in circuit design, automation, digital systems, IoT programming, and applied AI &mdash; while actively contributing to real-world engineering projects and campus research activities.</p></div>
+        <div class="timeline-dot"></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-content right reveal delay-1"><p class="tl-year">2025 &ndash; Campus Recruitment</p><h3>SPELL-Lab</h3><p class="tl-role">Laboratory Candidate &mdash; Signal Processing &amp; Learning for Spatial Intelligence</p><p>Participated in the recruitment selection for SPELL-Lab (Signal Processing and Learning for Spatial Intelligence Laboratory) at Telkom University, a research laboratory focused on advanced signal processing, spatial data analysis, and machine learning research.</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-content left reveal"><p class="tl-year">2025 &ndash; Campus Recruitment</p><h3>IMV Laboratory</h3><p class="tl-role">Early Selection Qualifier &mdash; Imaging, Machine Vision &amp; Visual Computing</p><p>Passed the initial selection stage for IMV Laboratory (Imaging and Machine Vision), a campus research lab specializing in computer vision, image processing, and visual computing systems. Demonstrated foundational knowledge in signal analysis and AI-driven visual systems.</p></div>
+        <div class="timeline-dot"></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-content right reveal delay-1"><p class="tl-year">Jan 2024 &ndash; Dec 2024</p><h3>Electo Value Environment</h3><p class="tl-role">Research &amp; Development Staff</p><p>Conducted R&amp;D for environmental tech innovations, evaluating system requirements and designing technology project concepts.</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-content left reveal"><p class="tl-year">2025 &ndash; 2026</p><h3>Serasi</h3><p class="tl-role">Vice Head of Public Relations (Wakadiv 1)</p><p>Coordinated the PR division in executing publication strategies, managing public communication, and supervising organizational branding.</p></div>
+        <div class="timeline-dot"></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-content right reveal delay-1"><p class="tl-year">2026 &ndash; 2027</p><h3>KMTE</h3><p class="tl-role">Public Relations Staff</p><p>Building strategic external partnerships and managing official communications to support the Electrical Engineering student organization's initiatives.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <p class="label-mono text-primary" style="margin-bottom:20px;">Ready to collaborate?</p>
+      <h2 class="headline-lg">Let&rsquo;s build something<br>exceptional together.</h2>
+      <p>Whether you need a real-time IoT monitoring system, an automated hardware mechanism, or an AI-driven web application &mdash; I bring the engineering expertise to make it happen.</p>
+      <div class="cta-btns">
+        <a href="mailto:arasyfathi@gmail.com" class="btn-primary">Send an Email &#x2197;</a>
+        <a href="https://linkedin.com" class="btn-ghost" target="_blank">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" style="font-size:1.5rem;">FA.</a>
+        <p>Electrical Engineer &amp; IoT Specialist crafting smart, automated, and interconnected solutions that merge sensor technology with software intelligence.</p>
+        <div class="footer-contact-links">
+          <a href="tel:+6282272099066">+62 822 7209 9066</a>
+          <a href="mailto:arasyfathi@gmail.com">arasyfathi@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Links</h5><ul><li><a href="#hero">Home</a></li><li><a href="#about">About</a></li><li><a href="#works">Works</a></li><li><a href="#journey">Journey</a></li></ul></div>
+      <div class="footer-col"><h5>Socials</h5><ul><li><a href="mailto:arasyfathi@gmail.com">Email</a></li><li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li><li><a href="#">WhatsApp</a></li><li><a href="https://github.com" target="_blank">GitHub</a></li></ul></div>
+      <div class="footer-col"><h5>Info</h5><ul><li><a href="#" id="local-time-display">21:52 UTC+7</a></li><li><a href="#">2026 &copy; Edition</a></li></ul></div>
+    </div>
+    <div class="footer-wordmark"><h2>FATHI</h2></div>
+    <div class="footer-bottom"><p>&copy; 2026 Fathi Arasy. All rights reserved.</p><p>Designed &amp; built with &hearts;</p></div>
+  </div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); }, {passive:true});
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  hamburgerBtn.addEventListener('click', () => { mobileNav.classList.toggle('open'); document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : ''; });
+  function closeMobileNav() { mobileNav.classList.remove('open'); document.body.style.overflow = ''; }
+  const revealEls = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+  revealEls.forEach(el => ro.observe(el));
+  function updateTime() { const el=document.getElementById('local-time-display'); if(el) el.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Jakarta',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date())+' UTC+7'; }
+  updateTime(); setInterval(updateTime, 30000);
+</script>
+</body>
+</html>

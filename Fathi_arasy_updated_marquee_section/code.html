@@ -1,0 +1,431 @@
+<!DOCTYPE html><html lang="en" style=""><head><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Muhamad Rasya Zildan - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#131313',
+            light: '#ececec',
+            accent: '#d4ff00',
+            graytext: '#888888'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'], // Fallback for Hanken Grotesk
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styles">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      background-color: #ececec;
+      color: #131313;
+    }
+
+    .dark-section {
+      background-color: #131313;
+      color: #ececec;
+    }
+
+    .glass-blob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212,255,0,0.15) 0%, rgba(255,255,255,0) 70%);
+      filter: blur(40px);
+      z-index: -1;
+      border-radius: 50%;
+    }
+
+    .journey-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #d4ff00 0%, #d4ff00 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 100%);
+      transform: translateX(-50%);
+    }
+
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      width: 100vw;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .big-text {
+      font-size: clamp(5rem, 15vw, 20rem);
+      line-height: 0.8;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
+  </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" data-snapdom="injected-import"></head>
+<body class="antialiased selection:bg-accent selection:text-dark">
+<!-- BEGIN: Navigation -->
+<nav class="fixed top-0 left-0 w-full px-8 py-6 flex justify-between items-center z-50 mix-blend-difference text-white">
+<div class="logo w-12 h-12">
+<img alt="Logo" class="w-full h-full object-contain filter invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-RiwITWpn_hWmb7JQ2MuhLpzZr35mccUZ3WKgxQ1bYIO_YbxK-XUmQMh6xXIm-L-gquh6eQe7Kzkozm27DD-Pl7A5x38FXr82jdfvCFNg8kO17IIJ3FeVbJjtIhxesKl8WIV2_P2W7vCZgEAPfmY4lG8gxHcVUgxHCxYpFxf5amWXv2U4sWr8QcPsNRA5MssSFWCqX7vZmPpkjez_qTYlpvtSDs2vJmn6YNs-5ql08n_yxZy6or8VX6FGKtC1mXA1UfR9E1FZAepQzw">
+</div>
+<div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+<a class="hover:text-accent transition-colors" href="#">Home</a>
+<a class="hover:text-accent transition-colors" href="#">About</a>
+<a class="hover:text-accent transition-colors" href="#">Works</a>
+</div>
+<div class="flex items-center space-x-4">
+<a class="px-6 py-2 rounded-full border border-white hover:bg-white hover:text-black transition-colors text-sm font-medium" href="#">Contact</a>
+<button class="w-10 h-10 rounded-full border border-white flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</button>
+</div>
+</nav>
+<!-- END: Navigation -->
+<!-- BEGIN: Hero Section -->
+<header class="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden"><div class="absolute left-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-8 items-center">
+  <a href="#" class="text-dark hover:text-accent transition-colors duration-300">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="0 0 24 24">
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+    </svg>
+  </a>
+  <a href="#" class="text-dark hover:text-accent transition-colors duration-300">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="0 0 24 24">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+    </svg>
+  </a>
+  <a href="#" class="text-dark hover:text-accent transition-colors duration-300">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="0 0 24 24">
+      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+    </svg>
+  </a>
+  <div class="w-px h-24 bg-dark/20 mt-4"></div>
+</div><div class="absolute inset-0 z-0 overflow-hidden">
+  <video autoplay="" loop="" muted="" playsinline="" class="absolute top-0 left-0 w-full h-full object-cover">
+    <source src="https://res.cloudinary.com/dny2pxthk/video/upload/v1783244513/background_baxqm4.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0 bg-black/20"></div>
+</div>
+<div class="glass-blob"></div>
+<div class="text-center z-10 relative">
+<p class="text-sm md:text-lg mb-4 text-gray-700">Hi! i'm Fathi</p>
+<h1 class="text-5xl md:text-7xl lg:text-9xl font-light tracking-tight text-dark leading-tight"><span data-path-to-node="3,0" data-index-in-node="0" class=""><b>Electrical Engineer<br>IoT Specialist.</b></span></h1>
+</div>
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-sm text-gray-500 uppercase tracking-widest">
+      scroll down
+    </div>
+</header>
+<!-- END: Hero Section -->
+<!-- BEGIN: Intro Section -->
+<section class="dark-section py-32 px-8 flex flex-col items-center justify-center text-center">
+<div class="max-w-4xl mx-auto space-y-12">
+<h2 class="text-3xl md:text-5xl font-light leading-relaxed">
+        I'm Fathi – an Electrical Engineer crafting smart, automated, and interconnected solutions that merge sensor technology with software intelligence.</h2>
+<p class="text-xl md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto">
+        I specialize in building IoT systems, automated devices, and sensor integrations using technologies like C, Python, Arduino, ESP32, and Blynk.
+      </p>
+<div class="pt-8">
+<a class="inline-flex items-center space-x-2 bg-accent text-dark px-8 py-4 rounded-full font-medium hover:bg-opacity-90 transition-all" href="#">
+<span class="">About Me</span>
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</a>
+</div>
+</div>
+</section>
+<!-- END: Intro Section -->
+<!-- BEGIN: Profile & Stats -->
+<section class="py-24 px-8 max-w-7xl mx-auto relative">
+<div class="flex flex-col md:flex-row items-center gap-16 mb-24">
+<div class="w-full md:w-1/2">
+<h3 class="text-3xl md:text-5xl font-light leading-tight mb-6">
+          Engineering smart, automated solutions through precise hardware integration and IoT.
+        </h3>
+<p class="text-gray-600 text-lg leading-relaxed">
+          Every project I develop starts with a deep understanding of technical challenges, translating them into reliable, automated hardware solutions. From designing circuit logic and PLC integration to developing fully monitored IoT ecosystems using ESP32, I focus on building systems that are highly responsive and efficient. Furthermore, my active background in organizational public relations equips me to effectively communicate complex engineering concepts and collaborate seamlessly within any team.
+        </p>
+</div>
+<div class="w-full md:w-1/2 flex justify-center">
+<img alt="Rasya Zildan Profile" class="w-full max-w-md object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuv4xEeokHWY9cJ5vDfVIRJXxU0t1EjPMk7HED2-ExooGtBtNtjoQLfpF62X9D11aKNlu8OAE7sc-6D0oBKZn7MFbpA5Kw4m6HMLQ4Y1_I341EHmg9tw6VQ5CTOqmOsE_FjJhocxGFPETDaIujsct_v_pvh9puznCvmkIqnCtTVhvNGNanyeVE8o8yDyGV_9D_cfB2-ktQyiDHJ4MJ5VLBcXqSwGs6vt-4l9bU9YW_VCbov2dTRdnYwNpzPWAgYuwYyZMF4DHc5bhibw">
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-2 gap-12 border-t border-gray-300 pt-16">
+<div>
+<p class="text-sm text-gray-500 uppercase tracking-widest mb-4">ORGANIZATIONAL ROLES</p>
+<p class="text-7xl md:text-8xl font-light"><span class="text-gray-400"><font color="#131313">4</font>+</span></p>
+</div>
+<div>
+<p class="text-sm text-gray-500 uppercase tracking-widest mb-4">PROTOTYPES BUILT</p>
+<p class="text-7xl md:text-8xl font-light">2<span class="text-gray-400">+</span></p>
+</div>
+</div>
+</section>
+<!-- END: Profile & Stats -->
+<!-- BEGIN: Expertise Section -->
+<section class="bg-gray-100 py-24 px-8 border-t border-gray-200">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-4xl md:text-6xl font-light mb-20 max-w-3xl">
+        Transforming engineering concepts into smart, automated solutions through hardware expertise and IoT innovation.
+      </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Service 1 -->
+<div class="bg-light p-8 border border-gray-200 hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-start mb-12">
+<div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><line x1="9" x2="9" y1="3" y2="21"></line></svg>
+</div>
+<span class="text-xs text-gray-400">01</span>
+</div>
+<h4 class="text-xl font-medium mb-4">IoT System Development</h4>
+<p class="text-gray-500 text-sm leading-relaxed"><span data-path-to-node="8,1,0,0" class="">Developing interconnected ecosystems using microcontrollers like ESP32 and platforms like Blynk for real-time remote monitoring and control</span><span data-path-to-node="8,1,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="8,1,0,2" class="">.</span></p>
+</div>
+<!-- Service 2 -->
+<div class="bg-gray-200 p-8 border border-gray-200">
+<div class="flex justify-between items-start mb-12">
+<div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><rect height="7" width="7" x="3" y="3"></rect><rect height="7" width="7" x="14" y="3"></rect><rect height="7" width="7" x="14" y="14"></rect><rect height="7" width="7" x="3" y="14"></rect></svg>
+</div>
+<span class="text-xs text-gray-400">02</span>
+</div>
+<h4 class="text-xl font-medium mb-4">Hardware &amp; Sensor Integration</h4>
+<p class="text-gray-500 text-sm leading-relaxed"><span data-path-to-node="10,1,0,0" class="">Building precise detection and actuation systems by integrating complex sensors (e.g., MPU-6050), encoders, and mechanical actuators for dynamic instruments</span><span data-path-to-node="10,1,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="10,1,0,2" class="">.</span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c3558283784=""></sources-carousel-inline></p>
+</div>
+<!-- Service 3 -->
+<div class="bg-light p-8 border border-gray-200 hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-start mb-12">
+<div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l9 4.9V17L12 22l-9-4.9V6.9z"></path></svg>
+</div>
+<span class="text-xs text-gray-400">03</span>
+</div>
+<h4 class="text-xl font-medium mb-4">Automation &amp; Control Logic</h4>
+<p class="text-gray-500 text-sm leading-relaxed"><span data-path-to-node="12,1,0,0" class="">Programming responsive automated systems and control logic—spanning from Arduino environments to Programmable Logic Controllers (PLC)—using C and Python</span><span data-path-to-node="12,1,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="12,1,0,2" class="">.</span></p>
+</div>
+<!-- Service 4 -->
+<div class="bg-light p-8 border border-gray-200 hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-start mb-12">
+<div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="5" r="3"></circle><line x1="12" x2="12" y1="22" y2="8"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+</div>
+<span class="text-xs text-gray-400">04</span>
+</div>
+<h4 class="text-xl font-medium mb-4">Public Relations &amp; R&amp;D</h4>
+<p class="text-gray-500 text-sm leading-relaxed"><span data-path-to-node="14,1,0,0" class="">Managing organizational communications, driving technology-focused research, and collaborating effectively to build strategic partnerships</span><span data-path-to-node="14,1,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="14,1,0,2" class="">.</span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Expertise Section -->
+<!-- BEGIN: Works Section -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<h2 class="text-3xl md:text-5xl font-light mb-16 max-w-2xl">
+      Discover my latest engineering projects and automated solutions that bring concepts to life.
+    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project 1 -->
+<div class="group cursor-pointer">
+<p class="text-xs text-gray-400 uppercase tracking-widest mb-4">SmartWaste AI</p>
+<div class="overflow-hidden aspect-video bg-gray-200 mb-6">
+<img alt="Paperplay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2VUvKwuF1aXUAfafsfoFjD3mJoyOXXzHIRNbSPOMmZuW8w2Sw7xKbUZlEQrTk9cwmtSW0ksEflJAjhzuvWr8dXB0yJTVyRQAk06BhYT5IpfYLgCflAjF4at3lMvWSkve0a7jibpJxcqLz1An-46X_0H52pLxHmjCE-oJbiT9aRI6SWRGIngGI2nklqj55Gw-IweA_XeEMSQzFPAaGHxFay77m730pvYVhVN-AXU7bzglNXOQ7wFee_oZWMYNxDey7AlZ3YsgDaVj-hA">
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group cursor-pointer mt-12 md:mt-24">
+<p class="text-xs text-gray-400 uppercase tracking-widest mb-4">Sistem Pendeteksi Orientasi Wadah</p>
+<div class="overflow-hidden aspect-video bg-gray-200 mb-6">
+<img alt="Graduation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ0d2CjSEl2sp69FYCuBihP8oWdJtgXjWTp5_SRqNWBU2hX6fA2MiROCQZ9_TbkVMHnPIDA9VGq8PF7R1PF9oz6nwAtzUPkqdsnzFuDny6XVP4AJhRPj0qjpYn3cqDP5CRSA9II6N9JkgeAfdm1E3a8IPtNmqSjbeXeS8HB9G-lc0RA9_2J8Ml5SYFT4E9MYF3Qll-jlsmwtKt_rgHxT8WrQdX7_ync6p76WC5dYzPHz4QSnUplK1NLvJxxadGXK83Elhoyyc9-j_0Wg">
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group cursor-pointer">
+<p class="text-xs text-gray-400 uppercase tracking-widest mb-4">Electo Value Environment Innovations -&nbsp;RESEARCH &amp; DEVELOPMENT</p>
+<div class="overflow-hidden aspect-video bg-gray-200 mb-6">
+<img alt="Kelas Kita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiYrOmuN2b259rSUNTIDwVNjiensJSUGE1orjf2xOXo9hQwCORmr3fswOH6LO6EgP7ALiRNSW6VeI-JtcJS7TiszGVW3chOQvv1frZ4kxc-Tra09rS-0DZBVxPOaR2txhBMkLL3YTFRFbxoccYZ7wRCLu_74B4qsachkiwMemW70y91lJ5F1rOY5YXcvE94BXkDhQLsSjlGTCYuBlWe88XNfsohKGGDmczB8U6dnizba1DlEzYvm22ZS3x2fl-PCPcVDh5XrDMX8AeQQ">
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group cursor-pointer mt-12 md:mt-24">
+<p class="text-xs text-gray-400 uppercase tracking-widest mb-4">Real-Time Temperature &amp; Humidity Monitoring (IoTDash)</p>
+<div class="overflow-hidden aspect-video bg-gray-200 mb-6 rounded-xl">
+  <img alt="Mobile App Design Showcase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmMU3wdiLNc6NStnUADhDQTsiBcqnvBIXU0PS7FZ6RZCUCchmx2spW8GTnQlnQbzgCfa_SVscTmQKHuJeZS8k67rjKe-BN7LsKRQeNlsdPKCj0WaJOM2VfeB7IovbUVqCC_JKgmi9u8YUrFNvWsZKGbf5xuVBctTVwJHCI8bCzzTwavhiQV0zDfmElVtaNacIH9UU3RTBhfr_A4zck9B0KXO40ygTqKfByAVEFmKk-_DeXeewmlVv8tPI3PNxI8sWljzuSzH8eKjAmsQ">
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-20">
+<a class="inline-flex items-center space-x-2 bg-white border border-gray-200 text-dark px-8 py-4 rounded-full font-medium hover:bg-gray-50 transition-all shadow-sm" href="#">
+<span class="">All Projects</span>
+<div class="w-6 h-6 rounded-full bg-accent flex items-center justify-center ml-2">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</div>
+</a>
+</div>
+</section>
+<!-- END: Works Section -->
+<!-- BEGIN: Journey Section -->
+<section class="dark-section relative py-32 px-8 overflow-hidden">
+<div class="max-w-4xl mx-auto text-center relative z-10 mb-32">
+<h2 class="text-4xl md:text-6xl font-light leading-tight">Explore my journey and the experiences that shape my engineering career.</h2>
+</div>
+<div class="relative max-w-5xl mx-auto pb-32">
+<div class="journey-line"></div>
+<!-- Item 1 -->
+<div class="flex items-center justify-between w-full mb-32 relative z-10">
+<div class="w-5/12 text-right pr-12">
+<h3 class="text-3xl md:text-5xl font-semibold mb-2">Telkom University</h3>
+<p class="text-xl text-gray-400 mb-4">Electrical Engineering Student</p>
+<p class="text-gray-500 text-sm">AUG 2024 - PRESENT</p>
+<p class="text-gray-400 mt-6 text-sm"><span data-path-to-node="9,3,0,0" class="">Building a strong foundation in automation, IoT, and hardware logic programming while actively participating in technology-driven projects</span><span data-path-to-node="9,3,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="9,3,0,2" class="">.</span></p>
+</div>
+<div class="w-2/12 flex justify-center">
+<div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_10px_#d4ff00]"></div>
+</div>
+<div class="w-5/12 pl-12"></div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between w-full mb-32 relative z-10">
+<div class="w-5/12 pr-12"></div>
+<div class="w-2/12 flex justify-center">
+<div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_10px_#d4ff00]"></div>
+</div>
+<div class="w-5/12 pl-12">
+<h3 class="text-3xl md:text-5xl font-semibold mb-2">Electo Value Environment</h3>
+<p class="text-xl text-gray-400 mb-4">Research &amp; Development Staff</p>
+<p class="text-gray-500 text-sm">JAN 2024 - DEC 2024</p>
+<p class="text-gray-400 mt-6 text-sm"><span data-path-to-node="11,3,0,0" class="">Conducted research and development for environmental tech innovations, evaluating system requirements, and designing technology project concepts</span><span data-path-to-node="11,3,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="11,3,0,2" class="">.</span></p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between w-full relative z-10">
+<div class="w-5/12 text-right pr-12">
+<h3 class="text-3xl md:text-5xl font-semibold mb-2">Serasi</h3>
+<p class="text-xl text-gray-400 mb-4">Vice Head of Public Relations (Wakadiv 1)</p>
+<p class="text-gray-500 text-sm">2025 - 2026</p>
+<p class="text-gray-400 mt-6 text-sm"><span data-path-to-node="13,3,0,0" class="">Coordinated the PR division in executing publication strategies, managing public communication, and supervising organizational branding</span><span data-path-to-node="13,3,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="13,3,0,2" class="">.</span></p>
+</div>
+<div class="w-2/12 flex justify-center">
+<div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_10px_#d4ff00]"></div>
+</div>
+<div class="w-5/12 pl-12"></div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center justify-between w-full mb-32 relative z-10">
+<div class="w-5/12 pr-12"></div>
+<div class="w-2/12 flex justify-center">
+<div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_10px_#d4ff00]"></div>
+</div>
+<div class="w-5/12 pl-12">
+<h3 class="text-3xl md:text-5xl font-semibold mb-2">KMTE</h3>
+<p class="text-xl text-gray-400 mb-4">Public Relations Staff</p>
+<p class="text-gray-500 text-sm">2026 - 2027</p>
+<p class="text-gray-400 mt-6 text-sm"><span data-path-to-node="15,3,0,0" class="">Building strategic external partnerships and managing official communications to support the Electrical Engineering student organization's initiatives</span><span data-path-to-node="15,3,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="15,3,0,2" class="">.</span></p>
+</div>
+</div></div>
+</section>
+<!-- END: Journey Section -->
+<!-- BEGIN: Marquee -->
+<section class="py-12 bg-light overflow-hidden"><div class="relative py-32 flex items-center justify-center min-h-[400px]">
+<!-- Ribbon 1: Rotated Up -->
+<div class="absolute w-full marquee-container py-8 bg-dark text-white transform rotate-6 z-20 shadow-2xl top-1/2 -translate-y-1/2">
+<div class="marquee-content flex items-center"><span class="text-2xl md:text-5xl font-bold uppercase mx-12 flex items-center gap-6"><br><span class="material-symbols-outlined text-accent">star</span></span><span class="text-2xl md:text-5xl font-bold uppercase mx-12 flex items-center gap-6">SMART IOT SOLUTIONS ☆ HARDWARE ENGINEERING ☆ AUTOMATED SYSTEMS ☆<span class="material-symbols-outlined text-accent">star</span></span></div>
+</div>
+<!-- Ribbon 2: Rotated Down -->
+<div class="absolute w-full marquee-container py-8 bg-dark text-white transform -rotate-6 z-10 shadow-2xl top-1/2 -translate-y-1/2">
+<div class="marquee-content flex items-center"><span class="text-2xl md:text-5xl font-bold uppercase mx-12 flex items-center gap-6">INTELLIGENT SENSORS ☆ REAL-TIME MONITORING ☆ AI INTEGRATION ☆<span class="material-symbols-outlined text-accent">star</span></span><span class="text-2xl md:text-5xl font-bold uppercase mx-12 flex items-center gap-6">TAILORED WEB DEVELOPMENT <span class="material-symbols-outlined text-accent">star</span> INNOVATIVE SELF-MADE CREATIONS <span class="material-symbols-outlined text-accent">star</span></span></div>
+</div>
+</div></section>
+<!-- END: Marquee -->
+<!-- BEGIN: Footer -->
+<footer class="dark-section pt-24 pb-8 px-8 relative overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between mb-32 z-10 relative">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full md:w-1/2">
+<div>
+<p class="text-gray-500 text-xs tracking-widest mb-6">LINKS</p>
+<ul class="space-y-3 text-sm">
+<li class=""><a class="hover:text-accent transition-colors" href="#">Home</a></li>
+<li class=""><a class="hover:text-accent transition-colors" href="#">Work</a></li>
+<li class=""><a class="hover:text-accent transition-colors" href="#">About</a></li>
+<li class=""><a class="hover:text-accent transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<p class="text-gray-500 text-xs tracking-widest mb-6">SOCIALS</p>
+<ul class="space-y-3 text-sm">
+<li class=""><a class="hover:text-accent transition-colors" href="#">Email</a></li>
+<li class=""><a class="hover:text-accent transition-colors" href="#">Linkedin</a></li>
+<li class=""><a class="hover:text-accent transition-colors" href="#">Whatsapp</a></li>
+<li class=""><a class="hover:text-accent transition-colors" href="#">Github</a></li>
+</ul>
+</div>
+<div>
+<p class="text-gray-500 text-xs tracking-widest mb-6">LOCAL TIME</p>
+<p class="text-sm">2:50 AM UTC+7</p>
+</div>
+<div>
+<p class="text-gray-500 text-xs tracking-widest mb-6">VERSION</p>
+<p class="text-sm">2026 © Edition</p>
+</div>
+</div>
+<div class="mt-12 md:mt-0 flex flex-col gap-4 text-sm font-light w-full md:w-auto">
+<a class="px-6 py-3 border border-gray-700 rounded-full text-center hover:border-accent hover:text-accent transition-colors" href="tel:+62895421845451">+6282272099066</a>
+<a class="px-6 py-3 border border-gray-700 rounded-full text-center hover:border-accent hover:text-accent transition-colors" href="mailto:mrasyazildan@gmail.com">arasyfathi@gmail.com</a>
+</div>
+</div>
+<div class="w-full text-center mt-auto z-0">
+<h1 class="big-text text-white opacity-90 select-none">FATHI</h1>
+</div>
+</footer>
+<!-- END: Footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
