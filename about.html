@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About &mdash; Fathi Arasy</title>
+  <meta name="description" content="About Fathi Arasy: Electrical Engineering student at Telkom University specializing in IoT, hardware automation, and AI-driven systems.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Hanken Grotesk', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            dark: '#131313',
+            light: '#ececec',
+            surface: '#1a1a1a',
+            accent: '#d4ff00',
+            muted: '#888888',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { --accent: #d4ff00; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #ececec; color: #131313; font-family: 'Hanken Grotesk', 'Inter', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent); color: #131313; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 9999px; }
+    nav.scrolled { background: rgba(236,236,236,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .mobile-nav { position: fixed; inset: 0; background: #ececec; z-index: 98; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .mobile-nav.open { opacity: 1; pointer-events: all; }
+    .mobile-nav a { font-size: 2.5rem; font-weight: 700; color: #131313; text-decoration: none; letter-spacing: -0.04em; transition: color 0.2s; }
+    .mobile-nav a:hover, .mobile-nav a.active { color: var(--accent); }
+    .nav-link.active { color: #131313 !important; font-weight: 600; }
+    .chip { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border: 1px solid rgba(0,0,0,0.2); border-radius: 9999px; color: #131313; display: inline-block; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.12s; }
+    .delay-2 { transition-delay: 0.24s; }
+    .delay-3 { transition-delay: 0.36s; }
+    .big-text { font-size: clamp(5rem, 18vw, 18rem); line-height: 0.85; font-weight: 800; letter-spacing: -0.05em; }
+    @media (max-width: 1024px) { .social-sidebar { display: none !important; } }
+    .journey-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #d4ff00 0%, #d4ff00 50%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.12) 100%); transform: translateX(-50%); }
+    .work-card img { transition: transform 0.7s cubic-bezier(.65,0,.35,1); }
+    .work-card:hover img { transform: scale(1.05); }
+  </style>
+</head>
+<body class="antialiased" data-page="about">
+
+<!-- NAVIGATION -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 transition-all duration-300">
+  <a href="index.html" class="text-2xl font-extrabold tracking-tighter text-dark">FA.</a>
+  <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+    <li><a href="index.html" class="nav-link text-dark/60 hover:text-dark transition-colors" data-page="home">Home</a></li>
+    <li><a href="about.html" class="nav-link text-dark/60 hover:text-dark transition-colors" data-page="about">About</a></li>
+    <li><a href="projects.html" class="nav-link text-dark/60 hover:text-dark transition-colors" data-page="projects">Projects</a></li>
+  </ul>
+  <div class="flex items-center gap-3">
+    <a href="mailto:arasyfathi@gmail.com" class="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full border border-dark/20 text-sm font-medium text-dark hover:bg-dark hover:text-light transition-all">Contact &#x2197;</a>
+    <button id="hamburger-btn" class="flex md:hidden flex-col gap-1.5 p-1" aria-label="Menu">
+      <span class="block w-6 h-0.5 bg-dark rounded"></span>
+      <span class="block w-6 h-0.5 bg-dark rounded"></span>
+      <span class="block w-4 h-0.5 bg-dark rounded"></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="projects.html" onclick="closeMobileNav()">Projects</a>
+  <a href="mailto:arasyfathi@gmail.com" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="pt-40 pb-20 px-8 max-w-7xl mx-auto">
+  <div class="reveal flex items-center gap-4 mb-6">
+    <span class="block w-10 h-px bg-dark/30"></span>
+    <span class="font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/40">About Me</span>
+  </div>
+  <h1 class="reveal delay-1 text-[clamp(3rem,9vw,7rem)] font-extrabold tracking-[-0.05em] leading-[0.88] mb-16 max-w-4xl">Who I am &amp; what I do.</h1>
+  <div class="max-w-3xl">
+    <p class="reveal delay-2 text-xl md:text-2xl font-light text-dark/60 leading-relaxed">
+      I&rsquo;m an Electrical Engineering student who enjoys building physical and digital systems that genuinely solve real-world problems. Most of my work sits at the intersection of the Internet of Things (IoT), hardware automation, and artificial intelligence.
+    </p>
+  </div>
+</section>
+
+<!-- BIOGRAPHY -->
+<section class="py-0 pb-24 px-8 max-w-7xl mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+    <div class="space-y-6 text-lg text-dark/55 font-light leading-relaxed">
+      <p class="reveal">I&rsquo;m an engineer who bridges the gap between physical hardware and intelligent software. With hands-on experience building IoT-powered monitoring systems, precise automated mechanisms, and AI-driven web applications, I specialize in solving complex engineering challenges while delivering robust and efficient technical systems.</p>
+      <p class="reveal delay-1">My approach combines rigorous hardware design with modern software integration. Whether it&rsquo;s implementing precise sensor readings with MPU-6050 and DHT22, developing automation control logic using PLCs, or architecting real-time monitoring dashboards with ESP32 and Blynk — I consistently deliver reliable prototypes that merge mechanical actuation with intelligent data processing.</p>
+      <p class="reveal delay-2">I trained a YOLOv8 object detection model for the SmartWaste project to automate waste classification, deploying it through a Flask web interface. I also built IoT control systems managed through Blynk.Console and Blynk.cloud, enabling real-time hardware monitoring and remote actuation directly from a dashboard.</p>
+      <div class="reveal delay-3 pt-4">
+        <a href="mailto:arasyfathi@gmail.com" class="inline-flex items-center gap-2 bg-dark text-light px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-dark/80 transition-all">Get in touch &#x2197;</a>
+      </div>
+    </div>
+    <div class="reveal delay-1 relative w-full aspect-[4/5] rounded-3xl overflow-hidden bg-gray-200">
+      <div class="absolute inset-0 rounded-3xl z-10" style="background:linear-gradient(135deg,rgba(212,255,0,0.25) 0%,transparent 50%);"></div>
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-UGLVX1z3oHzoguSHCokUf4cGkJunjmxL95aY3UKto_7kIOd9GN7ZWdnbwZMECPE5ytaAwxmEpguCqd6s3XqUzlhRXwyyQZzGWKKBAeEqiWr5jTgpXOhM230Klv6qqlg8-OLju7HweKuzel3WDjBC4eUFyFUqai6oA2-I8Thd-WLCWfL-j7eiDCv_qRHZDCEFMLV695YsF2EubClNIJOfj9NYpf9tmlflU0tJBjTSKEuRntCxyYypAWAg2PjukWgSt03WKJO8dcUT4g"
+           alt="Fathi Arasy portrait" class="w-full h-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="py-16 px-8 max-w-7xl mx-auto">
+  <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-px border border-gray-200 rounded-2xl overflow-hidden">
+    <div class="bg-white p-8 text-center hover:bg-gray-50 transition-colors">
+      <span class="block text-5xl font-extrabold tracking-tight text-dark mb-2">4<span class="text-dark/25">+</span></span>
+      <span class="font-mono text-[0.65rem] tracking-[0.12em] uppercase text-dark/40">Org. Roles</span>
+    </div>
+    <div class="bg-white p-8 text-center border-l border-gray-200 hover:bg-gray-50 transition-colors">
+      <span class="block text-5xl font-extrabold tracking-tight text-dark mb-2">4<span class="text-dark/25">+</span></span>
+      <span class="font-mono text-[0.65rem] tracking-[0.12em] uppercase text-dark/40">Prototypes Built</span>
+    </div>
+    <div class="bg-white p-8 text-center border-l border-gray-200 hover:bg-gray-50 transition-colors">
+      <span class="block text-3xl font-extrabold tracking-tight text-dark mb-2">YOLOv8</span>
+      <span class="font-mono text-[0.65rem] tracking-[0.12em] uppercase text-dark/40">AI Model Trained</span>
+    </div>
+    <div class="bg-white p-8 text-center border-l border-gray-200 hover:bg-gray-50 transition-colors">
+      <span class="block text-3xl font-extrabold tracking-tight text-dark mb-2">Real&#8209;Time</span>
+      <span class="font-mono text-[0.65rem] tracking-[0.12em] uppercase text-dark/40">IoT Systems</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE CARDS -->
+<section class="py-16 px-8 max-w-7xl mx-auto">
+  <div class="reveal flex items-center gap-4 mb-10">
+    <span class="block w-10 h-px bg-dark/30"></span>
+    <span class="font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/40">Expertise</span>
+  </div>
+  <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px border border-gray-200 rounded-2xl overflow-hidden">
+    <div class="bg-white p-8 hover:bg-gray-50 transition-colors">
+      <div class="flex justify-between items-start mb-10"><div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center"><svg fill="none" height="18" stroke="#131313" stroke-width="2" viewBox="0 0 24 24" width="18"><rect height="18" rx="2" width="18" x="3" y="3"></rect><line x1="9" x2="9" y1="3" y2="21"></line></svg></div><span class="font-mono text-[0.65rem] text-dark/30">01</span></div>
+      <h4 class="text-base font-semibold mb-3">IoT System Architecture</h4>
+      <p class="text-dark/45 text-sm leading-relaxed font-light">End-to-end solutions from ESP32 sensor nodes to real-time Blynk.Console &amp; Blynk.cloud dashboards and Flask REST backends.</p>
+    </div>
+    <div class="bg-gray-100 p-8 hover:bg-gray-50 transition-colors">
+      <div class="flex justify-between items-start mb-10"><div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center"><svg fill="none" height="18" stroke="#131313" stroke-width="2" viewBox="0 0 24 24" width="18"><rect height="7" width="7" x="3" y="3"></rect><rect height="7" width="7" x="14" y="3"></rect><rect height="7" width="7" x="14" y="14"></rect><rect height="7" width="7" x="3" y="14"></rect></svg></div><span class="font-mono text-[0.65rem] text-dark/30">02</span></div>
+      <h4 class="text-base font-semibold mb-3">Hardware &amp; Sensor Integration</h4>
+      <p class="text-dark/45 text-sm leading-relaxed font-light">Precise detection integrating MPU-6050, DHT22, ultrasonic sensors, encoders, and DC motor actuators for dynamic instruments.</p>
+    </div>
+    <div class="bg-white p-8 hover:bg-gray-50 transition-colors">
+      <div class="flex justify-between items-start mb-10"><div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center"><svg fill="none" height="18" stroke="#131313" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M12 2l9 4.9V17L12 22l-9-4.9V6.9z"></path></svg></div><span class="font-mono text-[0.65rem] text-dark/30">03</span></div>
+      <h4 class="text-base font-semibold mb-3">AI &amp; Model Training</h4>
+      <p class="text-dark/45 text-sm leading-relaxed font-light">Trained YOLOv8 object detection models for waste classification (SmartWaste), deployed through Flask with real-time inference and confidence scores.</p>
+    </div>
+    <div class="bg-white p-8 hover:bg-gray-50 transition-colors">
+      <div class="flex justify-between items-start mb-10"><div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center"><svg fill="none" height="18" stroke="#131313" stroke-width="2" viewBox="0 0 24 24" width="18"><circle cx="12" cy="5" r="3"></circle><line x1="12" x2="12" y1="22" y2="8"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg></div><span class="font-mono text-[0.65rem] text-dark/30">04</span></div>
+      <h4 class="text-base font-semibold mb-3">Automation &amp; Control Logic</h4>
+      <p class="text-dark/45 text-sm leading-relaxed font-light">Responsive automated systems from Arduino environments to industrial Programmable Logic Controllers (PLC), using C and Python.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="bg-gray-100 border-t border-gray-200 py-24 px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal flex items-center gap-4 mb-10">
+      <span class="block w-10 h-px bg-dark/30"></span>
+      <span class="font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/40">Skills</span>
+    </div>
+    <h2 class="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight leading-tight mb-14 max-w-xl">Technology Arsenal</h2>
+    <div class="reveal grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+      <div><h4 class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-dark/40 mb-4">Languages</h4><div class="flex flex-wrap gap-2"><span class="chip">C</span><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">HTML/CSS</span></div></div>
+      <div><h4 class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-dark/40 mb-4">AI &amp; ML</h4><div class="flex flex-wrap gap-2"><span class="chip">YOLOv8</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">OpenCV</span></div></div>
+      <div><h4 class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-dark/40 mb-4">Hardware</h4><div class="flex flex-wrap gap-2"><span class="chip">ESP32</span><span class="chip">Arduino</span><span class="chip">PLC</span></div></div>
+      <div><h4 class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-dark/40 mb-4">Sensors</h4><div class="flex flex-wrap gap-2"><span class="chip">DHT22</span><span class="chip">MPU-6050</span><span class="chip">Ultrasonic</span><span class="chip">Encoders</span></div></div>
+      <div><h4 class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-dark/40 mb-4">IoT</h4><div class="flex flex-wrap gap-2"><span class="chip">Blynk</span><span class="chip">HTTP REST</span><span class="chip">MQTT</span><span class="chip">ngrok</span></div></div>
+      <div><h4 class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-dark/40 mb-4">Web</h4><div class="flex flex-wrap gap-2"><span class="chip">Flask</span><span class="chip">Chart.js</span><span class="chip">Next.js</span><span class="chip">Tailwind</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="bg-dark text-light relative py-32 px-8 overflow-hidden">
+  <div class="max-w-4xl mx-auto text-center relative z-10 mb-24">
+    <div class="reveal flex items-center gap-4 justify-center mb-8">
+      <span class="block w-10 h-px bg-white/20"></span>
+      <span class="font-mono text-[0.7rem] tracking-[0.15em] uppercase text-white/40">Journey</span>
+      <span class="block w-10 h-px bg-white/20"></span>
+    </div>
+    <h2 class="reveal text-[clamp(2rem,6vw,4.5rem)] font-light leading-tight">Experiences that shaped my engineering career.</h2>
+  </div>
+  <div class="relative max-w-5xl mx-auto pb-10">
+    <div class="journey-line"></div>
+    <!-- 1 LEFT: Telkom -->
+    <div class="flex items-start justify-between w-full mb-20 relative z-10">
+      <div class="w-5/12 text-right pr-12 reveal">
+        <span class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-accent block mb-2">Aug 2024 &ndash; Present</span>
+        <h3 class="text-2xl md:text-3xl font-bold mb-1">Telkom University</h3>
+        <p class="text-white/40 text-sm mb-4">Electrical Engineering Student</p>
+        <p class="text-white/45 text-sm font-light leading-relaxed">Pursuing a Bachelor&rsquo;s in Electrical Engineering, building fundamentals in circuit design, automation, digital systems, IoT programming, and applied AI while actively contributing to engineering projects and campus research.</p>
+      </div>
+      <div class="w-2/12 flex justify-center pt-2"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_16px_rgba(212,255,0,0.6)]"></div></div>
+      <div class="w-5/12 pl-12"></div>
+    </div>
+    <!-- 2 RIGHT: IMV -->
+    <div class="flex items-start justify-between w-full mb-20 relative z-10">
+      <div class="w-5/12 pr-12"></div>
+      <div class="w-2/12 flex justify-center pt-2"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_16px_rgba(212,255,0,0.6)]"></div></div>
+      <div class="w-5/12 pl-12 reveal delay-1">
+        <span class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-accent block mb-2">2025 &ndash; Campus Recruitment</span>
+        <h3 class="text-2xl md:text-3xl font-bold mb-1">IMV Laboratory</h3>
+        <p class="text-white/40 text-sm mb-4">Early Selection Qualifier</p>
+        <p class="text-white/45 text-sm font-light leading-relaxed">Passed the initial selection stage for IMV Laboratory (Imaging and Machine Vision) at Telkom University, a campus research lab specializing in computer vision, image processing, and visual computing systems.</p>
+      </div>
+    </div>
+    <!-- 3 LEFT: Electo Value -->
+    <div class="flex items-start justify-between w-full mb-20 relative z-10">
+      <div class="w-5/12 text-right pr-12 reveal">
+        <span class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-accent block mb-2">Jan 2024 &ndash; Dec 2024</span>
+        <h3 class="text-2xl md:text-3xl font-bold mb-1">Electo Value Environment</h3>
+        <p class="text-white/40 text-sm mb-4">Research &amp; Development Staff</p>
+        <p class="text-white/45 text-sm font-light leading-relaxed">Conducted R&amp;D for environmental technology innovations, evaluating system requirements and designing project concepts focused on sustainable engineering solutions.</p>
+      </div>
+      <div class="w-2/12 flex justify-center pt-2"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_16px_rgba(212,255,0,0.6)]"></div></div>
+      <div class="w-5/12 pl-12"></div>
+    </div>
+    <!-- 4 RIGHT: Serasi -->
+    <div class="flex items-start justify-between w-full mb-20 relative z-10">
+      <div class="w-5/12 pr-12"></div>
+      <div class="w-2/12 flex justify-center pt-2"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_16px_rgba(212,255,0,0.6)]"></div></div>
+      <div class="w-5/12 pl-12 reveal delay-1">
+        <span class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-accent block mb-2">2025 &ndash; 2026</span>
+        <h3 class="text-2xl md:text-3xl font-bold mb-1">Serasi</h3>
+        <p class="text-white/40 text-sm mb-4">Vice Head of Public Relations (Wakadiv 1)</p>
+        <p class="text-white/45 text-sm font-light leading-relaxed">Coordinated the PR division in executing publication strategies, managing public communication, and supervising organizational branding.</p>
+      </div>
+    </div>
+    <!-- 5 LEFT: KMTE -->
+    <div class="flex items-start justify-between w-full relative z-10">
+      <div class="w-5/12 text-right pr-12 reveal">
+        <span class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-accent block mb-2">2026 &ndash; 2027</span>
+        <h3 class="text-2xl md:text-3xl font-bold mb-1">KMTE</h3>
+        <p class="text-white/40 text-sm mb-4">Public Relations Staff</p>
+        <p class="text-white/45 text-sm font-light leading-relaxed">Building strategic external partnerships and managing official communications to support the Electrical Engineering student organization&rsquo;s initiatives.</p>
+      </div>
+      <div class="w-2/12 flex justify-center pt-2"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_16px_rgba(212,255,0,0.6)]"></div></div>
+      <div class="w-5/12 pl-12"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-28 px-8 text-center">
+  <div class="max-w-3xl mx-auto reveal">
+    <p class="font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/40 mb-6">Ready to collaborate?</p>
+    <h2 class="text-[clamp(2.5rem,6vw,4rem)] font-bold tracking-tight leading-tight mb-6">Let&rsquo;s build something exceptional together.</h2>
+    <p class="text-dark/50 text-lg font-light leading-relaxed max-w-xl mx-auto mb-10">Whether you need an IoT system, AI classifier, or automated hardware mechanism &mdash; I bring the engineering expertise.</p>
+    <div class="flex items-center gap-4 justify-center flex-wrap">
+      <a href="mailto:arasyfathi@gmail.com" class="inline-flex items-center gap-2 bg-dark text-light px-8 py-4 rounded-full font-semibold text-sm hover:bg-dark/80 transition-all hover:-translate-y-0.5">Send an Email &#x2197;</a>
+      <a href="projects.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-dark/20 text-sm font-medium text-dark hover:bg-dark hover:text-light transition-all">View Projects &#x2192;</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light pt-20 pb-8 px-8 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between mb-20 z-10 relative gap-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full md:w-3/4">
+      <div>
+        <p class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/30 mb-6">Links</p>
+        <ul class="space-y-3 text-sm font-light">
+          <li><a href="index.html" class="text-white/50 hover:text-accent transition-colors">Home</a></li>
+          <li><a href="about.html" class="text-white/50 hover:text-accent transition-colors">About</a></li>
+          <li><a href="projects.html" class="text-white/50 hover:text-accent transition-colors">Projects</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/30 mb-6">Socials</p>
+        <ul class="space-y-3 text-sm font-light">
+          <li><a href="mailto:arasyfathi@gmail.com" class="text-white/50 hover:text-accent transition-colors">Email</a></li>
+          <li><a href="https://linkedin.com" target="_blank" class="text-white/50 hover:text-accent transition-colors">LinkedIn</a></li>
+          <li><a href="#" class="text-white/50 hover:text-accent transition-colors">WhatsApp</a></li>
+          <li><a href="https://github.com" target="_blank" class="text-white/50 hover:text-accent transition-colors">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/30 mb-6">Local Time</p>
+        <p id="local-time-display" class="text-sm text-white/50">23:35 UTC+7</p>
+      </div>
+      <div>
+        <p class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/30 mb-6">Version</p>
+        <p class="text-sm text-white/50">2026 &copy; Edition</p>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3 w-full md:w-auto shrink-0">
+      <a href="tel:+6282272099066" class="px-6 py-3 border border-white/10 rounded-full text-sm font-light text-center hover:border-accent hover:text-accent transition-colors">+62 822 7209 9066</a>
+      <a href="mailto:arasyfathi@gmail.com" class="px-6 py-3 border border-white/10 rounded-full text-sm font-light text-center hover:border-accent hover:text-accent transition-colors">arasyfathi@gmail.com</a>
+    </div>
+  </div>
+  <div class="w-full text-center z-0 relative select-none overflow-hidden">
+    <h2 class="big-text text-white/[0.06]">FATHI</h2>
+  </div>
+  <div class="max-w-7xl mx-auto flex items-center justify-between pt-6 border-t border-white/[0.06] mt-6 flex-wrap gap-4 z-10 relative">
+    <p class="text-xs text-white/25">&copy; 2026 Fathi Arasy. All rights reserved.</p>
+    <p class="text-xs text-white/25">Designed &amp; built with &hearts;</p>
+  </div>
+</footer>
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+  // Mobile nav
+  document.getElementById('hamburger-btn').addEventListener('click', () => {
+    const mn = document.getElementById('mobile-nav');
+    mn.classList.toggle('open');
+    document.body.style.overflow = mn.classList.contains('open') ? 'hidden' : '';
+  });
+  function closeMobileNav() { document.getElementById('mobile-nav').classList.remove('open'); document.body.style.overflow = ''; }
+  // Active nav link
+  const currentPage = document.body.dataset.page;
+  document.querySelectorAll('.nav-link').forEach(a => { if (a.dataset.page === currentPage) a.classList.add('active'); });
+  // Reveal on scroll
+  const ro = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  // Live local time
+  function updateTime() { const el = document.getElementById('local-time-display'); if (el) el.textContent = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()) + ' UTC+7'; }
+  updateTime(); setInterval(updateTime, 30000);
+</script>
+</body>
+</html>
