@@ -103,7 +103,7 @@
 </head>
 <body class="antialiased selection:bg-accent selection:text-dark">
 <!-- BEGIN: Navigation -->
-<nav class="fixed top-0 left-0 w-full px-8 py-6 flex justify-between items-center z-50 mix-blend-difference text-white">
+<nav id="main-nav" class="fixed top-0 left-0 w-full px-8 py-6 flex justify-between items-center z-50 mix-blend-difference text-white transition-all duration-500">
 <div class="logo w-12 h-12">
 <img alt="Logo" class="w-full h-full object-contain filter invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-RiwITWpn_hWmb7JQ2MuhLpzZr35mccUZ3WKgxQ1bYIO_YbxK-XUmQMh6xXIm-L-gquh6eQe7Kzkozm27DD-Pl7A5x38FXr82jdfvCFNg8kO17IIJ3FeVbJjtIhxesKl8WIV2_P2W7vCZgEAPfmY4lG8gxHcVUgxHCxYpFxf5amWXv2U4sWr8QcPsNRA5MssSFWCqX7vZmPpkjez_qTYlpvtSDs2vJmn6YNs-5ql08n_yxZy6or8VX6FGKtC1mXA1UfR9E1FZAepQzw">
 </div>
@@ -121,6 +121,14 @@
   </div>
 </div>
 </nav>
+  <!-- Minimalist Scroll Menu Button -->
+  <button id="scroll-menu-btn" class="fixed top-6 right-8 z-[60] w-12 h-12 rounded-full border border-white mix-blend-difference text-white flex items-center justify-center opacity-0 pointer-events-none -translate-y-full transition-all duration-500 hover:bg-white hover:text-black">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="12" x2="20" y2="12"></line>
+      <line x1="4" y1="6" x2="20" y2="6"></line>
+      <line x1="4" y1="18" x2="20" y2="18"></line>
+    </svg>
+  </button>
 <!-- END: Navigation -->
 <!-- BEGIN: Hero Section -->
 <header class="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden"><div class="absolute left-8 top-32 bottom-8 z-50 hidden lg:flex flex-col justify-between items-center">
@@ -465,4 +473,22 @@
 
 
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainNav = document.getElementById('main-nav');
+      const scrollMenuBtn = document.getElementById('scroll-menu-btn');
+      
+      if(mainNav && scrollMenuBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 100) {
+            mainNav.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none');
+            scrollMenuBtn.classList.remove('opacity-0', '-translate-y-full', 'pointer-events-none');
+          } else {
+            mainNav.classList.remove('opacity-0', '-translate-y-full', 'pointer-events-none');
+            scrollMenuBtn.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none');
+          }
+        });
+      }
+    });
+  </script>
 </body></html>
