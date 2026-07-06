@@ -1,248 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Projects &amp; Experience &mdash; Fathi Arasy</title>
-  <meta name="description" content="Engineering projects by Fathi Arasy: IoTDash, SmartWaste YOLOv8, Blynk dashboard systems, and organizational experience.">
+  <title>Works - Fathi Arasy</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Hanken Grotesk', 'Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
           colors: {
             dark: '#131313',
             light: '#ececec',
-            surface: '#1a1a1a',
             accent: '#d4ff00',
-            muted: '#888888',
+            graytext: '#888888'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
           }
         }
       }
     }
   </script>
   <style>
-    :root { --accent: #d4ff00; }
-    html { scroll-behavior: smooth; }
-    body { background-color: #ececec; color: #131313; font-family: 'Hanken Grotesk', 'Inter', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-    ::selection { background: var(--accent); color: #131313; }
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 9999px; }
-    nav.scrolled { background: rgba(236,236,236,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .mobile-nav { position: fixed; inset: 0; background: #ececec; z-index: 98; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
-    .mobile-nav.open { opacity: 1; pointer-events: all; }
-    .mobile-nav a { font-size: 2.5rem; font-weight: 700; color: #131313; text-decoration: none; letter-spacing: -0.04em; transition: color 0.2s; }
-    .mobile-nav a:hover, .mobile-nav a.active { color: var(--accent); }
-    .nav-link.active { color: #131313 !important; font-weight: 600; }
-    .chip { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border: 1px solid rgba(0,0,0,0.2); border-radius: 9999px; color: #131313; display: inline-block; }
+    body {
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      background-color: #ececec;
+      color: #131313;
+    }
+    .dark-section {
+      background-color: #131313;
+      color: #ececec;
+    }
+    .glass-blob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212,255,0,0.15) 0%, rgba(255,255,255,0) 70%);
+      filter: blur(40px);
+      z-index: -1;
+      border-radius: 50%;
+    }
+    .journey-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #d4ff00 0%, #d4ff00 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 100%);
+      transform: translateX(-50%);
+    }
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      width: 100vw;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+    .marquee-content {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .big-text {
+      font-size: clamp(5rem, 15vw, 20rem);
+      line-height: 0.8;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .delay-1 { transition-delay: 0.12s; }
-    .delay-2 { transition-delay: 0.24s; }
-    .delay-3 { transition-delay: 0.36s; }
-    .big-text { font-size: clamp(5rem, 18vw, 18rem); line-height: 0.85; font-weight: 800; letter-spacing: -0.05em; }
-    @media (max-width: 1024px) { .social-sidebar { display: none !important; } }
-    .journey-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #d4ff00 0%, #d4ff00 50%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.12) 100%); transform: translateX(-50%); }
-    .work-card img { transition: transform 0.7s cubic-bezier(.65,0,.35,1); }
-    .work-card:hover img { transform: scale(1.05); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .chip { font-family: monospace; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border: 1px solid rgba(0,0,0,0.2); border-radius: 9999px; display: inline-block; }
+    .dark-section .chip { border-color: rgba(255,255,255,0.2); color: #fff; }
   </style>
 </head>
-<body class="antialiased" data-page="projects">
-
-<!-- NAVIGATION -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 transition-all duration-300">
-  <a href="index.html" class="text-2xl font-extrabold tracking-tighter text-dark">FA.</a>
-  <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
-    <li><a href="index.html" class="nav-link text-dark/60 hover:text-dark transition-colors" data-page="home">Home</a></li>
-    <li><a href="about.html" class="nav-link text-dark/60 hover:text-dark transition-colors" data-page="about">About</a></li>
-    <li><a href="projects.html" class="nav-link text-dark/60 hover:text-dark transition-colors" data-page="projects">Projects</a></li>
-  </ul>
-  <div class="flex items-center gap-3">
-    <a href="mailto:arasyfathi@gmail.com" class="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full border border-dark/20 text-sm font-medium text-dark hover:bg-dark hover:text-light transition-all">Contact &#x2197;</a>
-    <button id="hamburger-btn" class="flex md:hidden flex-col gap-1.5 p-1" aria-label="Menu">
-      <span class="block w-6 h-0.5 bg-dark rounded"></span>
-      <span class="block w-6 h-0.5 bg-dark rounded"></span>
-      <span class="block w-4 h-0.5 bg-dark rounded"></span>
-    </button>
-  </div>
-</nav>
-<div class="mobile-nav" id="mobile-nav">
-  <a href="index.html" onclick="closeMobileNav()">Home</a>
-  <a href="about.html" onclick="closeMobileNav()">About</a>
-  <a href="projects.html" onclick="closeMobileNav()">Projects</a>
-  <a href="mailto:arasyfathi@gmail.com" onclick="closeMobileNav()">Contact</a>
+<body class="antialiased selection:bg-accent selection:text-dark">
+<!-- BEGIN: Navigation -->
+<nav class="fixed top-0 left-0 w-full px-8 py-6 flex justify-between items-center z-50 mix-blend-difference text-white">
+<div class="logo w-12 h-12">
+<a href="index.html">
+<img alt="Logo" class="w-full h-full object-contain filter invert hover:opacity-80 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-RiwITWpn_hWmb7JQ2MuhLpzZr35mccUZ3WKgxQ1bYIO_YbxK-XUmQMh6xXIm-L-gquh6eQe7Kzkozm27DD-Pl7A5x38FXr82jdfvCFNg8kO17IIJ3FeVbJjtIhxesKl8WIV2_P2W7vCZgEAPfmY4lG8gxHcVUgxHCxYpFxf5amWXv2U4sWr8QcPsNRA5MssSFWCqX7vZmPpkjez_qTYlpvtSDs2vJmn6YNs-5ql08n_yxZy6or8VX6FGKtC1mXA1UfR9E1FZAepQzw">
+</a>
 </div>
+<div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+<a class="hover:text-accent transition-colors" href="index.html">Home</a>
+<a class="hover:text-accent transition-colors" href="about.html">About</a>
+<a class="hover:text-accent transition-colors" href="projects.html">Works</a>
+</div>
+<div class="flex items-center space-x-4">
+<a class="px-6 py-2 rounded-full border border-white hover:bg-white hover:text-black transition-colors text-sm font-medium" href="mailto:arasyfathi@gmail.com">Contact</a>
+</div>
+</nav>
+<!-- END: Navigation -->
 
-<!-- PAGE HERO -->
-<section class="pt-40 pb-20 px-8 max-w-7xl mx-auto">
-  <div class="reveal flex items-center gap-4 mb-6">
-    <span class="block w-10 h-px bg-dark/30"></span>
-    <span class="font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/40">Selected Work</span>
-  </div>
-  <h1 class="reveal delay-1 text-[clamp(3rem,9vw,7rem)] font-extrabold tracking-[-0.05em] leading-[0.88] mb-16 max-w-4xl">Projects &amp;<br>Experience.</h1>
+<!-- BEGIN: Works Section -->
+<section class="py-32 px-8 max-w-7xl mx-auto mt-16">
+<h2 class="reveal text-3xl md:text-5xl font-light mb-16 max-w-2xl">
+      Discover my latest engineering projects and automated solutions that bring concepts to life.
+    </h2>
+<div class="reveal delay-1 grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project 1 -->
+<div class="group cursor-pointer">
+<p class="text-xs text-gray-400 uppercase tracking-widest mb-4">IoT &amp; Dashboard</p>
+<div class="overflow-hidden aspect-video bg-gray-200 mb-6 rounded-xl">
+<img alt="IoTDash" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmMU3wdiLNc6NStnUADhDQTsiBcqnvBIXU0PS7FZ6RZCUCchmx2spW8GTnQlnQbzgCfa_SVscTmQKHuJeZS8k67rjKe-BN7LsKRQeNlsdPKCj0WaJOM2VfeB7IovbUVqCC_JKgmi9u8YUrFNvWsZKGbf5xuVBctTVwJHCI8bCzzTwavhiQV0zDfmElVtaNacIH9UU3RTBhfr_A4zck9B0KXO40ygTqKfByAVEFmKk-_DeXeewmlVv8tPI3PNxI8sWljzuSzH8eKjAmsQ">
+</div>
+<h3 class="text-2xl font-medium mb-2">IoTDash: Real-Time Environment Monitoring</h3>
+<p class="text-gray-500 text-sm mb-4">Built a real-time temperature &amp; humidity monitoring system using ESP32, DHT22, and Blynk.cloud.</p>
+<div class="flex gap-2"><span class="chip">ESP32</span><span class="chip">Blynk</span><span class="chip">Flask</span></div>
+</div>
+<!-- Project 2 -->
+<div class="group cursor-pointer mt-12 md:mt-24">
+<p class="text-xs text-gray-400 uppercase tracking-widest mb-4">AI / Deep Learning</p>
+<div class="overflow-hidden aspect-video bg-gray-200 mb-6 rounded-xl">
+<img alt="SmartWaste" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2VUvKwuF1aXUAfafsfoFjD3mJoyOXXzHIRNbSPOMmZuW8w2Sw7xKbUZlEQrTk9cwmtSW0ksEflJAjhzuvWr8dXB0yJTVyRQAk06BhYT5IpfYLgCflAjF4at3lMvWSkve0a7jibpJxcqLz1An-46X_0H52pLxHmjCE-oJbiT9aRI6SWRGIngGI2nklqj55Gw-IweA_XeEMSQzFPAaGHxFay77m730pvYVhVN-AXU7bzglNXOQ7wFee_oZWMYNxDey7AlZ3YsgDaVj-hA">
+</div>
+<h3 class="text-2xl font-medium mb-2">SmartWaste AI Classification System</h3>
+<p class="text-gray-500 text-sm mb-4">Developed an automated waste classification system using YOLOv8 object detection with Flask Web UI.</p>
+<div class="flex gap-2"><span class="chip">YOLOv8</span><span class="chip">Python</span><span class="chip">Flask</span></div>
+</div>
+<!-- Project 3 -->
+<div class="group cursor-pointer">
+<p class="text-xs text-gray-400 uppercase tracking-widest mb-4">IoT &amp; Hardware Automation</p>
+<div class="overflow-hidden aspect-video bg-gray-200 mb-6 rounded-xl">
+<img alt="Smart Dustbin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiYrOmuN2b259rSUNTIDwVNjiensJSUGE1orjf2xOXo9hQwCORmr3fswOH6LO6EgP7ALiRNSW6VeI-JtcJS7TiszGVW3chOQvv1frZ4kxc-Tra09rS-0DZBVxPOaR2txhBMkLL3YTFRFbxoccYZ7wRCLu_74B4qsachkiwMemW70y91lJ5F1rOY5YXcvE94BXkDhQLsSjlGTCYuBlWe88XNfsohKGGDmczB8U6dnizba1DlEzYvm22ZS3x2fl-PCPcVDh5XrDMX8AeQQ">
+</div>
+<h3 class="text-2xl font-medium mb-2">Smart Dustbin IoT &amp; Blynk Dashboard</h3>
+<p class="text-gray-500 text-sm mb-4">Engineered a smart automated dustbin with real-time fill-level monitoring via Blynk.Console.</p>
+<div class="flex gap-2"><span class="chip">ESP32</span><span class="chip">Blynk</span><span class="chip">Servo</span></div>
+</div>
+<!-- Project 4 -->
+<div class="group cursor-pointer mt-12 md:mt-24">
+<p class="text-xs text-gray-400 uppercase tracking-widest mb-4">Sensor / Control System</p>
+<div class="overflow-hidden aspect-video bg-gray-200 mb-6 rounded-xl">
+<img alt="Orientation System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ0d2CjSEl2sp69FYCuBihP8oWdJtgXjWTp5_SRqNWBU2hX6fA2MiROCQZ9_TbkVMHnPIDA9VGq8PF7R1PF9oz6nwAtzUPkqdsnzFuDny6XVP4AJhRPj0qjpYn3cqDP5CRSA9II6N9JkgeAfdm1E3a8IPtNmqSjbeXeS8HB9G-lc0RA9_2J8Ml5SYFT4E9MYF3Qll-jlsmwtKt_rgHxT8WrQdX7_ync6p76WC5dYzPHz4QSnUplK1NLvJxxadGXK83Elhoyyc9-j_0Wg">
+</div>
+<h3 class="text-2xl font-medium mb-2">Dynamic Orientation Detection System</h3>
+<p class="text-gray-500 text-sm mb-4">Built a precise container orientation detection instrument using MPU-6050 IMU sensor fused with Arduino.</p>
+<div class="flex gap-2"><span class="chip">MPU-6050</span><span class="chip">Arduino</span><span class="chip">Encoders</span></div>
+</div>
+</div>
+</section>
+<!-- END: Works Section -->
+
+<!-- CALL TO ACTION -->
+<section class="py-24 px-8 text-center bg-gray-100 border-t border-gray-200">
+  <h2 class="reveal text-3xl md:text-5xl font-light mb-8">Ready to collaborate?</h2>
+  <a href="mailto:arasyfathi@gmail.com" class="reveal delay-1 inline-flex items-center space-x-2 bg-dark text-white px-8 py-4 rounded-full font-medium hover:bg-opacity-90 transition-all">
+    <span>Let's Talk</span>
+    <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+  </a>
 </section>
 
-<!-- PROJECTS GRID -->
-<section class="pb-24 px-8 max-w-7xl mx-auto">
-  <p class="reveal font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/40 border-b border-gray-200 pb-4 mb-12">Engineering Projects</p>
-  <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-10">
-    <!-- Project 1 -->
-    <div class="work-card group cursor-pointer">
-      <p class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-dark/40 mb-4">IoT &amp; Dashboard</p>
-      <div class="overflow-hidden aspect-video bg-gray-200 rounded-2xl mb-5">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmMU3wdiLNc6NStnUADhDQTsiBcqnvBIXU0PS7FZ6RZCUCchmx2spW8GTnQlnQbzgCfa_SVscTmQKHuJeZS8k67rjKe-BN7LsKRQeNlsdPKCj0WaJOM2VfeB7IovbUVqCC_JKgmi9u8YUrFNvWsZKGbf5xuVBctTVwJHCI8bCzzTwavhiQV0zDfmElVtaNacIH9UU3RTBhfr_A4zck9B0KXO40ygTqKfByAVEFmKk-_DeXeewmlVv8tPI3PNxI8sWljzuSzH8eKjAmsQ" alt="IoTDash" class="w-full h-full object-cover">
-      </div>
-      <h3 class="text-xl font-bold mb-2">IoTDash: Real-Time Environment Monitoring</h3>
-      <p class="text-dark/50 text-sm font-light leading-relaxed mb-4">Built a real-time temperature &amp; humidity monitoring system using ESP32 and DHT22. Data is transmitted via HTTP POST to a Flask server with an interactive Chart.js dashboard, and remotely accessible through Blynk.cloud.</p>
-      <div class="flex flex-wrap gap-2"><span class="chip">ESP32</span><span class="chip">Blynk.cloud</span><span class="chip">Flask</span><span class="chip">DHT22</span><span class="chip">Chart.js</span></div>
-    </div>
-    <!-- Project 2 -->
-    <div class="work-card group cursor-pointer mt-0 md:mt-16">
-      <p class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-dark/40 mb-4">AI / Deep Learning</p>
-      <div class="overflow-hidden aspect-video bg-gray-200 rounded-2xl mb-5">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2VUvKwuF1aXUAfafsfoFjD3mJoyOXXzHIRNbSPOMmZuW8w2Sw7xKbUZlEQrTk9cwmtSW0ksEflJAjhzuvWr8dXB0yJTVyRQAk06BhYT5IpfYLgCflAjF4at3lMvWSkve0a7jibpJxcqLz1An-46X_0H52pLxHmjCE-oJbiT9aRI6SWRGIngGI2nklqj55Gw-IweA_XeEMSQzFPAaGHxFay77m730pvYVhVN-AXU7bzglNXOQ7wFee_oZWMYNxDey7AlZ3YsgDaVj-hA" alt="SmartWaste" class="w-full h-full object-cover">
-      </div>
-      <h3 class="text-xl font-bold mb-2">SmartWaste AI Classification System</h3>
-      <p class="text-dark/50 text-sm font-light leading-relaxed mb-4">Developed an automated waste classification system by training a YOLOv8 object detection model on custom waste datasets. Deployed inference through a Flask web UI displaying predictions and confidence scores in real-time.</p>
-      <div class="flex flex-wrap gap-2"><span class="chip">YOLOv8</span><span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">Flask</span><span class="chip">Web UI</span></div>
-    </div>
-    <!-- Project 3 -->
-    <div class="work-card group cursor-pointer">
-      <p class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-dark/40 mb-4">IoT &amp; Hardware Automation</p>
-      <div class="overflow-hidden aspect-video bg-gray-200 rounded-2xl mb-5">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiYrOmuN2b259rSUNTIDwVNjiensJSUGE1orjf2xOXo9hQwCORmr3fswOH6LO6EgP7ALiRNSW6VeI-JtcJS7TiszGVW3chOQvv1frZ4kxc-Tra09rS-0DZBVxPOaR2txhBMkLL3YTFRFbxoccYZ7wRCLu_74B4qsachkiwMemW70y91lJ5F1rOY5YXcvE94BXkDhQLsSjlGTCYuBlWe88XNfsohKGGDmczB8U6dnizba1DlEzYvm22ZS3x2fl-PCPcVDh5XrDMX8AeQQ" alt="Smart Dustbin" class="w-full h-full object-cover">
-      </div>
-      <h3 class="text-xl font-bold mb-2">Smart Dustbin IoT &amp; Blynk Dashboard</h3>
-      <p class="text-dark/50 text-sm font-light leading-relaxed mb-4">Engineered a smart automated dustbin with real-time fill-level monitoring via Blynk.Console and Blynk.cloud. An ESP32 reads an ultrasonic sensor and drives a servo motor actuator, with hardware status streamed to the Blynk dashboard for remote monitoring.</p>
-      <div class="flex flex-wrap gap-2"><span class="chip">ESP32</span><span class="chip">Blynk.Console</span><span class="chip">Blynk.cloud</span><span class="chip">Ultrasonic</span><span class="chip">Servo</span></div>
-    </div>
-    <!-- Project 4 -->
-    <div class="work-card group cursor-pointer mt-0 md:mt-16">
-      <p class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-dark/40 mb-4">Sensor / Control System</p>
-      <div class="overflow-hidden aspect-video bg-gray-200 rounded-2xl mb-5">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ0d2CjSEl2sp69FYCuBihP8oWdJtgXjWTp5_SRqNWBU2hX6fA2MiROCQZ9_TbkVMHnPIDA9VGq8PF7R1PF9oz6nwAtzUPkqdsnzFuDny6XVP4AJhRPj0qjpYn3cqDP5CRSA9II6N9JkgeAfdm1E3a8IPtNmqSjbeXeS8HB9G-lc0RA9_2J8Ml5SYFT4E9MYF3Qll-jlsmwtKt_rgHxT8WrQdX7_ync6p76WC5dYzPHz4QSnUplK1NLvJxxadGXK83Elhoyyc9-j_0Wg" alt="Orientation System" class="w-full h-full object-cover">
-      </div>
-      <h3 class="text-xl font-bold mb-2">Dynamic Orientation Detection System</h3>
-      <p class="text-dark/50 text-sm font-light leading-relaxed mb-4">Built a precise container orientation detection instrument using MPU-6050 IMU sensor fused with Arduino, DC motors, and optical encoders for dynamic angular actuation and real-time orientation feedback.</p>
-      <div class="flex flex-wrap gap-2"><span class="chip">MPU-6050</span><span class="chip">Arduino</span><span class="chip">DC Motors</span><span class="chip">Encoders</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ORGANIZATIONAL EXPERIENCE -->
-<section class="py-24 px-8 bg-gray-100 border-t border-gray-200">
-  <div class="max-w-7xl mx-auto">
-    <p class="reveal font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/40 border-b border-gray-300 pb-4 mb-12">Organizational Experience</p>
-    <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-accent transition-colors">
-        <span class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-accent block mb-4">2026 &ndash; 2027</span>
-        <h4 class="font-bold text-base mb-1">Staf Public Relation</h4>
-        <p class="text-dark/40 text-sm font-light">KMTE &mdash; Electrical Engineering Student Association</p>
-        <p class="text-dark/40 text-sm font-light mt-3 leading-relaxed">Strategic communication and student engagement in the Teknik Elektro faculty organization.</p>
-      </div>
-      <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-accent transition-colors">
-        <span class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-accent block mb-4">2025 &ndash; 2026</span>
-        <h4 class="font-bold text-base mb-1">Wakadiv 1 Humas</h4>
-        <p class="text-dark/40 text-sm font-light">Serasi &mdash; Vice Head of Public Relations</p>
-        <p class="text-dark/40 text-sm font-light mt-3 leading-relaxed">Coordinated PR division, executing publication strategies and managing organizational branding.</p>
-      </div>
-      <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-accent transition-colors">
-        <span class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-accent block mb-4">2024 &ndash; 2025</span>
-        <h4 class="font-bold text-base mb-1">Staf Humas</h4>
-        <p class="text-dark/40 text-sm font-light">Serasi &mdash; Public Relations Staff</p>
-        <p class="text-dark/40 text-sm font-light mt-3 leading-relaxed">Managed organizational communication channels and built community engagement strategies.</p>
-      </div>
-      <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-accent transition-colors">
-        <span class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-accent block mb-4">2024</span>
-        <h4 class="font-bold text-base mb-1">Staf R&amp;D</h4>
-        <p class="text-dark/40 text-sm font-light">Electo Value Environment Innovations</p>
-        <p class="text-dark/40 text-sm font-light mt-3 leading-relaxed">Conducted R&amp;D for environmental technology innovations and sustainable engineering solutions.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="py-28 px-8 text-center">
-  <div class="max-w-3xl mx-auto reveal">
-    <p class="font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/40 mb-6">Interested in working together?</p>
-    <h2 class="text-[clamp(2.5rem,6vw,4rem)] font-bold tracking-tight leading-tight mb-6">Let&rsquo;s build something exceptional together.</h2>
-    <div class="flex items-center gap-4 justify-center flex-wrap mt-10">
-      <a href="mailto:arasyfathi@gmail.com" class="inline-flex items-center gap-2 bg-dark text-light px-8 py-4 rounded-full font-semibold text-sm hover:bg-dark/80 transition-all hover:-translate-y-0.5">Send an Email &#x2197;</a>
-      <a href="about.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-dark/20 text-sm font-medium text-dark hover:bg-dark hover:text-light transition-all">About Me &#x2192;</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-dark text-light pt-20 pb-8 px-8 relative overflow-hidden">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between mb-20 z-10 relative gap-12">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full md:w-3/4">
-      <div>
-        <p class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/30 mb-6">Links</p>
-        <ul class="space-y-3 text-sm font-light">
-          <li><a href="index.html" class="text-white/50 hover:text-accent transition-colors">Home</a></li>
-          <li><a href="about.html" class="text-white/50 hover:text-accent transition-colors">About</a></li>
-          <li><a href="projects.html" class="text-white/50 hover:text-accent transition-colors">Projects</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/30 mb-6">Socials</p>
-        <ul class="space-y-3 text-sm font-light">
-          <li><a href="mailto:arasyfathi@gmail.com" class="text-white/50 hover:text-accent transition-colors">Email</a></li>
-          <li><a href="https://linkedin.com" target="_blank" class="text-white/50 hover:text-accent transition-colors">LinkedIn</a></li>
-          <li><a href="#" class="text-white/50 hover:text-accent transition-colors">WhatsApp</a></li>
-          <li><a href="https://github.com" target="_blank" class="text-white/50 hover:text-accent transition-colors">GitHub</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/30 mb-6">Local Time</p>
-        <p id="local-time-display" class="text-sm text-white/50">23:35 UTC+7</p>
-      </div>
-      <div>
-        <p class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/30 mb-6">Version</p>
-        <p class="text-sm text-white/50">2026 &copy; Edition</p>
-      </div>
-    </div>
-    <div class="flex flex-col gap-3 w-full md:w-auto shrink-0">
-      <a href="tel:+6282272099066" class="px-6 py-3 border border-white/10 rounded-full text-sm font-light text-center hover:border-accent hover:text-accent transition-colors">+62 822 7209 9066</a>
-      <a href="mailto:arasyfathi@gmail.com" class="px-6 py-3 border border-white/10 rounded-full text-sm font-light text-center hover:border-accent hover:text-accent transition-colors">arasyfathi@gmail.com</a>
-    </div>
-  </div>
-  <div class="w-full text-center z-0 relative select-none overflow-hidden">
-    <h2 class="big-text text-white/[0.06]">FATHI</h2>
-  </div>
-  <div class="max-w-7xl mx-auto flex items-center justify-between pt-6 border-t border-white/[0.06] mt-6 flex-wrap gap-4 z-10 relative">
-    <p class="text-xs text-white/25">&copy; 2026 Fathi Arasy. All rights reserved.</p>
-    <p class="text-xs text-white/25">Designed &amp; built with &hearts;</p>
-  </div>
+<!-- BEGIN: Footer -->
+<footer class="dark-section pt-24 pb-8 px-8 relative overflow-hidden mt-auto">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between mb-32 z-10 relative">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full md:w-1/2">
+<div>
+<p class="text-gray-500 text-xs tracking-widest mb-6">LINKS</p>
+<ul class="space-y-3 text-sm">
+<li><a class="hover:text-accent transition-colors" href="index.html">Home</a></li>
+<li><a class="hover:text-accent transition-colors" href="projects.html">Work</a></li>
+<li><a class="hover:text-accent transition-colors" href="about.html">About</a></li>
+</ul>
+</div>
+<div>
+<p class="text-gray-500 text-xs tracking-widest mb-6">SOCIALS</p>
+<ul class="space-y-3 text-sm">
+<li><a class="hover:text-accent transition-colors" href="mailto:arasyfathi@gmail.com">Email</a></li>
+<li><a class="hover:text-accent transition-colors" href="https://linkedin.com">Linkedin</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Whatsapp</a></li>
+<li><a class="hover:text-accent transition-colors" href="https://github.com/arasyfathi/portofolio">Github</a></li>
+</ul>
+</div>
+<div>
+<p class="text-gray-500 text-xs tracking-widest mb-6">LOCAL TIME</p>
+<p class="text-sm" id="local-time-display">UTC+7</p>
+</div>
+<div>
+<p class="text-gray-500 text-xs tracking-widest mb-6">VERSION</p>
+<p class="text-sm">2026 © Edition</p>
+</div>
+</div>
+<div class="mt-12 md:mt-0 flex flex-col gap-4 text-sm font-light w-full md:w-auto">
+<a class="px-6 py-3 border border-gray-700 rounded-full text-center hover:border-accent hover:text-accent transition-colors" href="tel:+6282272099066">+6282272099066</a>
+<a class="px-6 py-3 border border-gray-700 rounded-full text-center hover:border-accent hover:text-accent transition-colors" href="mailto:arasyfathi@gmail.com">arasyfathi@gmail.com</a>
+</div>
+</div>
+<div class="w-full text-center mt-auto z-0">
+<h1 class="big-text text-white opacity-90 select-none">FATHI</h1>
+</div>
 </footer>
+<!-- END: Footer -->
 <script>
-  // Navbar scroll
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
-  // Mobile nav
-  document.getElementById('hamburger-btn').addEventListener('click', () => {
-    const mn = document.getElementById('mobile-nav');
-    mn.classList.toggle('open');
-    document.body.style.overflow = mn.classList.contains('open') ? 'hidden' : '';
-  });
-  function closeMobileNav() { document.getElementById('mobile-nav').classList.remove('open'); document.body.style.overflow = ''; }
-  // Active nav link
-  const currentPage = document.body.dataset.page;
-  document.querySelectorAll('.nav-link').forEach(a => { if (a.dataset.page === currentPage) a.classList.add('active'); });
   // Reveal on scroll
   const ro = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  
   // Live local time
-  function updateTime() { const el = document.getElementById('local-time-display'); if (el) el.textContent = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()) + ' UTC+7'; }
+  function updateTime() { 
+    const el = document.getElementById('local-time-display'); 
+    if (el) {
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12; 
+      minutes = minutes < 10 ? '0'+minutes : minutes;
+      el.textContent = hours + ':' + minutes + ' ' + ampm + ' UTC+7'; 
+    }
+  }
   updateTime(); setInterval(updateTime, 30000);
 </script>
 </body>
