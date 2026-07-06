@@ -4,540 +4,630 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fathi Arasy &mdash; Electrical Engineer &amp; IoT Specialist</title>
-  <meta name="description" content="Portfolio of Muhamad Fathi Arasy - Electrical Engineering student at Telkom University specializing in IoT, hardware automation, and AI-driven web applications.">
+  <meta name="description" content="Portfolio of Muhamad Fathi Arasy, Electrical Engineering student at Telkom University specializing in IoT, hardware automation, and AI-driven systems.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Hanken Grotesk', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            dark: '#131313',
+            light: '#ececec',
+            surface: '#1a1a1a',
+            accent: '#d4ff00',
+            muted: '#888888',
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    :root{--bg:#131313;--surface:#1a1a1a;--surface-high:#222222;--border:rgba(255,255,255,0.08);--primary:#d4ff00;--on-surface:#e5e2e1;--muted:#888888;--container-max:1280px;--gutter:24px;--section-gap:120px;}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;scroll-padding-top:80px;}
-    body{background-color:var(--bg);color:var(--on-surface);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-    ::-webkit-scrollbar{width:4px;}
-    ::-webkit-scrollbar-track{background:var(--bg);}
-    ::-webkit-scrollbar-thumb{background:var(--primary);border-radius:9999px;}
-    ::selection{background:var(--primary);color:#131313;}
-    h1,h2,h3,h4,h5{font-family:'Hanken Grotesk',sans-serif;letter-spacing:-0.03em;line-height:1.1;}
-    .container{max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter);}
-    section{padding-top:var(--section-gap);padding-bottom:var(--section-gap);}
-    .text-primary{color:var(--primary);}
-    .chip{font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(212,255,0,.4);border-radius:9999px;background:rgba(212,255,0,.07);color:var(--primary);display:inline-block;}
-    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#131313;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:.9rem;padding:14px 28px;border-radius:9999px;border:none;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .3s;}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 24px rgba(212,255,0,.35);}
-    .btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--on-surface);font-family:'Hanken Grotesk',sans-serif;font-weight:500;font-size:.9rem;padding:13px 26px;border-radius:9999px;border:1px solid rgba(255,255,255,.2);cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s;}
-    .btn-ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.4);}
-    /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px var(--gutter);display:flex;align-items:center;justify-content:space-between;transition:background .4s;}
-    nav.scrolled{background:rgba(19,19,19,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
-    .nav-logo{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:-.04em;color:var(--primary);text-decoration:none;}
-    .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
-    .nav-links a{font-family:'Hanken Grotesk',sans-serif;font-size:.875rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s;}
-    .nav-links a:hover{color:var(--on-surface);}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
-    .hamburger span{display:block;width:24px;height:2px;background:var(--on-surface);border-radius:2px;transition:transform .3s;}
-    @media(max-width:768px){.nav-links,.nav-desktop-cta{display:none;}.hamburger{display:flex;}}
-    .mobile-nav{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .3s;}
-    .mobile-nav.open{opacity:1;pointer-events:all;}
-    .mobile-nav a{font-family:'Hanken Grotesk',sans-serif;font-size:2.5rem;font-weight:700;color:var(--on-surface);text-decoration:none;transition:color .2s;}
-    .mobile-nav a:hover{color:var(--primary);}
-    /* HERO */
-    #hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:100px;padding-bottom:80px;position:relative;overflow:hidden;}
-    #hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 40%,transparent 100%);pointer-events:none;}
-    .hero-glow{position:absolute;width:700px;height:500px;background:radial-gradient(ellipse,rgba(212,255,0,.12) 0%,transparent 70%);filter:blur(60px);top:50%;left:50%;transform:translate(-50%,-60%);pointer-events:none;animation:pulseGlow 6s ease-in-out infinite alternate;}
-    @keyframes pulseGlow{from{opacity:.6;transform:translate(-50%,-60%) scale(1);}to{opacity:1;transform:translate(-50%,-55%) scale(1.08);}}
-    .hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--primary);margin-bottom:24px;display:flex;align-items:center;gap:10px;justify-content:center;}
-    .hero-eyebrow::before,.hero-eyebrow::after{content:'';display:inline-block;width:32px;height:1px;background:var(--primary);}
-    .hero-title{font-size:clamp(3.5rem,11vw,9rem);font-weight:800;letter-spacing:-.05em;line-height:.9;margin-bottom:28px;font-family:'Hanken Grotesk',sans-serif;}
-    .hero-title .accent-word{color:var(--primary);}
-    .hero-subtitle{font-size:clamp(1rem,2vw,1.25rem);color:var(--muted);max-width:560px;margin:0 auto 48px;font-weight:400;line-height:1.75;}
-    .hero-ctas{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;}
-    .social-sidebar{position:fixed;left:28px;bottom:40px;display:flex;flex-direction:column;align-items:center;gap:20px;z-index:50;}
-    .social-sidebar::after{content:'';display:block;width:1px;height:80px;background:linear-gradient(to bottom,var(--muted),transparent);margin-top:8px;}
-    .social-sidebar a{color:var(--muted);transition:color .2s,transform .2s;text-decoration:none;}
-    .social-sidebar a:hover{color:var(--primary);transform:translateX(4px);}
-    .social-sidebar svg{width:18px;height:18px;fill:currentColor;}
-    .scroll-indicator{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;}
-    .scroll-indicator span{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
-    .scroll-dot{width:6px;height:6px;border-radius:50%;background:var(--primary);animation:scrollBounce 1.6s ease-in-out infinite;}
-    @keyframes scrollBounce{0%,100%{transform:translateY(0);opacity:.5;}50%{transform:translateY(8px);opacity:1;}}
-    @media(max-width:768px){.social-sidebar{display:none;}}
-    /* INTRO */
-    #intro{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 0;}
-    .intro-text{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(1.4rem,3vw,2.25rem);font-weight:400;line-height:1.55;color:var(--on-surface);max-width:900px;}
-    .intro-text strong{color:var(--primary);font-weight:700;}
-    /* ABOUT */
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-    @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px;}}
-    .about-section-label{display:flex;align-items:center;gap:12px;margin-bottom:32px;}
-    .about-section-label span{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);}
-    .about-section-label::before{content:'';display:block;width:40px;height:1px;background:var(--primary);}
-    .about-bio p{font-size:1.05rem;color:var(--muted);line-height:1.85;margin-bottom:20px;}
-    .about-portrait-wrap{position:relative;}
-    .about-portrait-wrap::before{content:'';position:absolute;inset:-2px;border-radius:14px;background:linear-gradient(135deg,rgba(212,255,0,.4) 0%,transparent 60%);z-index:0;}
-    .about-portrait{position:relative;z-index:1;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block;filter:grayscale(20%);transition:filter .4s;}
-    .about-portrait:hover{filter:grayscale(0%);}
-    .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:48px;}
-    .stat-item{padding:28px 24px;background:var(--surface);text-align:center;transition:background .2s;}
-    .stat-item:hover{background:var(--surface-high);}
-    .stat-item+.stat-item{border-left:1px solid var(--border);}
-    .stat-number{font-family:'Hanken Grotesk',sans-serif;font-size:2.25rem;font-weight:800;color:var(--primary);display:block;}
-    .stat-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px;display:block;}
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:var(--section-gap);}
-    @media(max-width:768px){.services-grid{grid-template-columns:1fr;}}
-    .service-card{padding:36px 28px;background:var(--surface);transition:background .25s;}
-    .service-card+.service-card{border-left:1px solid var(--border);}
-    @media(max-width:768px){.service-card+.service-card{border-left:none;border-top:1px solid var(--border);}}
-    .service-card:hover{background:rgba(212,255,0,.03);}
-    .service-num{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--primary);letter-spacing:.1em;margin-bottom:20px;display:block;}
-    .service-card h3{font-size:1.15rem;font-weight:600;margin-bottom:12px;color:var(--on-surface);}
-    .service-card p{font-size:.875rem;color:var(--muted);line-height:1.75;}
+    :root { --accent: #d4ff00; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #ececec; color: #131313; font-family: 'Hanken Grotesk', 'Inter', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent); color: #131313; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 9999px; }
     /* MARQUEE */
-    #marquee-section{padding:0;position:relative;height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--bg);}
-    @keyframes marquee-fwd{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-    @keyframes marquee-rev{0%{transform:translateX(-50%);}100%{transform:translateX(0);}}
-    .ribbon{position:absolute;width:150%;left:-25%;padding:22px 0;background:#0e0e0e;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;white-space:nowrap;box-shadow:0 8px 40px rgba(0,0,0,.6);}
-    .ribbon-1{transform:rotate(5deg);z-index:10;}
-    .ribbon-2{transform:rotate(-5deg);z-index:20;}
-    .ribbon-track{display:inline-flex;align-items:center;white-space:nowrap;}
-    .ribbon-1 .ribbon-track{animation:marquee-fwd 18s linear infinite;}
-    .ribbon-2 .ribbon-track{animation:marquee-rev 18s linear infinite;}
-    .ribbon-item{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(1.5rem,4vw,3rem);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;color:var(--on-surface);padding:0 40px;display:inline-flex;align-items:center;gap:32px;}
-    .ribbon-star{color:var(--primary);font-size:1.2em;flex-shrink:0;}
-    /* SKILLS */
-    #skills{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-    .skills-layout{display:grid;grid-template-columns:300px 1fr;gap:80px;}
-    @media(max-width:900px){.skills-layout{grid-template-columns:1fr;gap:48px;}}
-    .skills-intro p{color:var(--muted);line-height:1.75;font-size:.95rem;margin-top:16px;}
-    .skills-categories{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
-    @media(max-width:640px){.skills-categories{grid-template-columns:1fr;}}
-    .skill-category h4{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:16px;}
-    .chip-cloud{display:flex;flex-wrap:wrap;gap:8px;}
-    /* WORKS */
-    .works-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:24px;}
-    .works-section-label{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:48px;}
-    .project-list{border-top:1px solid var(--border);}
-    .project-row{position:relative;display:flex;align-items:center;justify-content:space-between;padding:28px 0;border-bottom:1px solid var(--border);cursor:pointer;overflow:hidden;background:transparent;transition:background .4s ease;}
-    .project-row:hover{background:#080808;}
-    .project-row-left{z-index:10;transition:opacity .25s .05s;}
-    .project-row-right{z-index:10;text-align:right;transition:opacity .25s .05s;}
-    .project-row:hover .project-row-left,.project-row:hover .project-row-right{opacity:0;}
-    .project-row h3{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(1.1rem,2.5vw,1.75rem);font-weight:600;letter-spacing:-.02em;color:var(--on-surface);text-transform:uppercase;}
-    .project-row p{font-size:.85rem;color:var(--muted);margin-top:4px;}
-    .project-type{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
-    .project-hover-ribbon{position:absolute;inset:0;z-index:30;transform:translateX(-100%);transition:transform .5s cubic-bezier(.65,0,.35,1);display:flex;align-items:center;overflow:hidden;pointer-events:none;}
-    .project-row:hover .project-hover-ribbon{transform:translateX(0);}
-    .project-hover-track{display:inline-flex;align-items:center;white-space:nowrap;font-family:'Hanken Grotesk',sans-serif;font-size:1.75rem;font-weight:700;text-transform:uppercase;letter-spacing:-.02em;color:white;}
-    .project-row:nth-child(odd) .project-hover-track{animation:marquee-fwd 12s linear infinite;}
-    .project-row:nth-child(even) .project-hover-track{animation:marquee-rev 12s linear infinite;}
-    .project-hover-track span{padding:0 32px;}
-    .project-hover-track img{width:64px;height:40px;object-fit:cover;border-radius:6px;border:1px solid rgba(255,255,255,.15);flex-shrink:0;}
-    .exp-section{margin-top:80px;}
-    /* JOURNEY */
-    #journey{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-    .journey-header{text-align:center;margin-bottom:80px;}
-    .timeline{position:relative;max-width:800px;margin:0 auto;}
-    .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--primary) 0%,rgba(212,255,0,.15) 100%);transform:translateX(-50%);}
-    .timeline-item{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:64px;position:relative;}
-    .timeline-item:last-child{margin-bottom:0;}
-    .timeline-dot{position:absolute;left:50%;top:8px;transform:translateX(-50%);width:12px;height:12px;background:var(--primary);border-radius:50%;box-shadow:0 0 16px rgba(212,255,0,.6);z-index:2;}
-    .tl-content{width:calc(50% - 32px);}
-    .tl-content.left{text-align:right;}
-    .tl-content.right{margin-left:calc(50% + 32px);}
-    .tl-year{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:8px;}
-    .tl-content h3{font-size:clamp(1.1rem,2vw,1.5rem);font-weight:700;color:var(--on-surface);margin-bottom:4px;}
-    .tl-role{font-size:.875rem;color:var(--primary);margin-bottom:10px;}
-    .tl-content p{font-size:.825rem;color:var(--muted);line-height:1.7;}
-    @media(max-width:640px){.timeline::before{left:20px;}.timeline-item{flex-direction:column;gap:8px;}.timeline-dot{left:20px;}.tl-content{width:100%;text-align:left!important;margin-left:48px!important;}}
-    /* IMPACT */
-    .impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--border);border-radius:12px;overflow:hidden;}
-    @media(max-width:900px){.impact-grid{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:480px){.impact-grid{grid-template-columns:1fr;}}
-    .impact-card{padding:40px 32px;background:var(--surface);transition:background .2s;position:relative;overflow:hidden;}
-    .impact-card+.impact-card{border-left:1px solid var(--border);}
-    @media(max-width:900px){.impact-card:nth-child(2n+1){border-left:none;}.impact-card:nth-child(n+3){border-top:1px solid var(--border);}}
-    .impact-card:hover{background:rgba(212,255,0,.04);}
-    .impact-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
-    .impact-card:hover::after{transform:scaleX(1);}
-    .impact-number{font-family:'Hanken Grotesk',sans-serif;font-size:2.5rem;font-weight:800;color:var(--primary);display:block;margin-bottom:10px;}
-    .impact-card h4{font-size:.9rem;font-weight:600;color:var(--on-surface);margin-bottom:8px;}
-    .impact-card p{font-size:.8rem;color:var(--muted);line-height:1.65;}
-    /* CTA */
-    .cta-box{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:80px 48px;position:relative;overflow:hidden;text-align:center;}
-    .cta-box::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(212,255,0,.12) 0%,transparent 70%);pointer-events:none;filter:blur(40px);}
-    .cta-box p{color:var(--muted);margin:16px auto 40px;max-width:560px;font-size:1.05rem;}
-    .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-    /* FOOTER */
-    footer{background:#0a0a0a;border-top:1px solid var(--border);padding:72px var(--gutter) 32px;}
-    .footer-inner{max-width:var(--container-max);margin:0 auto;}
-    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:80px;}
-    @media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr;}}
-    @media(max-width:480px){.footer-top{grid-template-columns:1fr;}}
-    .footer-brand p{font-size:.875rem;color:var(--muted);line-height:1.75;margin-top:16px;max-width:280px;}
-    .footer-col h5{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
-    .footer-col ul{list-style:none;}
-    .footer-col ul li{margin-bottom:10px;}
-    .footer-col ul a{font-size:.875rem;color:var(--on-surface);text-decoration:none;transition:color .2s;}
-    .footer-col ul a:hover{color:var(--primary);}
-    .footer-contact-links{display:flex;flex-direction:column;gap:8px;margin-top:20px;}
-    .footer-contact-links a{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);border-radius:9999px;padding:8px 16px;transition:border-color .2s,color .2s;}
-    .footer-contact-links a:hover{border-color:var(--primary);color:var(--primary);}
-    .footer-wordmark{text-align:center;padding-top:48px;border-top:1px solid var(--border);}
-    .footer-wordmark h2{font-family:'Hanken Grotesk',sans-serif;font-size:clamp(5rem,18vw,16rem);font-weight:800;letter-spacing:-.05em;line-height:.85;color:rgba(255,255,255,.07);user-select:none;}
-    .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid var(--border);flex-wrap:wrap;gap:12px;margin-top:32px;}
-    .footer-bottom p{font-size:.8rem;color:var(--muted);}
+    @keyframes marquee-fwd { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes marquee-rev { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .marquee-fwd { animation: marquee-fwd 18s linear infinite; }
+    .marquee-rev { animation: marquee-rev 18s linear infinite; }
+    /* JOURNEY LINE */
+    .journey-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #d4ff00 0%, #d4ff00 50%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.12) 100%); transform: translateX(-50%); }
+    /* BIG TEXT */
+    .big-text { font-size: clamp(5rem, 18vw, 18rem); line-height: 0.85; font-weight: 800; letter-spacing: -0.05em; }
+    /* HERO VIDEO */
+    .hero-video-overlay { position: absolute; inset: 0; background: rgba(236,236,236,0.35); }
+    /* WORK HOVER */
+    .work-card img { transition: transform 0.7s cubic-bezier(.65,0,.35,1); }
+    .work-card:hover img { transform: scale(1.05); }
+    /* NAV SCROLL */
+    nav.scrolled { background: rgba(236,236,236,0.88); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    /* GLASS BLOB */
+    .glass-blob { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%); width: 700px; height: 500px; background: radial-gradient(ellipse, rgba(212,255,0,0.13) 0%, transparent 70%); filter: blur(60px); border-radius: 50%; pointer-events: none; animation: pulseBlob 6s ease-in-out infinite alternate; }
+    @keyframes pulseBlob { from { opacity: 0.6; transform: translate(-50%, -60%) scale(1); } to { opacity: 1; transform: translate(-50%, -55%) scale(1.08); } }
     /* REVEAL */
-    .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;}
-    .reveal.visible{opacity:1;transform:translateY(0);}
-    .delay-1{transition-delay:.1s;}.delay-2{transition-delay:.2s;}.delay-3{transition-delay:.3s;}
-    /* headline helpers */
-    .headline-lg{font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-.03em;}
-    .headline-md{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:600;}
-    .label-mono{font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;}
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    /* MOBILE NAV */
+    .mobile-nav { position: fixed; inset: 0; background: #ececec; z-index: 98; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .mobile-nav.open { opacity: 1; pointer-events: all; }
+    .mobile-nav a { font-size: 2.5rem; font-weight: 700; color: #131313; text-decoration: none; letter-spacing: -0.04em; transition: color 0.2s; }
+    .mobile-nav a:hover { color: var(--accent); }
+    /* SOCIAL SIDEBAR */
+    @media (max-width: 1024px) { .social-sidebar { display: none !important; } }
+    /* CHIP */
+    .chip { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border: 1px solid rgba(0,0,0,0.2); border-radius: 9999px; background: transparent; color: #131313; display: inline-block; }
+    /* SCROLL DOT */
+    .scroll-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: scrollBounce 1.6s ease-in-out infinite; }
+    @keyframes scrollBounce { 0%,100% { transform: translateY(0); opacity: 0.5; } 50% { transform: translateY(8px); opacity: 1; } }
   </style>
 </head>
-<body>
+<body class="antialiased selection:bg-accent selection:text-dark">
 
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#hero" class="nav-logo">FA.</a>
-  <ul class="nav-links">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#works">Works</a></li>
-    <li><a href="#journey">Journey</a></li>
+<!-- NAVIGATION -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 transition-all duration-300">
+  <a href="#hero" class="text-2xl font-extrabold tracking-tighter text-dark">FA.</a>
+  <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-dark/70">
+    <li><a href="#hero" class="hover:text-dark transition-colors">Home</a></li>
+    <li><a href="#about" class="hover:text-dark transition-colors">About</a></li>
+    <li><a href="#works" class="hover:text-dark transition-colors">Works</a></li>
+    <li><a href="#journey" class="hover:text-dark transition-colors">Journey</a></li>
   </ul>
-  <div style="display:flex;align-items:center;gap:12px;">
-    <a href="mailto:arasyfathi@gmail.com" class="btn-ghost nav-desktop-cta" style="padding:10px 20px;font-size:.8rem;">Contact &#x2197;</a>
-    <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
-      <span></span><span></span><span></span>
+  <div class="flex items-center gap-3">
+    <a href="mailto:arasyfathi@gmail.com" class="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full border border-dark/20 text-sm font-medium text-dark hover:bg-dark hover:text-light transition-all">Contact &#x2197;</a>
+    <button id="hamburger-btn" class="flex md:hidden flex-col gap-1.5 p-1" aria-label="Menu">
+      <span class="block w-6 h-0.5 bg-dark rounded transition-transform duration-300"></span>
+      <span class="block w-6 h-0.5 bg-dark rounded transition-transform duration-300"></span>
+      <span class="block w-4 h-0.5 bg-dark rounded transition-transform duration-300"></span>
     </button>
   </div>
 </nav>
+
+<!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobile-nav">
-  <a href="#hero"    onclick="closeMobileNav()">Home</a>
-  <a href="#about"   onclick="closeMobileNav()">About</a>
-  <a href="#works"   onclick="closeMobileNav()">Works</a>
+  <a href="#hero" onclick="closeMobileNav()">Home</a>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#works" onclick="closeMobileNav()">Works</a>
   <a href="#journey" onclick="closeMobileNav()">Journey</a>
   <a href="mailto:arasyfathi@gmail.com" onclick="closeMobileNav()">Contact</a>
 </div>
 
 <!-- SOCIAL SIDEBAR -->
-<aside class="social-sidebar" aria-label="Social links">
-  <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+<aside class="social-sidebar fixed left-8 bottom-10 flex flex-col items-center gap-6 z-40">
+  <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-dark/50 hover:text-accent transition-colors duration-300">
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
   </a>
-  <a href="https://github.com" target="_blank" aria-label="GitHub">
-    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+  <a href="https://instagram.com" target="_blank" rel="noopener" class="text-dark/50 hover:text-accent transition-colors duration-300">
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
   </a>
+  <a href="https://github.com" target="_blank" rel="noopener" class="text-dark/50 hover:text-accent transition-colors duration-300">
+    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+  </a>
+  <div class="w-px h-20 bg-dark/20 mt-2"></div>
 </aside>
 
+
+<!-- ═══════════════════════════════════════════ -->
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-glow"></div>
-  <div class="container" style="position:relative;z-index:5;">
-    <p class="hero-eyebrow reveal">Available for opportunities</p>
-    <h1 class="hero-title reveal delay-1">Electrical<br><span class="accent-word">Engineer.</span></h1>
-    <p class="hero-subtitle reveal delay-2">IoT specialist &amp; hardware engineer building smart, automated, and AI-integrated systems &mdash; from circuits to cloud.</p>
-    <div class="hero-ctas reveal delay-3">
-      <a href="#works" class="btn-primary">View My Work &#x2193;</a>
-      <a href="#about" class="btn-ghost">About Me</a>
+<!-- ═══════════════════════════════════════════ -->
+<header id="hero" class="relative min-h-screen flex flex-col items-center justify-center pt-24 px-6 overflow-hidden">
+  <!-- background video -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+      <source src="https://res.cloudinary.com/dny2pxthk/video/upload/v1783244513/background_baxqm4.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+  <!-- glow blob -->
+  <div class="glass-blob"></div>
+  <!-- grid overlay -->
+  <div class="absolute inset-0 z-0" style="background-image:linear-gradient(rgba(0,0,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 40%,transparent 100%);"></div>
+
+  <div class="relative z-10 text-center max-w-6xl mx-auto">
+    <p class="reveal font-mono text-xs tracking-[0.2em] uppercase text-dark/50 mb-6 flex items-center gap-3 justify-center">
+      <span class="inline-block w-8 h-px bg-dark/30"></span>
+      Available for opportunities
+      <span class="inline-block w-8 h-px bg-dark/30"></span>
+    </p>
+    <h1 class="reveal delay-1 text-[clamp(3.5rem,12vw,9.5rem)] font-extrabold tracking-[-0.05em] leading-[0.88] text-dark mb-8">
+      Electrical<br><span class="text-accent" style="text-shadow:0 0 80px rgba(212,255,0,0.4);">Engineer.</span>
+    </h1>
+    <p class="reveal delay-2 text-lg md:text-xl text-dark/60 max-w-xl mx-auto leading-relaxed font-light mb-12">
+      IoT specialist &amp; hardware engineer building smart, automated, and AI-integrated systems &mdash; from circuits to cloud.
+    </p>
+    <div class="reveal delay-3 flex items-center gap-4 justify-center flex-wrap">
+      <a href="#works" class="inline-flex items-center gap-2 bg-dark text-light px-8 py-4 rounded-full font-semibold text-sm hover:bg-dark/80 transition-all hover:-translate-y-0.5 hover:shadow-xl">
+        View My Work <span>&#x2193;</span>
+      </a>
+      <a href="#about" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-dark/20 text-sm font-medium text-dark hover:bg-dark hover:text-light transition-all">
+        About Me
+      </a>
     </div>
   </div>
-  <div class="scroll-indicator">
+  <!-- scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
     <div class="scroll-dot"></div>
-    <span>Scroll</span>
+    <span class="font-mono text-[0.6rem] tracking-[0.15em] uppercase text-dark/40">Scroll</span>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- INTRO DARK BAND -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="bg-dark text-light py-28 px-8">
+  <div class="max-w-5xl mx-auto">
+    <p class="reveal text-[clamp(1.5rem,3.5vw,2.4rem)] font-light leading-[1.55] text-white/90">
+      I&rsquo;m <strong class="font-bold text-accent">Fathi Arasy</strong> &mdash; an Electrical Engineering student at Telkom University who bridges
+      <strong class="font-semibold text-white">physical hardware</strong> and <strong class="font-semibold text-white">intelligent software</strong>.
+      My work lives at the intersection of IoT, hardware automation, and AI&mdash;from YOLOv8-trained classifiers to real-time Blynk dashboards.
+    </p>
   </div>
 </section>
 
-<!-- INTRO -->
-<div id="intro">
-  <div class="container">
-    <p class="intro-text reveal">I&rsquo;m <strong>Fathi Arasy</strong> &mdash; an Electrical Engineering student at Telkom University who bridges <strong>physical hardware</strong> and <strong>intelligent software</strong>. My work lives at the intersection of IoT, hardware automation, and AI-driven web applications.</p>
-  </div>
-</div>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="about-section-label reveal"><span>About Me</span></div>
-    <div class="about-grid">
-      <div class="about-bio">
-        <h2 class="headline-lg reveal" style="margin-bottom:28px;">Building smart systems that make a real impact.</h2>
-        <div class="reveal delay-1">
-          <p>I&rsquo;m an Electrical Engineering student who enjoys building physical and digital systems that genuinely solve real-world problems. Most of my work sits at the intersection of the Internet of Things (IoT), hardware automation, and artificial intelligence.</p>
-          <p>I like taking ideas from the first concept all the way to a functional prototype &mdash; whether that means designing precise circuit logic, programming microcontrollers, or structuring reliable real-time web dashboards.</p>
-          <p>In past projects, I&rsquo;ve built automated waste sorting systems, AI image classifiers, and real-time environmental monitoring tools. My goal is always the same: smart, scalable, and efficient engineering solutions that make an impact.</p>
-        </div>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:36px;" class="reveal delay-2">
-          <a href="mailto:arasyfathi@gmail.com" class="btn-primary">Get in touch &#x2197;</a>
-        </div>
+<!-- ═══════════════════════════════════════════ -->
+<!-- ABOUT ME -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="about" class="py-28 px-8 max-w-7xl mx-auto">
+  <!-- section label -->
+  <div class="reveal flex items-center gap-4 mb-12">
+    <span class="block w-10 h-px bg-dark/30"></span>
+    <span class="font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/50">About Me</span>
+  </div>
+
+  <!-- about grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mb-20">
+    <div>
+      <h2 class="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight leading-[1.05] mb-8">
+        Engineering smart systems that make a real impact.
+      </h2>
+      <div class="reveal delay-1 space-y-5 text-lg text-dark/60 font-light leading-relaxed">
+        <p>I&rsquo;m an Electrical Engineering student who enjoys building physical and digital systems that genuinely solve real-world problems. Most of my work sits at the intersection of the Internet of Things (IoT), hardware automation, and artificial intelligence.</p>
+        <p>I like taking ideas from the first concept all the way to a functional prototype &mdash; whether that means designing precise circuit logic, programming microcontrollers, or structuring reliable real-time web dashboards.</p>
+        <p>In past projects, I&rsquo;ve trained YOLOv8 models for automated waste classification, built real-time IoT dashboards using Blynk.Console and Blynk.cloud, and developed environmental monitoring systems using ESP32 and Flask. My goal is always the same: smart, scalable, and efficient engineering solutions.</p>
       </div>
-      <div class="about-portrait-wrap reveal delay-2">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-UGLVX1z3oHzoguSHCokUf4cGkJunjmxL95aY3UKto_7kIOd9GN7ZWdnbwZMECPE5ytaAwxmEpguCqd6s3XqUzlhRXwyyQZzGWKKBAeEqiWr5jTgpXOhM230Klv6qqlg8-OLju7HweKuzel3WDjBC4eUFyFUqai6oA2-I8Thd-WLCWfL-j7eiDCv_qRHZDCEFMLV695YsF2EubClNIJOfj9NYpf9tmlflU0tJBjTSKEuRntCxyYypAWAg2PjukWgSt03WKJO8dcUT4g" alt="Fathi Arasy portrait" class="about-portrait">
+      <div class="reveal delay-2 flex gap-4 flex-wrap mt-10">
+        <a href="mailto:arasyfathi@gmail.com" class="inline-flex items-center gap-2 bg-dark text-light px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-dark/80 transition-all">Get in touch &#x2197;</a>
       </div>
     </div>
-    <div class="stats-row reveal">
-      <div class="stat-item"><span class="stat-number">4+</span><span class="stat-label">Prototypes Built</span></div>
-      <div class="stat-item"><span class="stat-number">3+</span><span class="stat-label">Leadership Roles</span></div>
-      <div class="stat-item"><span class="stat-number">Real&#8209;Time</span><span class="stat-label">IoT Systems</span></div>
+    <!-- portrait -->
+    <div class="reveal delay-2 relative w-full aspect-[4/5] rounded-3xl overflow-hidden bg-gray-200">
+      <div class="absolute inset-0 rounded-3xl" style="background:linear-gradient(135deg,rgba(212,255,0,0.3) 0%,transparent 50%);z-index:1;"></div>
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-UGLVX1z3oHzoguSHCokUf4cGkJunjmxL95aY3UKto_7kIOd9GN7ZWdnbwZMECPE5ytaAwxmEpguCqd6s3XqUzlhRXwyyQZzGWKKBAeEqiWr5jTgpXOhM230Klv6qqlg8-OLju7HweKuzel3WDjBC4eUFyFUqai6oA2-I8Thd-WLCWfL-j7eiDCv_qRHZDCEFMLV695YsF2EubClNIJOfj9NYpf9tmlflU0tJBjTSKEuRntCxyYypAWAg2PjukWgSt03WKJO8dcUT4g"
+           alt="Fathi Arasy portrait" class="w-full h-full object-cover filter grayscale-[15%] hover:grayscale-0 transition-all duration-500">
     </div>
-    <div class="services-grid reveal">
-      <div class="service-card"><span class="service-num">01</span><h3>IoT System Architecture</h3><p>End-to-end solutions connecting physical environments to digital platforms &mdash; from ESP32 sensor nodes to Blynk.Console &amp; Blynk.cloud dashboards, as well as custom real-time Flask web dashboards with REST APIs.</p></div>
-      <div class="service-card"><span class="service-num">02</span><h3>Automation &amp; Control Logic</h3><p>Responsive automated systems integrating MPU-6050 sensors, DC motor actuators, and industrial PLC logic. Mechanical precision meets software intelligence.</p></div>
-      <div class="service-card"><span class="service-num">03</span><h3>AI &amp; Web Integration</h3><p>Trained YOLOv8 object detection models for real-world waste classification (SmartWaste). Built prediction dashboards and web interfaces powered by Flask, delivering accurate AI inference results with confidence scores.</p></div>
+  </div>
+
+  <!-- stats -->
+  <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-px border border-gray-200 rounded-2xl overflow-hidden mb-20">
+    <div class="bg-white p-8 text-center hover:bg-gray-50 transition-colors">
+      <span class="block text-5xl md:text-6xl font-extrabold tracking-tight text-dark mb-2">4<span class="text-dark/30">+</span></span>
+      <span class="font-mono text-[0.65rem] tracking-[0.12em] uppercase text-dark/40">Organizational Roles</span>
+    </div>
+    <div class="bg-white p-8 text-center border-l border-gray-200 hover:bg-gray-50 transition-colors">
+      <span class="block text-5xl md:text-6xl font-extrabold tracking-tight text-dark mb-2">4<span class="text-dark/30">+</span></span>
+      <span class="font-mono text-[0.65rem] tracking-[0.12em] uppercase text-dark/40">Prototypes Built</span>
+    </div>
+    <div class="bg-white p-8 text-center border-l border-gray-200 hover:bg-gray-50 transition-colors">
+      <span class="block text-3xl md:text-4xl font-extrabold tracking-tight text-dark mb-2">YOLOv8</span>
+      <span class="font-mono text-[0.65rem] tracking-[0.12em] uppercase text-dark/40">AI Model Trained</span>
+    </div>
+    <div class="bg-white p-8 text-center border-l border-gray-200 hover:bg-gray-50 transition-colors">
+      <span class="block text-3xl md:text-4xl font-extrabold tracking-tight text-dark mb-2">Real&#8209;Time</span>
+      <span class="font-mono text-[0.65rem] tracking-[0.12em] uppercase text-dark/40">IoT Systems</span>
+    </div>
+  </div>
+
+  <!-- expertise cards -->
+  <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px border border-gray-200 rounded-2xl overflow-hidden">
+    <div class="bg-white p-8 hover:bg-gray-50 transition-colors">
+      <div class="flex justify-between items-start mb-10">
+        <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+          <svg fill="none" height="18" stroke="#131313" stroke-width="2" viewBox="0 0 24 24" width="18"><rect height="18" rx="2" width="18" x="3" y="3"></rect><line x1="9" x2="9" y1="3" y2="21"></line></svg>
+        </div>
+        <span class="font-mono text-[0.65rem] text-dark/30">01</span>
+      </div>
+      <h4 class="text-base font-semibold mb-3">IoT System Architecture</h4>
+      <p class="text-dark/50 text-sm leading-relaxed font-light">End-to-end solutions connecting physical environments to digital platforms — from ESP32 sensor nodes to real-time Blynk.Console &amp; Blynk.cloud dashboards.</p>
+    </div>
+    <div class="bg-gray-100 p-8 hover:bg-gray-50 transition-colors">
+      <div class="flex justify-between items-start mb-10">
+        <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+          <svg fill="none" height="18" stroke="#131313" stroke-width="2" viewBox="0 0 24 24" width="18"><rect height="7" width="7" x="3" y="3"></rect><rect height="7" width="7" x="14" y="3"></rect><rect height="7" width="7" x="14" y="14"></rect><rect height="7" width="7" x="3" y="14"></rect></svg>
+        </div>
+        <span class="font-mono text-[0.65rem] text-dark/30">02</span>
+      </div>
+      <h4 class="text-base font-semibold mb-3">Hardware &amp; Sensor Integration</h4>
+      <p class="text-dark/50 text-sm leading-relaxed font-light">Precise detection and actuation systems integrating MPU-6050 sensors, DHT22, encoders, ultrasonic sensors, and DC motor actuators for dynamic instruments.</p>
+    </div>
+    <div class="bg-white p-8 hover:bg-gray-50 transition-colors">
+      <div class="flex justify-between items-start mb-10">
+        <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+          <svg fill="none" height="18" stroke="#131313" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M12 2l9 4.9V17L12 22l-9-4.9V6.9z"></path></svg>
+        </div>
+        <span class="font-mono text-[0.65rem] text-dark/30">03</span>
+      </div>
+      <h4 class="text-base font-semibold mb-3">AI &amp; Model Training</h4>
+      <p class="text-dark/50 text-sm leading-relaxed font-light">Trained YOLOv8 object detection models for real-world waste classification (SmartWaste), deploying AI inference results through Flask web dashboards with confidence scores.</p>
+    </div>
+    <div class="bg-white p-8 hover:bg-gray-50 transition-colors">
+      <div class="flex justify-between items-start mb-10">
+        <div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+          <svg fill="none" height="18" stroke="#131313" stroke-width="2" viewBox="0 0 24 24" width="18"><circle cx="12" cy="5" r="3"></circle><line x1="12" x2="12" y1="22" y2="8"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+        </div>
+        <span class="font-mono text-[0.65rem] text-dark/30">04</span>
+      </div>
+      <h4 class="text-base font-semibold mb-3">Automation &amp; Control Logic</h4>
+      <p class="text-dark/50 text-sm leading-relaxed font-light">Responsive automated systems spanning Arduino environments to industrial Programmable Logic Controllers (PLC), using C and Python for control and data acquisition.</p>
     </div>
   </div>
 </section>
 
+
+<!-- ═══════════════════════════════════════════ -->
 <!-- MARQUEE / CROSSING RIBBONS -->
-<div id="marquee-section" aria-hidden="true">
-  <div class="ribbon ribbon-1">
-    <div class="ribbon-track">
-      <span class="ribbon-item">Smart IoT Solutions <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">Hardware Engineering <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">Automated Systems <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">AI Integration <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">Smart IoT Solutions <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">Hardware Engineering <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">Automated Systems <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">AI Integration <span class="ribbon-star">&#x2726;</span></span>
+<!-- ═══════════════════════════════════════════ -->
+<div aria-hidden="true" class="relative h-[380px] overflow-hidden flex items-center justify-center bg-light">
+  <!-- Ribbon 1 -->
+  <div class="absolute w-[150%] -left-[25%] py-5 bg-dark text-light shadow-2xl overflow-hidden whitespace-nowrap" style="transform:rotate(5deg);z-index:20;border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div class="marquee-fwd inline-flex items-center whitespace-nowrap">
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Smart IoT Solutions</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">YOLOv8 AI Training</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Blynk Dashboard</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Hardware Engineering</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Smart IoT Solutions</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">YOLOv8 AI Training</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Blynk Dashboard</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Hardware Engineering</span><span class="text-accent text-4xl px-6">&#x2726;</span>
     </div>
   </div>
-  <div class="ribbon ribbon-2">
-    <div class="ribbon-track">
-      <span class="ribbon-item">Intelligent Sensors <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">Real-Time Monitoring <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">Scalable Architecture <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">Embedded Systems <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">Intelligent Sensors <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">Real-Time Monitoring <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">Scalable Architecture <span class="ribbon-star">&#x2726;</span></span>
-      <span class="ribbon-item">Embedded Systems <span class="ribbon-star">&#x2726;</span></span>
+  <!-- Ribbon 2 -->
+  <div class="absolute w-[150%] -left-[25%] py-5 bg-dark text-light shadow-2xl overflow-hidden whitespace-nowrap" style="transform:rotate(-5deg);z-index:10;border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div class="marquee-rev inline-flex items-center whitespace-nowrap">
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Intelligent Sensors</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Real-Time Monitoring</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Embedded Systems</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Automated Control</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Intelligent Sensors</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Real-Time Monitoring</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Embedded Systems</span><span class="text-accent text-4xl px-6">&#x2726;</span>
+      <span class="text-[clamp(1.5rem,4vw,3rem)] font-extrabold uppercase tracking-[-0.02em] px-10">Automated Control</span><span class="text-accent text-4xl px-6">&#x2726;</span>
     </div>
   </div>
 </div>
 
+
+<!-- ═══════════════════════════════════════════ -->
 <!-- WORKS -->
-<section id="works">
-  <div class="container">
-    <div class="works-header reveal">
-      <div>
-        <p class="label-mono text-primary" style="margin-bottom:12px;">Selected Projects</p>
-        <h2 class="headline-lg">Projects &amp; Experience</h2>
-      </div>
-      <a href="#" class="btn-ghost">All Projects &#x2197;</a>
+<!-- ═══════════════════════════════════════════ -->
+<section id="works" class="py-28 px-8 max-w-7xl mx-auto">
+  <div class="reveal flex items-end justify-between mb-16 flex-wrap gap-6">
+    <div>
+      <p class="font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/40 mb-3">Selected Projects</p>
+      <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight leading-tight">Projects &amp; Experience</h2>
     </div>
-    <p class="works-section-label reveal">Projects</p>
-    <div class="project-list reveal">
-      <div class="project-row">
-        <div class="project-row-left"><h3>IoTDash: Real-Time Environment Monitoring</h3><p>ESP32 &middot; Blynk.cloud &middot; Flask &middot; DHT22 &middot; HTTP POST &middot; Chart.js</p></div>
-        <div class="project-row-right"><span class="project-type">IoT &amp; Dashboard</span></div>
-        <div class="project-hover-ribbon"><div class="project-hover-track">
-          <span>IOTDASH: REAL-TIME ENVIRONMENT MONITORING <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266804/tpad_jycrwr.jpg" alt=""></span>
-          <span>IOTDASH: REAL-TIME ENVIRONMENT MONITORING <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266804/tpad_jycrwr.jpg" alt=""></span>
-          <span>IOTDASH: REAL-TIME ENVIRONMENT MONITORING <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266804/tpad_jycrwr.jpg" alt=""></span>
-          <span>IOTDASH: REAL-TIME ENVIRONMENT MONITORING <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266804/tpad_jycrwr.jpg" alt=""></span>
-        </div></div>
+    <a href="#" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-dark/20 text-sm font-medium text-dark hover:bg-dark hover:text-light transition-all">All Projects &#x2197;</a>
+  </div>
+
+  <p class="reveal font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/40 border-b border-gray-200 pb-4 mb-10">Projects</p>
+
+  <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Project 1 -->
+    <div class="work-card group cursor-pointer">
+      <p class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-dark/40 mb-4">IoT &amp; Dashboard</p>
+      <div class="overflow-hidden aspect-video bg-gray-200 rounded-xl mb-5">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmMU3wdiLNc6NStnUADhDQTsiBcqnvBIXU0PS7FZ6RZCUCchmx2spW8GTnQlnQbzgCfa_SVscTmQKHuJeZS8k67rjKe-BN7LsKRQeNlsdPKCj0WaJOM2VfeB7IovbUVqCC_JKgmi9u8YUrFNvWsZKGbf5xuVBctTVwJHCI8bCzzTwavhiQV0zDfmElVtaNacIH9UU3RTBhfr_A4zck9B0KXO40ygTqKfByAVEFmKk-_DeXeewmlVv8tPI3PNxI8sWljzuSzH8eKjAmsQ"
+             alt="IoTDash" class="w-full h-full object-cover">
       </div>
-      <div class="project-row">
-        <div class="project-row-left"><h3>SmartWaste AI Classification System</h3><p>YOLOv8 &middot; Python &middot; OpenCV &middot; Flask &middot; Web UI</p></div>
-        <div class="project-row-right"><span class="project-type">AI / Deep Learning</span></div>
-        <div class="project-hover-ribbon"><div class="project-hover-track">
-          <span>SMARTWASTE AI CLASSIFICATION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMARTWASTE_AI_CLASSIFICATION_SYSTEM_qxwz4m.jpg" alt=""></span>
-          <span>SMARTWASTE AI CLASSIFICATION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMARTWASTE_AI_CLASSIFICATION_SYSTEM_qxwz4m.jpg" alt=""></span>
-          <span>SMARTWASTE AI CLASSIFICATION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMARTWASTE_AI_CLASSIFICATION_SYSTEM_qxwz4m.jpg" alt=""></span>
-          <span>SMARTWASTE AI CLASSIFICATION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMARTWASTE_AI_CLASSIFICATION_SYSTEM_qxwz4m.jpg" alt=""></span>
-        </div></div>
-      </div>
-      <div class="project-row">
-        <div class="project-row-left"><h3>Smart Dustbin IoT &amp; Blynk Dashboard</h3><p>ESP32 &middot; Blynk.Console &middot; Blynk.cloud &middot; Ultrasonic Sensor &middot; Servo Motor</p></div>
-        <div class="project-row-right"><span class="project-type">IoT &amp; Dashboard</span></div>
-        <div class="project-hover-ribbon"><div class="project-hover-track">
-          <span>SMART DUSTBIN IOT AUTOMATION <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMART_DUSTBIN_IOT_AUTOMATION_cv4va8.jpg" alt=""></span>
-          <span>SMART DUSTBIN IOT AUTOMATION <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMART_DUSTBIN_IOT_AUTOMATION_cv4va8.jpg" alt=""></span>
-          <span>SMART DUSTBIN IOT AUTOMATION <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMART_DUSTBIN_IOT_AUTOMATION_cv4va8.jpg" alt=""></span>
-          <span>SMART DUSTBIN IOT AUTOMATION <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783284289/SMART_DUSTBIN_IOT_AUTOMATION_cv4va8.jpg" alt=""></span>
-        </div></div>
-      </div>
-      <div class="project-row">
-        <div class="project-row-left"><h3>Dynamic Orientation Detection System</h3><p>MPU-6050 &middot; Arduino &middot; DC Motors &middot; Encoders</p></div>
-        <div class="project-row-right"><span class="project-type">Sensor / Control</span></div>
-        <div class="project-hover-ribbon"><div class="project-hover-track">
-          <span>DYNAMIC ORIENTATION DETECTION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/rover1_bnz7tv.jpg" alt=""></span>
-          <span>DYNAMIC ORIENTATION DETECTION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/rover1_bnz7tv.jpg" alt=""></span>
-          <span>DYNAMIC ORIENTATION DETECTION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/rover1_bnz7tv.jpg" alt=""></span>
-          <span>DYNAMIC ORIENTATION DETECTION SYSTEM <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/rover1_bnz7tv.jpg" alt=""></span>
-        </div></div>
+      <h3 class="text-xl font-semibold mb-2">IoTDash: Real-Time Environment Monitoring</h3>
+      <p class="text-dark/50 text-sm font-light">Built a real-time temperature &amp; humidity monitoring system using ESP32, DHT22, and Blynk.cloud. Data is transmitted via HTTP POST to a Flask server with an interactive Chart.js dashboard.</p>
+      <div class="flex flex-wrap gap-2 mt-4">
+        <span class="chip">ESP32</span><span class="chip">Blynk.cloud</span><span class="chip">Flask</span><span class="chip">DHT22</span><span class="chip">Chart.js</span>
       </div>
     </div>
-    <div class="exp-section">
-      <p class="works-section-label reveal" style="margin-top:0;">Organizational Experience</p>
-      <div class="project-list reveal">
-        <div class="project-row">
-          <div class="project-row-left"><h3>Staf Public Relation &ndash; KMTE</h3><p>Strategic communication and student engagement</p></div>
-          <div class="project-row-right"><span class="project-type">2026 &ndash; 2027</span></div>
-          <div class="project-hover-ribbon"><div class="project-hover-track">
-            <span>STAF PUBLIC RELATION &ndash; KMTE <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/pr_sriilz.jpg" alt=""></span>
-            <span>STAF PUBLIC RELATION &ndash; KMTE <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/pr_sriilz.jpg" alt=""></span>
-            <span>STAF PUBLIC RELATION &ndash; KMTE <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/pr_sriilz.jpg" alt=""></span>
-            <span>STAF PUBLIC RELATION &ndash; KMTE <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/pr_sriilz.jpg" alt=""></span>
-          </div></div>
-        </div>
-        <div class="project-row">
-          <div class="project-row-left"><h3>Wakadiv 1 Humas &ndash; Serasi</h3><p>Leadership in public relations and community management</p></div>
-          <div class="project-row-right"><span class="project-type">2025 &ndash; 2026</span></div>
-          <div class="project-hover-ribbon"><div class="project-hover-track">
-            <span>WAKADIV 1 HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/wakadiv_qcrz0p.jpg" alt=""></span>
-            <span>WAKADIV 1 HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/wakadiv_qcrz0p.jpg" alt=""></span>
-            <span>WAKADIV 1 HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/wakadiv_qcrz0p.jpg" alt=""></span>
-            <span>WAKADIV 1 HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264590/wakadiv_qcrz0p.jpg" alt=""></span>
-          </div></div>
-        </div>
-        <div class="project-row">
-          <div class="project-row-left"><h3>Staf R&amp;D &ndash; Electo Value Env.</h3><p>Innovation and technical development research</p></div>
-          <div class="project-row-right"><span class="project-type">2024</span></div>
-          <div class="project-hover-ribbon"><div class="project-hover-track">
-            <span>STAF RESEARCH &amp; DEVELOPMENT <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266387/rnd_mlap0x.jpg" alt=""></span>
-            <span>STAF RESEARCH &amp; DEVELOPMENT <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266387/rnd_mlap0x.jpg" alt=""></span>
-            <span>STAF RESEARCH &amp; DEVELOPMENT <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266387/rnd_mlap0x.jpg" alt=""></span>
-            <span>STAF RESEARCH &amp; DEVELOPMENT <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783266387/rnd_mlap0x.jpg" alt=""></span>
-          </div></div>
-        </div>
-        <div class="project-row">
-          <div class="project-row-left"><h3>Staf Humas &ndash; Serasi</h3><p>Managing organizational communication channels</p></div>
-          <div class="project-row-right"><span class="project-type">2024 &ndash; 2025</span></div>
-          <div class="project-hover-ribbon"><div class="project-hover-track">
-            <span>STAF HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264591/staf_dl3eex.jpg" alt=""></span>
-            <span>STAF HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264591/staf_dl3eex.jpg" alt=""></span>
-            <span>STAF HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264591/staf_dl3eex.jpg" alt=""></span>
-            <span>STAF HUMAS &ndash; SERASI <img src="https://res.cloudinary.com/dny2pxthk/image/upload/v1783264591/staf_dl3eex.jpg" alt=""></span>
-          </div></div>
-        </div>
+    <!-- Project 2 -->
+    <div class="work-card group cursor-pointer mt-0 md:mt-16">
+      <p class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-dark/40 mb-4">AI / Deep Learning</p>
+      <div class="overflow-hidden aspect-video bg-gray-200 rounded-xl mb-5">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2VUvKwuF1aXUAfafsfoFjD3mJoyOXXzHIRNbSPOMmZuW8w2Sw7xKbUZlEQrTk9cwmtSW0ksEflJAjhzuvWr8dXB0yJTVyRQAk06BhYT5IpfYLgCflAjF4at3lMvWSkve0a7jibpJxcqLz1An-46X_0H52pLxHmjCE-oJbiT9aRI6SWRGIngGI2nklqj55Gw-IweA_XeEMSQzFPAaGHxFay77m730pvYVhVN-AXU7bzglNXOQ7wFee_oZWMYNxDey7AlZ3YsgDaVj-hA"
+             alt="SmartWaste" class="w-full h-full object-cover">
       </div>
+      <h3 class="text-xl font-semibold mb-2">SmartWaste AI Classification System</h3>
+      <p class="text-dark/50 text-sm font-light">Developed an automated waste classification system using YOLOv8 object detection. Trained the model on custom waste datasets, deployed inference through a Flask web UI displaying predictions and confidence scores in real-time.</p>
+      <div class="flex flex-wrap gap-2 mt-4">
+        <span class="chip">YOLOv8</span><span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">Flask</span><span class="chip">Web UI</span>
+      </div>
+    </div>
+    <!-- Project 3 -->
+    <div class="work-card group cursor-pointer">
+      <p class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-dark/40 mb-4">IoT &amp; Hardware Automation</p>
+      <div class="overflow-hidden aspect-video bg-gray-200 rounded-xl mb-5">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiYrOmuN2b259rSUNTIDwVNjiensJSUGE1orjf2xOXo9hQwCORmr3fswOH6LO6EgP7ALiRNSW6VeI-JtcJS7TiszGVW3chOQvv1frZ4kxc-Tra09rS-0DZBVxPOaR2txhBMkLL3YTFRFbxoccYZ7wRCLu_74B4qsachkiwMemW70y91lJ5F1rOY5YXcvE94BXkDhQLsSjlGTCYuBlWe88XNfsohKGGDmczB8U6dnizba1DlEzYvm22ZS3x2fl-PCPcVDh5XrDMX8AeQQ"
+             alt="Smart Dustbin" class="w-full h-full object-cover">
+      </div>
+      <h3 class="text-xl font-semibold mb-2">Smart Dustbin IoT &amp; Blynk Dashboard</h3>
+      <p class="text-dark/50 text-sm font-light">Engineered a smart automated dustbin with real-time fill-level monitoring via Blynk.Console and Blynk.cloud. Integrated an ultrasonic sensor and servo motor actuator controlled by ESP32, enabling remote hardware monitoring and automated lid control.</p>
+      <div class="flex flex-wrap gap-2 mt-4">
+        <span class="chip">ESP32</span><span class="chip">Blynk.Console</span><span class="chip">Blynk.cloud</span><span class="chip">Ultrasonic</span><span class="chip">Servo</span>
+      </div>
+    </div>
+    <!-- Project 4 -->
+    <div class="work-card group cursor-pointer mt-0 md:mt-16">
+      <p class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-dark/40 mb-4">Sensor / Control System</p>
+      <div class="overflow-hidden aspect-video bg-gray-200 rounded-xl mb-5">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ0d2CjSEl2sp69FYCuBihP8oWdJtgXjWTp5_SRqNWBU2hX6fA2MiROCQZ9_TbkVMHnPIDA9VGq8PF7R1PF9oz6nwAtzUPkqdsnzFuDny6XVP4AJhRPj0qjpYn3cqDP5CRSA9II6N9JkgeAfdm1E3a8IPtNmqSjbeXeS8HB9G-lc0RA9_2J8Ml5SYFT4E9MYF3Qll-jlsmwtKt_rgHxT8WrQdX7_ync6p76WC5dYzPHz4QSnUplK1NLvJxxadGXK83Elhoyyc9-j_0Wg"
+             alt="Orientation System" class="w-full h-full object-cover">
+      </div>
+      <h3 class="text-xl font-semibold mb-2">Dynamic Orientation Detection System</h3>
+      <p class="text-dark/50 text-sm font-light">Built a precise container orientation detection instrument using MPU-6050 IMU sensor fused with Arduino, DC motors, and optical encoders for dynamic angular actuation and real-time orientation feedback.</p>
+      <div class="flex flex-wrap gap-2 mt-4">
+        <span class="chip">MPU-6050</span><span class="chip">Arduino</span><span class="chip">DC Motors</span><span class="chip">Encoders</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organizational Experience -->
+  <p class="reveal font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/40 border-b border-gray-200 pb-4 mb-10 mt-24">Organizational Experience</p>
+  <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px border border-gray-200 rounded-2xl overflow-hidden">
+    <div class="bg-white p-8 hover:bg-gray-50 transition-colors">
+      <span class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-accent block mb-4">2026 &ndash; 2027</span>
+      <h4 class="font-semibold text-base mb-1">Staf Public Relation</h4>
+      <p class="text-dark/40 text-sm font-light">KMTE (Electrical Engineering Student Association)</p>
+    </div>
+    <div class="bg-white p-8 border-l border-gray-200 hover:bg-gray-50 transition-colors">
+      <span class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-accent block mb-4">2025 &ndash; 2026</span>
+      <h4 class="font-semibold text-base mb-1">Wakadiv 1 Humas</h4>
+      <p class="text-dark/40 text-sm font-light">Serasi &mdash; Vice Head of Public Relations</p>
+    </div>
+    <div class="bg-white p-8 border-l border-gray-200 hover:bg-gray-50 transition-colors">
+      <span class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-accent block mb-4">2024 &ndash; 2025</span>
+      <h4 class="font-semibold text-base mb-1">Staf Humas</h4>
+      <p class="text-dark/40 text-sm font-light">Serasi &mdash; Public Relations Staff</p>
+    </div>
+    <div class="bg-white p-8 border-l border-gray-200 hover:bg-gray-50 transition-colors">
+      <span class="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-accent block mb-4">2024</span>
+      <h4 class="font-semibold text-base mb-1">Staf R&amp;D</h4>
+      <p class="text-dark/40 text-sm font-light">Electo Value Environment Innovations</p>
     </div>
   </div>
 </section>
 
+
+<!-- ═══════════════════════════════════════════ -->
 <!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <div class="skills-layout">
-      <div class="skills-intro">
-        <div class="about-section-label reveal"><span>Skills</span></div>
-        <h2 class="headline-md reveal delay-1">Technology Arsenal</h2>
-        <p class="reveal delay-2">A comprehensive toolkit for building smart hardware, IoT ecosystems, and AI-integrated systems.</p>
+<!-- ═══════════════════════════════════════════ -->
+<section id="skills" class="bg-gray-100 border-t border-gray-200 py-28 px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal flex items-center gap-4 mb-12">
+      <span class="block w-10 h-px bg-dark/30"></span>
+      <span class="font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/50">Skills</span>
+    </div>
+    <h2 class="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight leading-tight mb-16 max-w-2xl">Technology Arsenal</h2>
+    <div class="reveal grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+      <div>
+        <h4 class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-dark/40 mb-4">Languages</h4>
+        <div class="flex flex-wrap gap-2"><span class="chip">C</span><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">HTML/CSS</span></div>
       </div>
-      <div class="skills-categories reveal delay-1">
-        <div class="skill-category"><h4>Programming Languages</h4><div class="chip-cloud"><span class="chip">C</span><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">HTML/CSS</span></div></div>
-        <div class="skill-category"><h4>AI &amp; Machine Learning</h4><div class="chip-cloud"><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">OpenCV</span><span class="chip">PyTorch</span><span class="chip">OpenAI API</span><span class="chip">Hugging Face</span></div></div>
-        <div class="skill-category"><h4>Hardware &amp; Microcontrollers</h4><div class="chip-cloud"><span class="chip">ESP32</span><span class="chip">Arduino</span><span class="chip">PLC Systems</span><span class="chip">Actuators</span></div></div>
-        <div class="skill-category"><h4>Sensors &amp; Components</h4><div class="chip-cloud"><span class="chip">DHT22</span><span class="chip">MPU-6050</span><span class="chip">Encoders</span><span class="chip">DC Motors</span><span class="chip">Ultrasonic</span></div></div>
-        <div class="skill-category"><h4>IoT &amp; Networking</h4><div class="chip-cloud"><span class="chip">Blynk</span><span class="chip">HTTP REST</span><span class="chip">ngrok</span><span class="chip">JSON</span><span class="chip">MQTT</span></div></div>
-        <div class="skill-category"><h4>Web &amp; Dashboard</h4><div class="chip-cloud"><span class="chip">Flask</span><span class="chip">Chart.js</span><span class="chip">Tailwind CSS</span><span class="chip">Vercel</span><span class="chip">Framer Motion</span></div></div>
+      <div>
+        <h4 class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-dark/40 mb-4">AI &amp; ML</h4>
+        <div class="flex flex-wrap gap-2"><span class="chip">YOLOv8</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">OpenCV</span></div>
+      </div>
+      <div>
+        <h4 class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-dark/40 mb-4">Hardware</h4>
+        <div class="flex flex-wrap gap-2"><span class="chip">ESP32</span><span class="chip">Arduino</span><span class="chip">PLC</span></div>
+      </div>
+      <div>
+        <h4 class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-dark/40 mb-4">Sensors</h4>
+        <div class="flex flex-wrap gap-2"><span class="chip">DHT22</span><span class="chip">MPU-6050</span><span class="chip">Ultrasonic</span><span class="chip">Encoders</span></div>
+      </div>
+      <div>
+        <h4 class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-dark/40 mb-4">IoT</h4>
+        <div class="flex flex-wrap gap-2"><span class="chip">Blynk</span><span class="chip">HTTP REST</span><span class="chip">MQTT</span><span class="chip">ngrok</span></div>
+      </div>
+      <div>
+        <h4 class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-dark/40 mb-4">Web</h4>
+        <div class="flex flex-wrap gap-2"><span class="chip">Flask</span><span class="chip">Chart.js</span><span class="chip">Next.js</span><span class="chip">Tailwind</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- IMPACT -->
-<section id="impact">
-  <div class="container">
-    <div class="about-section-label reveal"><span>Proven Impact</span></div>
-    <h2 class="headline-lg reveal delay-1" style="margin-bottom:48px;">Measurable results<br>that matter.</h2>
-    <div class="impact-grid reveal delay-2">
-      <div class="impact-card"><span class="impact-number">Real&#8209;Time</span><h4>Telemetry Monitoring</h4><p>Continuous environmental sensor data captured and transmitted with precise intervals using ESP32 and HTTP POST protocols.</p></div>
-      <div class="impact-card"><span class="impact-number">Auto&#8209;<br>mated</span><h4>Hardware Actuation</h4><p>Reducing manual intervention by developing smart systems like automated waste sorters and sensor-driven mechanisms.</p></div>
-      <div class="impact-card"><span class="impact-number">4+</span><h4>Engineering Prototypes</h4><p>Designed and deployed diverse systems including IoT dashboards, mechanical instruments, and AI web classifiers.</p></div>
-      <div class="impact-card"><span class="impact-number">3+</span><h4>Leadership &amp; PR Roles</h4><p>Years of active contribution in managing public relations, team coordination, and strategic technology R&amp;D initiatives.</p></div>
-    </div>
-  </div>
-</section>
 
+<!-- ═══════════════════════════════════════════ -->
 <!-- JOURNEY -->
-<section id="journey">
-  <div class="container">
-    <div class="journey-header">
-      <div class="about-section-label reveal" style="justify-content:center;"><span>Journey</span></div>
-      <h2 class="headline-lg reveal delay-1">Experiences that<br>shaped my career.</h2>
-      <p class="reveal delay-2" style="color:var(--muted);margin-top:16px;">From student labs to real-world engineering challenges.</p>
+<!-- ═══════════════════════════════════════════ -->
+<section id="journey" class="bg-dark text-light relative py-32 px-8 overflow-hidden">
+  <div class="max-w-4xl mx-auto text-center relative z-10 mb-24">
+    <div class="reveal flex items-center gap-4 justify-center mb-8">
+      <span class="block w-10 h-px bg-white/20"></span>
+      <span class="font-mono text-[0.7rem] tracking-[0.15em] uppercase text-white/40">Journey</span>
+      <span class="block w-10 h-px bg-white/20"></span>
     </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="tl-content left reveal"><p class="tl-year">Aug 2024 &ndash; Present</p><h3>Telkom University</h3><p class="tl-role">Electrical Engineering Student</p><p>Pursuing a Bachelor&rsquo;s degree in Electrical Engineering, building strong fundamentals in circuit design, automation, digital systems, IoT programming, and applied AI &mdash; while actively contributing to real-world engineering projects and campus research activities.</p></div>
-        <div class="timeline-dot"></div>
+    <h2 class="reveal text-[clamp(2rem,6vw,4.5rem)] font-light leading-tight">Explore my journey and the experiences that shaped my engineering career.</h2>
+  </div>
+
+  <div class="relative max-w-5xl mx-auto pb-16">
+    <div class="journey-line"></div>
+
+    <!-- Item 1 — LEFT -->
+    <div class="flex items-start justify-between w-full mb-24 relative z-10">
+      <div class="w-5/12 text-right pr-12 reveal">
+        <span class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-accent block mb-2">Aug 2024 &ndash; Present</span>
+        <h3 class="text-3xl md:text-4xl font-bold mb-2">Telkom University</h3>
+        <p class="text-white/40 text-sm mb-6">Electrical Engineering Student</p>
+        <p class="text-white/50 text-sm font-light leading-relaxed">Pursuing a Bachelor&rsquo;s degree in Electrical Engineering, building strong fundamentals in circuit design, automation, digital systems, IoT programming, and applied AI &mdash; while actively contributing to real-world engineering projects and campus research activities.</p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="tl-content right reveal delay-1"><p class="tl-year">2025 &ndash; Campus Recruitment</p><h3>SPELL-Lab</h3><p class="tl-role">Laboratory Candidate &mdash; Signal Processing &amp; Learning for Spatial Intelligence</p><p>Participated in the recruitment selection for SPELL-Lab (Signal Processing and Learning for Spatial Intelligence Laboratory) at Telkom University, a research laboratory focused on advanced signal processing, spatial data analysis, and machine learning research.</p></div>
+      <div class="w-2/12 flex justify-center pt-2"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_16px_rgba(212,255,0,0.6)]"></div></div>
+      <div class="w-5/12 pl-12"></div>
+    </div>
+
+    <!-- Item 2 — RIGHT -->
+    <div class="flex items-start justify-between w-full mb-24 relative z-10">
+      <div class="w-5/12 pr-12"></div>
+      <div class="w-2/12 flex justify-center pt-2"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_16px_rgba(212,255,0,0.6)]"></div></div>
+      <div class="w-5/12 pl-12 reveal delay-1">
+        <span class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-accent block mb-2">2025 &ndash; Campus Recruitment</span>
+        <h3 class="text-3xl md:text-4xl font-bold mb-2">SPELL-Lab</h3>
+        <p class="text-white/40 text-sm mb-6">Laboratory Candidate</p>
+        <p class="text-white/50 text-sm font-light leading-relaxed">Participated in the official recruitment selection for SPELL-Lab (Signal Processing and Learning for Spatial Intelligence Laboratory) at Telkom University — a research lab focused on advanced signal processing, spatial data analysis, and machine learning research.</p>
       </div>
-      <div class="timeline-item">
-        <div class="tl-content left reveal"><p class="tl-year">2025 &ndash; Campus Recruitment</p><h3>IMV Laboratory</h3><p class="tl-role">Early Selection Qualifier &mdash; Imaging, Machine Vision &amp; Visual Computing</p><p>Passed the initial selection stage for IMV Laboratory (Imaging and Machine Vision), a campus research lab specializing in computer vision, image processing, and visual computing systems. Demonstrated foundational knowledge in signal analysis and AI-driven visual systems.</p></div>
-        <div class="timeline-dot"></div>
+    </div>
+
+    <!-- Item 3 — LEFT -->
+    <div class="flex items-start justify-between w-full mb-24 relative z-10">
+      <div class="w-5/12 text-right pr-12 reveal">
+        <span class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-accent block mb-2">2025 &ndash; Campus Recruitment</span>
+        <h3 class="text-3xl md:text-4xl font-bold mb-2">IMV Laboratory</h3>
+        <p class="text-white/40 text-sm mb-6">Early Selection Qualifier</p>
+        <p class="text-white/50 text-sm font-light leading-relaxed">Passed the initial selection stage for IMV Laboratory (Imaging and Machine Vision) at Telkom University, a campus research lab specializing in computer vision, image processing, and visual computing systems.</p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="tl-content right reveal delay-1"><p class="tl-year">Jan 2024 &ndash; Dec 2024</p><h3>Electo Value Environment</h3><p class="tl-role">Research &amp; Development Staff</p><p>Conducted R&amp;D for environmental tech innovations, evaluating system requirements and designing technology project concepts.</p></div>
+      <div class="w-2/12 flex justify-center pt-2"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_16px_rgba(212,255,0,0.6)]"></div></div>
+      <div class="w-5/12 pl-12"></div>
+    </div>
+
+    <!-- Item 4 — RIGHT -->
+    <div class="flex items-start justify-between w-full mb-24 relative z-10">
+      <div class="w-5/12 pr-12"></div>
+      <div class="w-2/12 flex justify-center pt-2"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_16px_rgba(212,255,0,0.6)]"></div></div>
+      <div class="w-5/12 pl-12 reveal delay-1">
+        <span class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-accent block mb-2">Jan 2024 &ndash; Dec 2024</span>
+        <h3 class="text-3xl md:text-4xl font-bold mb-2">Electo Value Environment</h3>
+        <p class="text-white/40 text-sm mb-6">Research &amp; Development Staff</p>
+        <p class="text-white/50 text-sm font-light leading-relaxed">Conducted R&amp;D for environmental technology innovations, evaluating system requirements and designing project concepts focused on sustainable engineering solutions.</p>
       </div>
-      <div class="timeline-item">
-        <div class="tl-content left reveal"><p class="tl-year">2025 &ndash; 2026</p><h3>Serasi</h3><p class="tl-role">Vice Head of Public Relations (Wakadiv 1)</p><p>Coordinated the PR division in executing publication strategies, managing public communication, and supervising organizational branding.</p></div>
-        <div class="timeline-dot"></div>
+    </div>
+
+    <!-- Item 5 — LEFT -->
+    <div class="flex items-start justify-between w-full mb-24 relative z-10">
+      <div class="w-5/12 text-right pr-12 reveal">
+        <span class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-accent block mb-2">2025 &ndash; 2026</span>
+        <h3 class="text-3xl md:text-4xl font-bold mb-2">Serasi</h3>
+        <p class="text-white/40 text-sm mb-6">Vice Head of Public Relations (Wakadiv 1)</p>
+        <p class="text-white/50 text-sm font-light leading-relaxed">Coordinated the PR division in executing publication strategies, managing public communication, and supervising organizational branding.</p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="tl-content right reveal delay-1"><p class="tl-year">2026 &ndash; 2027</p><h3>KMTE</h3><p class="tl-role">Public Relations Staff</p><p>Building strategic external partnerships and managing official communications to support the Electrical Engineering student organization's initiatives.</p></div>
+      <div class="w-2/12 flex justify-center pt-2"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_16px_rgba(212,255,0,0.6)]"></div></div>
+      <div class="w-5/12 pl-12"></div>
+    </div>
+
+    <!-- Item 6 — RIGHT -->
+    <div class="flex items-start justify-between w-full relative z-10">
+      <div class="w-5/12 pr-12"></div>
+      <div class="w-2/12 flex justify-center pt-2"><div class="w-3 h-3 bg-accent rounded-full shadow-[0_0_16px_rgba(212,255,0,0.6)]"></div></div>
+      <div class="w-5/12 pl-12 reveal delay-1">
+        <span class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-accent block mb-2">2026 &ndash; 2027</span>
+        <h3 class="text-3xl md:text-4xl font-bold mb-2">KMTE</h3>
+        <p class="text-white/40 text-sm mb-6">Public Relations Staff</p>
+        <p class="text-white/50 text-sm font-light leading-relaxed">Building strategic external partnerships and managing official communications to support the Electrical Engineering student organization&rsquo;s initiatives.</p>
       </div>
     </div>
   </div>
 </section>
 
+
+<!-- ═══════════════════════════════════════════ -->
 <!-- CTA -->
-<section id="cta">
-  <div class="container">
-    <div class="cta-box reveal">
-      <p class="label-mono text-primary" style="margin-bottom:20px;">Ready to collaborate?</p>
-      <h2 class="headline-lg">Let&rsquo;s build something<br>exceptional together.</h2>
-      <p>Whether you need a real-time IoT monitoring system, an automated hardware mechanism, or an AI-driven web application &mdash; I bring the engineering expertise to make it happen.</p>
-      <div class="cta-btns">
-        <a href="mailto:arasyfathi@gmail.com" class="btn-primary">Send an Email &#x2197;</a>
-        <a href="https://linkedin.com" class="btn-ghost" target="_blank">Connect on LinkedIn</a>
-      </div>
+<!-- ═══════════════════════════════════════════ -->
+<section id="cta" class="py-28 px-8">
+  <div class="max-w-4xl mx-auto text-center reveal">
+    <p class="font-mono text-[0.7rem] tracking-[0.15em] uppercase text-dark/40 mb-6">Ready to collaborate?</p>
+    <h2 class="text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-tight leading-tight mb-6">Let&rsquo;s build something<br>exceptional together.</h2>
+    <p class="text-dark/50 text-lg font-light leading-relaxed max-w-2xl mx-auto mb-12">Whether you need a real-time IoT monitoring system, a YOLOv8-powered AI classifier, or an automated hardware mechanism &mdash; I bring the engineering expertise to make it happen.</p>
+    <div class="flex items-center gap-4 justify-center flex-wrap">
+      <a href="mailto:arasyfathi@gmail.com" class="inline-flex items-center gap-2 bg-dark text-light px-8 py-4 rounded-full font-semibold text-sm hover:bg-dark/80 transition-all hover:-translate-y-0.5 hover:shadow-xl">Send an Email &#x2197;</a>
+      <a href="https://linkedin.com" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-dark/20 text-sm font-medium text-dark hover:bg-dark hover:text-light transition-all">Connect on LinkedIn</a>
     </div>
   </div>
 </section>
 
+
+<!-- ═══════════════════════════════════════════ -->
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="#hero" class="nav-logo" style="font-size:1.5rem;">FA.</a>
-        <p>Electrical Engineer &amp; IoT Specialist crafting smart, automated, and interconnected solutions that merge sensor technology with software intelligence.</p>
-        <div class="footer-contact-links">
-          <a href="tel:+6282272099066">+62 822 7209 9066</a>
-          <a href="mailto:arasyfathi@gmail.com">arasyfathi@gmail.com</a>
-        </div>
+<!-- ═══════════════════════════════════════════ -->
+<footer class="bg-dark text-light pt-24 pb-8 px-8 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between mb-24 z-10 relative gap-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full md:w-3/4">
+      <div>
+        <p class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/30 mb-6">Links</p>
+        <ul class="space-y-3 text-sm font-light">
+          <li><a href="#hero" class="text-white/60 hover:text-accent transition-colors">Home</a></li>
+          <li><a href="#about" class="text-white/60 hover:text-accent transition-colors">About</a></li>
+          <li><a href="#works" class="text-white/60 hover:text-accent transition-colors">Works</a></li>
+          <li><a href="#journey" class="text-white/60 hover:text-accent transition-colors">Journey</a></li>
+        </ul>
       </div>
-      <div class="footer-col"><h5>Links</h5><ul><li><a href="#hero">Home</a></li><li><a href="#about">About</a></li><li><a href="#works">Works</a></li><li><a href="#journey">Journey</a></li></ul></div>
-      <div class="footer-col"><h5>Socials</h5><ul><li><a href="mailto:arasyfathi@gmail.com">Email</a></li><li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li><li><a href="#">WhatsApp</a></li><li><a href="https://github.com" target="_blank">GitHub</a></li></ul></div>
-      <div class="footer-col"><h5>Info</h5><ul><li><a href="#" id="local-time-display">21:52 UTC+7</a></li><li><a href="#">2026 &copy; Edition</a></li></ul></div>
+      <div>
+        <p class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/30 mb-6">Socials</p>
+        <ul class="space-y-3 text-sm font-light">
+          <li><a href="mailto:arasyfathi@gmail.com" class="text-white/60 hover:text-accent transition-colors">Email</a></li>
+          <li><a href="https://linkedin.com" target="_blank" class="text-white/60 hover:text-accent transition-colors">LinkedIn</a></li>
+          <li><a href="#" class="text-white/60 hover:text-accent transition-colors">WhatsApp</a></li>
+          <li><a href="https://github.com" target="_blank" class="text-white/60 hover:text-accent transition-colors">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/30 mb-6">Local Time</p>
+        <p id="local-time-display" class="text-sm text-white/60">22:16 UTC+7</p>
+      </div>
+      <div>
+        <p class="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-white/30 mb-6">Version</p>
+        <p class="text-sm text-white/60">2026 &copy; Edition</p>
+      </div>
     </div>
-    <div class="footer-wordmark"><h2>FATHI</h2></div>
-    <div class="footer-bottom"><p>&copy; 2026 Fathi Arasy. All rights reserved.</p><p>Designed &amp; built with &hearts;</p></div>
+    <div class="flex flex-col gap-3 w-full md:w-auto">
+      <a href="tel:+6282272099066" class="px-6 py-3 border border-white/10 rounded-full text-sm font-light text-center hover:border-accent hover:text-accent transition-colors">+62 822 7209 9066</a>
+      <a href="mailto:arasyfathi@gmail.com" class="px-6 py-3 border border-white/10 rounded-full text-sm font-light text-center hover:border-accent hover:text-accent transition-colors">arasyfathi@gmail.com</a>
+    </div>
+  </div>
+  <!-- BIG WORDMARK -->
+  <div class="w-full text-center z-0 relative select-none">
+    <h2 class="big-text text-white/[0.07]">FATHI</h2>
+  </div>
+  <div class="max-w-7xl mx-auto flex items-center justify-between pt-8 border-t border-white/[0.06] mt-8 flex-wrap gap-4 z-10 relative">
+    <p class="text-xs text-white/30">&copy; 2026 Fathi Arasy. All rights reserved.</p>
+    <p class="text-xs text-white/30">Designed &amp; built with &hearts;</p>
   </div>
 </footer>
 
 <script>
+  // Navbar scroll
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); }, {passive:true});
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+
+  // Mobile nav
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const mobileNav = document.getElementById('mobile-nav');
-  hamburgerBtn.addEventListener('click', () => { mobileNav.classList.toggle('open'); document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : ''; });
+  hamburgerBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
   function closeMobileNav() { mobileNav.classList.remove('open'); document.body.style.overflow = ''; }
+
+  // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
-  const ro = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => ro.observe(el));
-  function updateTime() { const el=document.getElementById('local-time-display'); if(el) el.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Jakarta',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date())+' UTC+7'; }
+
+  // Live local time WIB
+  function updateTime() {
+    const el = document.getElementById('local-time-display');
+    if (el) el.textContent = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()) + ' UTC+7';
+  }
   updateTime(); setInterval(updateTime, 30000);
 </script>
 </body>
