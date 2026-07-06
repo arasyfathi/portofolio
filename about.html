@@ -49,7 +49,7 @@
 </head>
 <body class="bg-brand-light text-brand-text font-sans antialiased">
 <!-- BEGIN: Navigation -->
-<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 mix-blend-difference text-white">
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 mix-blend-difference text-white transition-all duration-500">
 <div class="text-2xl font-bold tracking-tighter"><a href="#" class="block w-10 h-10 hover:opacity-80 transition-opacity"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ofCQWujowd3tpsSmNFteNvsSfS64SZ98oHIhBra-c6qYKAI-dapAQ2xShxRNnlxrpKappWUxvcaFRHx4cS25O7BZzvbRxztKXXNPJbUd2p4Wnq5S2ZLOdH3BW4ROKJyFKfwbJsYVBjE7a2UOez_hkSAj_R4AXWNInBKQ_6tPmei4ge1tObMANazVTQI3XRRfz2Qhpsl75yK1Mg0znKvUOt4x4-8M8lZtorxoJBy3T4FXdAYFi6PioqqIvrFvXQwf9bzd07XaWVc" alt="Logo" class="w-full h-full object-contain invert"></a></div>
 <div class="hidden md:flex items-center gap-8 text-sm font-medium">
 <a class="hover:opacity-70 transition-opacity" href="index.html">Home</a>
@@ -63,6 +63,47 @@
 </div>
 </div>
 </nav>
+
+  <!-- Minimalist Scroll Menu Button -->
+  <button id="scroll-menu-btn" class="fixed top-6 right-8 z-[60] w-12 h-12 rounded-full border border-white mix-blend-difference text-white flex items-center justify-center opacity-0 pointer-events-none -translate-y-full transition-all duration-500 hover:bg-white hover:text-black">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="12" x2="20" y2="12"></line>
+      <line x1="4" y1="6" x2="20" y2="6"></line>
+      <line x1="4" y1="18" x2="20" y2="18"></line>
+    </svg>
+  </button>
+
+  <!-- BEGIN: Overlay Menu -->
+  <div id="overlay-menu" class="fixed inset-0 z-[100] p-4 sm:p-8 opacity-0 pointer-events-none transition-opacity duration-500 hidden backdrop-blur-sm">
+    <div class="w-full h-full bg-[#1a1a1a] rounded-3xl flex flex-col md:flex-row relative overflow-hidden shadow-2xl border border-white/10">
+      <!-- Close Button -->
+      <button id="close-menu-btn" class="absolute top-6 right-8 z-[110] w-12 h-12 rounded-full border border-white text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Left Side: Navigation Links -->
+      <div class="w-full md:w-1/2 h-full flex flex-col justify-center px-12 md:px-24">
+        <nav class="flex flex-col gap-8">
+          <a href="index.html" class="text-4xl md:text-5xl font-bold text-white hover:text-[#d4ff00] transition-colors font-['Hanken_Grotesk']">Home</a>
+          <a href="about.html" class="text-4xl md:text-5xl font-bold text-white hover:text-[#d4ff00] transition-colors font-['Hanken_Grotesk']">About</a>
+          <a href="projects.html" class="text-4xl md:text-5xl font-bold text-white hover:text-[#d4ff00] transition-colors font-['Hanken_Grotesk']">Works / Projects</a>
+          <a href="mailto:arasyfathi@gmail.com" class="text-4xl md:text-5xl font-bold text-white hover:text-[#d4ff00] transition-colors font-['Hanken_Grotesk']">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Right Side: Placeholder for Video/Image -->
+      <div class="hidden md:flex w-full md:w-1/2 h-full p-8">
+        <div class="w-full h-full bg-white/5 rounded-[2rem] flex items-center justify-center overflow-hidden relative border border-white/10">
+           <p class="text-gray-400 absolute text-lg">Visual Placeholder</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: Overlay Menu -->
+
 <!-- END: Navigation -->
 <main class="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1920px] mx-auto overflow-hidden">
 <!-- BEGIN: Hero Section -->
@@ -311,4 +352,41 @@
 
 
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainNav = document.getElementById('main-nav');
+      const scrollMenuBtn = document.getElementById('scroll-menu-btn');
+      const overlayMenu = document.getElementById('overlay-menu');
+      const closeMenuBtn = document.getElementById('close-menu-btn');
+      
+      if(mainNav && scrollMenuBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+            mainNav.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none');
+            scrollMenuBtn.classList.remove('opacity-0', '-translate-y-full', 'pointer-events-none');
+          } else {
+            mainNav.classList.remove('opacity-0', '-translate-y-full', 'pointer-events-none');
+            scrollMenuBtn.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none');
+          }
+        });
+      }
+
+      if (scrollMenuBtn && overlayMenu && closeMenuBtn) {
+        scrollMenuBtn.addEventListener('click', () => {
+          overlayMenu.classList.remove('hidden');
+          // slight delay for transition
+          setTimeout(() => {
+            overlayMenu.classList.remove('opacity-0', 'pointer-events-none');
+          }, 10);
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+          overlayMenu.classList.add('opacity-0', 'pointer-events-none');
+          setTimeout(() => {
+            overlayMenu.classList.add('hidden');
+          }, 500);
+        });
+      }
+    });
+  </script>
 </body></html>
