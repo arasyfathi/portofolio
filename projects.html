@@ -111,23 +111,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" data-snapdom="injected-import"><script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
 </head>
 <body class="bg-light text-dark font-sans antialiased">
-  <!-- BEGIN: Preloader -->
-  <div id="preloader" class="fixed inset-0 bg-[#131313] z-[9999] flex items-center justify-center transition-all duration-1000 ease-in-out">
-    <div class="text-center flex flex-col items-center">
-      <p id="preloader-text" class="text-white text-2xl md:text-3xl font-sans font-medium tracking-wide transition-opacity duration-300 opacity-0"></p>
-      <div id="preloader-dots" class="mt-6 flex justify-center gap-2 opacity-0 transition-opacity duration-300">
-        <span class="w-1.5 h-1.5 rounded-full bg-white/30 animate-pulse" style="animation-delay:0s"></span>
-        <span class="w-1.5 h-1.5 rounded-full bg-white/50 animate-pulse" style="animation-delay:0.2s"></span>
-        <span class="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse" style="animation-delay:0.4s"></span>
-      </div>
-    </div>
-  </div>
-  <!-- END: Preloader -->
+  
 <!-- BEGIN: Navigation -->
-<nav id="main-nav" class="fixed top-0 left-0 w-full px-8 py-6 flex justify-between items-center z-50 mix-blend-difference text-white transition-all duration-500">
-<div class="logo w-12 h-12">
-<img alt="Logo" class="w-full h-full object-contain filter invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-RiwITWpn_hWmb7JQ2MuhLpzZr35mccUZ3WKgxQ1bYIO_YbxK-XUmQMh6xXIm-L-gquh6eQe7Kzkozm27DD-Pl7A5x38FXr82jdfvCFNg8kO17IIJ3FeVbJjtIhxesKl8WIV2_P2W7vCZgEAPfmY4lG8gxHcVUgxHCxYpFxf5amWXv2U4sWr8QcPsNRA5MssSFWCqX7vZmPpkjez_qTYlpvtSDs2vJmn6YNs-5ql08n_yxZy6or8VX6FGKtC1mXA1UfR9E1FZAepQzw">
-</div>
+<nav id="main-nav" class="fixed top-0 inset-x-0 w-full max-w-[1920px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center z-50 mix-blend-difference text-white transition-all duration-500">
+<div class="logo font-bold text-2xl tracking-tighter">
+    <a href="index.html" class="hover:opacity-80 transition-opacity block w-8 h-8 flex items-center justify-center">F</a>
+  </div>
 <div class="flex items-center gap-8">
 <div class="hidden md:flex items-center gap-8 text-base font-semibold">
 <a class="hover:text-accent transition-colors" href="index.html">Home</a>
@@ -464,72 +453,6 @@
       }
     });
   </script>
-<script>
-    // === Stateful Preloader ===
-    (function() {
-      const preloader = document.getElementById('preloader');
-      const textEl = document.getElementById('preloader-text');
-      const dotsEl = document.getElementById('preloader-dots');
-      
-      if (!preloader || !textEl || !dotsEl) return;
-      
-      const isFirstVisit = !sessionStorage.getItem('firstVisit');
-      
-      function endPreloader() {
-        setTimeout(() => {
-          preloader.classList.add('opacity-0', '-translate-y-full');
-          setTimeout(() => preloader.remove(), 1000);
-        }, 300);
-      }
 
-      if (isFirstVisit) {
-        dotsEl.classList.remove('opacity-0');
-        const messages = [
-          'Booting Hardware...',
-          'Connecting Sensors...',
-          'Establishing IoT Link...',
-          'System Ready.'
-        ];
-        let idx = 0;
-
-        function showNext() {
-          textEl.style.opacity = '0';
-          setTimeout(() => {
-            textEl.textContent = messages[idx];
-            if (idx === messages.length - 1) {
-              textEl.classList.remove('text-white');
-              textEl.classList.add('text-[#c9ff3c]');
-              dotsEl.style.opacity = '0';
-            }
-            textEl.style.opacity = '1';
-
-            if (idx < messages.length - 1) {
-              idx++;
-              setTimeout(showNext, 500);
-            } else {
-              sessionStorage.setItem('firstVisit', 'done');
-              setTimeout(endPreloader, 600);
-            }
-          }, 250);
-        }
-        
-        setTimeout(showNext, 100);
-      } else {
-        let pageName = 'Home';
-        const path = window.location.pathname;
-        if (path.includes('about')) pageName = 'About';
-        else if (path.includes('projects')) pageName = 'Projects & Experience';
-        else if (document.title.includes('About')) pageName = 'About';
-        else if (document.title.includes('Project') || document.title.includes('Works')) pageName = 'Projects & Experience';
-        
-        textEl.textContent = pageName;
-        textEl.classList.remove('text-white');
-        textEl.classList.add('text-[#c9ff3c]');
-        textEl.style.opacity = '1';
-        
-        setTimeout(endPreloader, 600);
-      }
-    })();
-  </script>
 </body>
 </html>
