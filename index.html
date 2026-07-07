@@ -101,7 +101,14 @@
   </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" data-snapdom="injected-import"><script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
 </head>
-<body class="antialiased selection:bg-accent selection:text-dark">
+<body class="antialiased selection:bg-accent selection:text-dark cursor-none">
+  <!-- BEGIN: Custom Cursor -->
+  <div id="custom-cursor-outer" class="fixed top-0 left-0 pointer-events-none z-[9998] flex items-center justify-center" style="transform: translate(-50%, -50%);">
+    <div id="cursor-ring" class="w-10 h-10 rounded-full border-2 border-[#c9ff3c] transition-transform duration-200 ease-out" style="transition: width 0.25s, height 0.25s, background-color 0.25s;"></div>
+  </div>
+  <div id="custom-cursor-dot" class="fixed top-0 left-0 pointer-events-none z-[9999] w-1.5 h-1.5 rounded-full bg-[#c9ff3c]" style="transform: translate(-50%, -50%);"></div>
+  <!-- END: Custom Cursor -->
+
   <!-- BEGIN: Preloader -->
   <div id="preloader" class="fixed inset-0 bg-[#131313] z-[9999] flex items-center justify-center transition-all duration-1000">
     <div class="text-center">
@@ -631,5 +638,61 @@
         });
       }
     });
+  </script>
+<script>
+    // === Custom Cursor ===
+    (function() {
+      const cursorOuter = document.getElementById('custom-cursor-outer');
+      const cursorDot   = document.getElementById('custom-cursor-dot');
+      const ring        = document.getElementById('cursor-ring');
+
+      if (!cursorOuter || !cursorDot) return;
+
+      let mouseX = 0, mouseY = 0;
+      let outerX = 0, outerY = 0;
+      const LERP = 0.12; // spring speed (lower = more delay)
+
+      // Update mouse position immediately for the dot
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorDot.style.transform = `translate(${mouseX - 3}px, ${mouseY - 3}px)`;
+      });
+
+      // Animate the outer ring with a spring/lerp effect
+      function animateCursor() {
+        outerX += (mouseX - outerX) * LERP;
+        outerY += (mouseY - outerY) * LERP;
+        cursorOuter.style.transform = `translate(${outerX}px, ${outerY}px)`;
+        cursorOuter.style.left = '0px';
+        cursorOuter.style.top = '0px';
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+
+      // Hover effect on interactive elements
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          ring.style.width = '20px';
+          ring.style.height = '20px';
+          ring.style.backgroundColor = 'rgba(201, 255, 60, 0.2)';
+        });
+        el.addEventListener('mouseleave', () => {
+          ring.style.width = '40px';
+          ring.style.height = '40px';
+          ring.style.backgroundColor = 'transparent';
+        });
+      });
+
+      // Show cursor only when on page
+      document.addEventListener('mouseleave', () => {
+        cursorOuter.style.opacity = '0';
+        cursorDot.style.opacity = '0';
+      });
+      document.addEventListener('mouseenter', () => {
+        cursorOuter.style.opacity = '1';
+        cursorDot.style.opacity = '1';
+      });
+    })();
   </script>
 </body></html>
