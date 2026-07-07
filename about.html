@@ -83,18 +83,22 @@
   </div>
   <!-- END: Preloader -->
 <!-- BEGIN: Navigation -->
-<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6 mix-blend-difference text-white transition-all duration-500">
-<div class="text-2xl font-bold tracking-tighter"><a href="#" class="block w-10 h-10 hover:opacity-80 transition-opacity"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ofCQWujowd3tpsSmNFteNvsSfS64SZ98oHIhBra-c6qYKAI-dapAQ2xShxRNnlxrpKappWUxvcaFRHx4cS25O7BZzvbRxztKXXNPJbUd2p4Wnq5S2ZLOdH3BW4ROKJyFKfwbJsYVBjE7a2UOez_hkSAj_R4AXWNInBKQ_6tPmei4ge1tObMANazVTQI3XRRfz2Qhpsl75yK1Mg0znKvUOt4x4-8M8lZtorxoJBy3T4FXdAYFi6PioqqIvrFvXQwf9bzd07XaWVc" alt="Logo" class="w-full h-full object-contain invert"></a></div>
-<div class="hidden md:flex items-center gap-8 text-sm font-medium">
-<a class="hover:opacity-70 transition-opacity" href="index.html">Home</a>
-<a class="hover:opacity-70 transition-opacity" href="about.html">About</a>
-<a class="hover:opacity-70 transition-opacity" href="projects.html">Projects &amp; Experience </a>
-<div class="flex items-center gap-2">
-<a class="bg-white text-black px-5 py-2.5 rounded-full hover:bg-opacity-90 transition-all" href="mailto:arasyfathi@gmail.com">Contact</a>
-<button class="bg-white text-black p-2.5 rounded-full hover:bg-opacity-90 transition-all">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-</button>
+<nav id="main-nav" class="fixed top-0 left-0 w-full px-8 py-6 flex justify-between items-center z-50 mix-blend-difference text-white transition-all duration-500">
+<div class="logo w-12 h-12">
+<img alt="Logo" class="w-full h-full object-contain filter invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-RiwITWpn_hWmb7JQ2MuhLpzZr35mccUZ3WKgxQ1bYIO_YbxK-XUmQMh6xXIm-L-gquh6eQe7Kzkozm27DD-Pl7A5x38FXr82jdfvCFNg8kO17IIJ3FeVbJjtIhxesKl8WIV2_P2W7vCZgEAPfmY4lG8gxHcVUgxHCxYpFxf5amWXv2U4sWr8QcPsNRA5MssSFWCqX7vZmPpkjez_qTYlpvtSDs2vJmn6YNs-5ql08n_yxZy6or8VX6FGKtC1mXA1UfR9E1FZAepQzw">
 </div>
+<div class="flex items-center gap-8">
+<div class="hidden md:flex items-center gap-8 text-base font-semibold">
+<a class="hover:text-accent transition-colors" href="index.html">Home</a>
+<a class="hover:text-accent transition-colors" href="about.html">About</a>
+<a class="hover:text-accent transition-colors" href="projects.html">Projects &amp; Experience</a>
+</div>
+<div class="flex items-center gap-2">
+  <a class="bg-white text-black px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-all text-sm font-medium" href="mailto:arasyfathi@gmail.com">Contact</a>
+  <button class="bg-white text-black p-2.5 rounded-full flex items-center justify-center hover:bg-opacity-90 transition-all">
+  <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+  </button>
+  </div>
 </div>
 </nav>
 
@@ -169,7 +173,7 @@
   <!-- END: Overlay Menu -->
 
 <!-- END: Navigation -->
-<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1920px] mx-auto overflow-hidden">
+<main class="pt-32 pb-24 max-w-[1920px] mx-auto px-6 md:px-12 overflow-hidden">
 <!-- BEGIN: Hero Section -->
 <section class="mb-32">
 <h1 class="text-[10vw] leading-none font-light tracking-tight mb-12 animate-fade-in-up animation-delay-200">About Me</h1>
@@ -373,40 +377,46 @@
 <!-- END: CTA Section -->
 </main>
 <!-- BEGIN: Footer -->
-<footer class="bg-[#1a1a1a] text-white pt-20 pb-10 px-6 md:px-12 lg:px-24">
-<div class="max-w-[1920px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 mb-32">
+<footer class="dark-section pt-24 pb-8 px-8 relative overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between mb-32 z-10 relative">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full md:w-1/2">
 <div>
-<h5 class="text-xs tracking-widest text-gray-500 mb-6 uppercase">Links</h5>
-<ul class="space-y-4 text-sm">
-<li class=""><a class="hover:text-brand-accent transition-colors" href="index.html">Home</a></li>
-<li class=""><a class="hover:text-brand-accent transition-colors" href="projects.html">Projects &amp; Experience</a></li>
-<li class=""><a class="hover:text-brand-accent transition-colors" href="about.html">About</a></li>
-<li class=""><a class="hover:text-brand-accent transition-colors" href="mailto:arasyfathi@gmail.com">Contact</a></li>
+<p class="text-gray-500 text-xs tracking-widest mb-6">LINKS</p>
+<ul class="space-y-3 text-sm">
+<li class=""><a class="hover:text-accent transition-colors" href="index.html">Home</a></li>
+<li class=""><a class="hover:text-accent transition-colors" href="projects.html">Projects &amp; Experience</a></li>
+<li class=""><a class="hover:text-accent transition-colors" href="about.html">About</a></li>
+<li class=""><a class="hover:text-accent transition-colors" href="mailto:arasyfathi@gmail.com">Contact</a></li>
 </ul>
 </div>
 <div>
-<h5 class="text-xs tracking-widest text-gray-500 mb-6 uppercase">Socials</h5>
-<ul class="space-y-4 text-sm">
-<li class=""><a class="hover:text-brand-accent transition-colors" href="mailto:arasyfathi@gmail.com">Email</a></li>
-<li class=""><a class="hover:text-brand-accent transition-colors" href="https://www.linkedin.com/in/fathi-arasy-68b8b83aa?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
-<li class=""><a class="hover:text-brand-accent transition-colors" href="https://www.instagram.com/fathi_arasy?igsh=MTB0c3M2ZnRwZXA0Zw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-<li class=""><a class="hover:text-brand-accent transition-colors" href="https://github.com/arasyfathi" target="_blank" rel="noopener noreferrer">Github</a></li>
+<p class="text-gray-500 text-xs tracking-widest mb-6">SOCIALS</p>
+<ul class="space-y-3 text-sm">
+<li class=""><a class="hover:text-accent transition-colors" href="mailto:arasyfathi@gmail.com">Email</a></li>
+<li class=""><a class="hover:text-accent transition-colors" href="https://www.linkedin.com/in/fathi-arasy-68b8b83aa?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
+<li class=""><a class="hover:text-accent transition-colors" href="https://www.instagram.com/fathi_arasy?igsh=MTB0c3M2ZnRwZXA0Zw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+<li class=""><a class="hover:text-accent transition-colors" href="https://github.com/arasyfathi" target="_blank" rel="noopener noreferrer">Github</a></li>
 </ul>
 </div>
 <div>
-<h5 class="text-xs tracking-widest text-gray-500 mb-6 uppercase">Local Time</h5>
-<p class="text-sm">4:52 PM UTC+7</p>
+<p class="text-gray-500 text-xs tracking-widest mb-6">LOCAL TIME</p>
+<p class="text-sm">2:50 AM UTC+7</p>
 </div>
 <div>
-<h5 class="text-xs tracking-widest text-gray-500 mb-6 uppercase">Version</h5>
+<p class="text-gray-500 text-xs tracking-widest mb-6">VERSION</p>
 <p class="text-sm">2026 © Edition</p>
+</div>
+</div>
+<div class="mt-12 md:mt-0 flex flex-col gap-4 text-sm font-light w-full md:w-auto">
+<a class="px-6 py-3 border border-gray-700 rounded-full text-center hover:border-accent hover:text-accent transition-colors" href="tel:+62895421845451">+6282272099066</a>
+<a class="px-6 py-3 border border-gray-700 rounded-full text-center hover:border-accent hover:text-accent transition-colors" href="mailto:arasyfathi@gmail.com">arasyfathi@gmail.com</a>
 </div>
 </div>
 <div class="w-full text-center mt-auto z-0">
   <div class="w-full flex justify-center items-center h-[300px] md:h-[400px] -mb-8 md:-mb-20 relative z-10">
     <spline-viewer url="https://prod.spline.design/ByOfI8Tqmrqaxtfa/scene.splinecode"></spline-viewer>
   </div>
-  <h1 class="text-[clamp(5rem,15vw,20rem)] leading-[0.8] font-extrabold tracking-tighter text-white opacity-90 select-none m-0">FATHI</h1>
+  <h1 class="big-text text-white opacity-90 select-none">FATHI</h1>
 </div>
 </footer>
 <!-- END: Footer -->
