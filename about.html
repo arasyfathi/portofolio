@@ -7,22 +7,30 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <script>
-    tailwind.config = {
+        tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Hanken Grotesk', 'sans-serif'],
-          },
           colors: {
-            brand: {
-              light: '#f5f5f5',
-              dark: '#111111',
-              accent: '#d4ff00',
-              text: '#333333',
-              muted: '#666666'
+            dark: '#131313',
+            light: '#ececec',
+            accent: '#d4ff00',
+            graytext: '#888888'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            marquee: 'marquee 20s linear infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
             }
           }
         }
+      }
+    }
       }
     }
   </script>
@@ -200,8 +208,17 @@
 </div>
 </section>
 <!-- END: Hero Section -->
-<!-- BEGIN: Marquee Section -->
-<!-- END: Marquee Section -->
+  <!-- BEGIN: Infinite Marquee Section -->
+  <div class="w-full overflow-hidden flex whitespace-nowrap py-12 relative z-10" style="background-color: #131313;">
+    <div class="animate-marquee flex gap-8 items-center text-white">
+      <!-- We duplicate the text 4 times, and translate -50%, which means it seamlessly loops over 2 copies -->
+      <span class="text-6xl md:text-8xl font-sans font-bold tracking-tighter">ENGINEER <span class="text-[#d4ff00] px-4">★</span> UI & UX DESIGNER <span class="text-[#d4ff00] px-4">★</span> FULL-STACK <span class="text-[#d4ff00] px-4">★</span></span>
+      <span class="text-6xl md:text-8xl font-sans font-bold tracking-tighter">ENGINEER <span class="text-[#d4ff00] px-4">★</span> UI & UX DESIGNER <span class="text-[#d4ff00] px-4">★</span> FULL-STACK <span class="text-[#d4ff00] px-4">★</span></span>
+      <span class="text-6xl md:text-8xl font-sans font-bold tracking-tighter">ENGINEER <span class="text-[#d4ff00] px-4">★</span> UI & UX DESIGNER <span class="text-[#d4ff00] px-4">★</span> FULL-STACK <span class="text-[#d4ff00] px-4">★</span></span>
+      <span class="text-6xl md:text-8xl font-sans font-bold tracking-tighter">ENGINEER <span class="text-[#d4ff00] px-4">★</span> UI & UX DESIGNER <span class="text-[#d4ff00] px-4">★</span> FULL-STACK <span class="text-[#d4ff00] px-4">★</span></span>
+    </div>
+  </div>
+  <!-- END: Infinite Marquee Section -->
 <!-- BEGIN: Biography Section -->
 <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-32">
 <div class="space-y-8 text-lg text-brand-muted font-light leading-relaxed">

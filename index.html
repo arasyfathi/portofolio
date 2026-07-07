@@ -4,7 +4,7 @@
 <title>Fathi Arasy - Portfolio</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
-    tailwind.config = {
+        tailwind.config = {
       theme: {
         extend: {
           colors: {
@@ -14,10 +14,20 @@
             graytext: '#888888'
           },
           fontFamily: {
-            sans: ['Inter', 'sans-serif'], // Fallback for Hanken Grotesk
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            marquee: 'marquee 20s linear infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
           }
         }
       }
+    }
     }
   </script>
 <style data-purpose="custom-styles">
@@ -310,6 +320,17 @@
 </div>
 </section>
 <!-- END: Intro Section -->
+  <!-- BEGIN: Infinite Marquee Section -->
+  <div class="w-full overflow-hidden flex whitespace-nowrap py-12 relative z-10" style="background-color: #131313;">
+    <div class="animate-marquee flex gap-8 items-center text-white">
+      <!-- We duplicate the text 4 times, and translate -50%, which means it seamlessly loops over 2 copies -->
+      <span class="text-6xl md:text-8xl font-sans font-bold tracking-tighter">ENGINEER <span class="text-[#d4ff00] px-4">★</span> UI & UX DESIGNER <span class="text-[#d4ff00] px-4">★</span> FULL-STACK <span class="text-[#d4ff00] px-4">★</span></span>
+      <span class="text-6xl md:text-8xl font-sans font-bold tracking-tighter">ENGINEER <span class="text-[#d4ff00] px-4">★</span> UI & UX DESIGNER <span class="text-[#d4ff00] px-4">★</span> FULL-STACK <span class="text-[#d4ff00] px-4">★</span></span>
+      <span class="text-6xl md:text-8xl font-sans font-bold tracking-tighter">ENGINEER <span class="text-[#d4ff00] px-4">★</span> UI & UX DESIGNER <span class="text-[#d4ff00] px-4">★</span> FULL-STACK <span class="text-[#d4ff00] px-4">★</span></span>
+      <span class="text-6xl md:text-8xl font-sans font-bold tracking-tighter">ENGINEER <span class="text-[#d4ff00] px-4">★</span> UI & UX DESIGNER <span class="text-[#d4ff00] px-4">★</span> FULL-STACK <span class="text-[#d4ff00] px-4">★</span></span>
+    </div>
+  </div>
+  <!-- END: Infinite Marquee Section -->
 <!-- BEGIN: Profile & Stats -->
 <section class="z-10 py-24 px-8 max-w-7xl mx-auto relative">
 <div class="flex flex-col md:flex-row items-center gap-16 mb-24">
