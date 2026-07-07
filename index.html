@@ -102,6 +102,19 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" data-snapdom="injected-import"><script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
 </head>
 <body class="antialiased selection:bg-accent selection:text-dark">
+  <!-- BEGIN: Preloader -->
+  <div id="preloader" class="fixed inset-0 bg-[#131313] z-[9999] flex items-center justify-center transition-all duration-1000">
+    <div class="text-center">
+      <p id="preloader-text" class="text-white text-xl md:text-2xl font-mono tracking-widest transition-opacity duration-300 opacity-100"></p>
+      <div class="mt-6 flex justify-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-white/30 animate-pulse" style="animation-delay:0s"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-white/50 animate-pulse" style="animation-delay:0.2s"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse" style="animation-delay:0.4s"></span>
+      </div>
+    </div>
+  </div>
+  <!-- END: Preloader -->
+
 <!-- BEGIN: Navigation -->
 <nav id="main-nav" class="fixed top-0 left-0 w-full px-8 py-6 flex justify-between items-center z-50 mix-blend-difference text-white transition-all duration-500">
 <div class="logo w-12 h-12">
@@ -538,6 +551,51 @@
 
 
 <script>
+    (function() {
+      const messages = [
+        'Booting Hardware...',
+        'Connecting Sensors...',
+        'Establishing IoT Link...',
+        'System Ready.'
+      ];
+
+      const preloader = document.getElementById('preloader');
+      const textEl = document.getElementById('preloader-text');
+      let idx = 0;
+
+      function showNext() {
+        // Fade out text
+        textEl.style.opacity = '0';
+        setTimeout(() => {
+          textEl.textContent = messages[idx];
+          // Fade in text
+          textEl.style.opacity = '1';
+
+          if (idx < messages.length - 1) {
+            idx++;
+            setTimeout(showNext, 600);
+          } else {
+            // All messages shown — wait, then slide up and fade out
+            setTimeout(() => {
+              preloader.style.transform = 'translateY(-100%)';
+              preloader.style.opacity = '0';
+              preloader.style.transition = 'transform 0.9s ease-in-out, opacity 0.9s ease-in-out';
+              setTimeout(() => {
+                preloader.remove();
+              }, 1000);
+            }, 700);
+          }
+        }, 250);
+      }
+
+      // Start after a tiny delay so DOM is ready
+      textEl.style.transition = 'opacity 0.25s ease';
+      textEl.textContent = messages[idx];
+      idx++;
+      setTimeout(showNext, 600);
+    })();
+  </script>
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
       const mainNav = document.getElementById('main-nav');
       const scrollMenuBtn = document.getElementById('scroll-menu-btn');
