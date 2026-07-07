@@ -111,6 +111,18 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" data-snapdom="injected-import"><script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
 </head>
 <body class="bg-light text-dark font-sans antialiased">
+  <!-- BEGIN: Preloader -->
+  <div id="preloader" class="fixed inset-0 bg-[#131313] z-[9999] flex items-center justify-center transition-all duration-1000 ease-in-out">
+    <div class="text-center flex flex-col items-center">
+      <p id="preloader-text" class="text-white text-2xl md:text-3xl font-sans font-medium tracking-wide transition-opacity duration-300 opacity-0"></p>
+      <div id="preloader-dots" class="mt-6 flex justify-center gap-2 opacity-0 transition-opacity duration-300">
+        <span class="w-1.5 h-1.5 rounded-full bg-white/30 animate-pulse" style="animation-delay:0s"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-white/50 animate-pulse" style="animation-delay:0.2s"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-white/70 animate-pulse" style="animation-delay:0.4s"></span>
+      </div>
+    </div>
+  </div>
+  <!-- END: Preloader -->
   <!-- BEGIN: Page Transition Curtain -->
   <div id="page-transition" class="fixed inset-0 z-[9998] bg-[#131313] pointer-events-none transition-transform duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)] origin-bottom translate-y-0"></div>
   <!-- END: Page Transition Curtain -->
@@ -502,5 +514,72 @@
     })();
 
 </script>
+<script>
+    // === Stateful Preloader ===
+    (function() {
+      const preloader = document.getElementById('preloader');
+      const textEl = document.getElementById('preloader-text');
+      const dotsEl = document.getElementById('preloader-dots');
+      
+      if (!preloader || !textEl || !dotsEl) return;
+      
+      const isFirstVisit = !sessionStorage.getItem('firstVisit');
+      
+      function endPreloader() {
+        setTimeout(() => {
+          preloader.classList.add('opacity-0', '-translate-y-full');
+          setTimeout(() => preloader.remove(), 1000);
+        }, 300);
+      }
+
+      if (isFirstVisit) {
+        dotsEl.classList.remove('opacity-0');
+        const messages = [
+          'Booting Hardware...',
+          'Connecting Sensors...',
+          'Establishing IoT Link...',
+          'System Ready.'
+        ];
+        let idx = 0;
+
+        function showNext() {
+          textEl.style.opacity = '0';
+          setTimeout(() => {
+            textEl.textContent = messages[idx];
+            if (idx === messages.length - 1) {
+              textEl.classList.remove('text-white');
+              textEl.classList.add('text-[#c9ff3c]');
+              dotsEl.style.opacity = '0';
+            }
+            textEl.style.opacity = '1';
+
+            if (idx < messages.length - 1) {
+              idx++;
+              setTimeout(showNext, 500);
+            } else {
+              sessionStorage.setItem('firstVisit', 'done');
+              setTimeout(endPreloader, 600);
+            }
+          }, 250);
+        }
+        
+        setTimeout(showNext, 100);
+      } else {
+        let pageName = 'Home';
+        const path = window.location.pathname;
+        if (path.includes('about')) pageName = 'About';
+        else if (path.includes('projects')) pageName = 'Projects & Experience';
+        else if (document.title.includes('About')) pageName = 'About';
+        else if (document.title.includes('Project') || document.title.includes('Works')) pageName = 'Projects & Experience';
+        
+        textEl.textContent = pageName;
+        textEl.classList.remove('text-white');
+        textEl.classList.add('text-[#c9ff3c]');
+        textEl.style.opacity = '1';
+        
+        setTimeout(endPreloader, 600);
+      }
+    })();
+  </script>
 </body>
 </html>
