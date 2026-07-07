@@ -98,7 +98,32 @@
       font-weight: 800;
       letter-spacing: -0.05em;
     }
-  </style>
+  
+      /* ── Fade In Up Animation ── */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in-up {
+        animation: fadeInUp 1s ease-out forwards;
+        opacity: 0; /* hidden until animation fires */
+      }
+
+      /* Delay helpers */
+      .animation-delay-200  { animation-delay: 0.2s; }
+      .animation-delay-400  { animation-delay: 0.4s; }
+      .animation-delay-600  { animation-delay: 0.6s; }
+      .animation-delay-800  { animation-delay: 0.8s; }
+      .animation-delay-1000 { animation-delay: 1.0s; }
+
+    </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" data-snapdom="injected-import"><script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
 </head>
 <body class="antialiased selection:bg-accent selection:text-dark cursor-none">
@@ -246,8 +271,8 @@
 </div>
 <div class="glass-blob"></div>
 <div class="text-center z-10 relative">
-<p class="text-sm md:text-lg mb-4 text-gray-700">Hi! i'm Fathi</p>
-<h1 class="text-5xl md:text-7xl lg:text-9xl font-light tracking-tight text-dark leading-tight"><span data-path-to-node="3,0" data-index-in-node="0" class=""><b>Electrical Engineer<br>IoT Specialist.</b></span></h1>
+<p class="text-sm md:text-lg mb-4 text-gray-700 animate-fade-in-up animation-delay-200">Hi! i'm Fathi</p>
+<h1 class="text-5xl md:text-7xl lg:text-9xl font-light tracking-tight text-dark leading-tight animate-fade-in-up animation-delay-400"><span data-path-to-node="3,0" data-index-in-node="0" class=""><b>Electrical Engineer<br>IoT Specialist.</b></span></h1>
 </div>
 <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-sm text-gray-500 uppercase tracking-widest">
       scroll down
@@ -257,9 +282,9 @@
 <!-- BEGIN: Intro Section -->
 <section class="dark-section py-32 px-8 flex flex-col items-center justify-center text-center">
 <div class="max-w-4xl mx-auto space-y-12">
-<h2 class="text-3xl md:text-5xl font-light leading-relaxed">
+<h2 class="text-3xl md:text-5xl font-light leading-relaxed animate-fade-in-up animation-delay-600">
         I'm Fathi – an Electrical Engineer crafting smart, automated, and interconnected solutions that merge sensor technology with software intelligence.</h2>
-<p class="text-xl md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto">
+<p class="text-xl md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto animate-fade-in-up animation-delay-800">
         I specialize in building IoT systems, automated devices, and sensor integrations using technologies like C, Python, Arduino, ESP32, and Blynk.
       </p>
 <div class="pt-8">
