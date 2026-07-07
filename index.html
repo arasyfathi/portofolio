@@ -343,7 +343,7 @@
 <h2 class="text-4xl md:text-6xl font-light mb-20 max-w-3xl">
         Transforming engineering concepts into smart, automated solutions through hardware expertise and IoT innovation.
       </h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div id="expertise-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" style="transition: transform 0.3s ease-out; will-change: transform;">
 <!-- Service 1 -->
 <div class="bg-light p-8 border border-gray-200 hover:bg-gray-50 transition-colors">
 <div class="flex justify-between items-start mb-12">
@@ -888,6 +888,39 @@
             dot.classList.add('bg-gray-800');
           }
         });
+      });
+    })();
+
+</script>
+<script>
+
+    // === Skew Scroll on Expertise Grid ===
+    (function() {
+      const expertiseGrid = document.getElementById('expertise-grid');
+      if (!expertiseGrid) return;
+      
+      let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+      let skewTimeout;
+      
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const diff = currentScroll - lastScroll;
+        
+        // Clamp the skew degree between -10 and 10 for a noticeable but controlled effect
+        let skewDeg = diff * 0.1;
+        skewDeg = Math.max(-10, Math.min(10, skewDeg));
+        
+        requestAnimationFrame(() => {
+          expertiseGrid.style.transform = `skewY(${skewDeg}deg)`;
+        });
+        
+        lastScroll = currentScroll;
+        
+        // Reset the skew back to 0 slowly when scrolling stops
+        clearTimeout(skewTimeout);
+        skewTimeout = setTimeout(() => {
+          expertiseGrid.style.transform = `skewY(0deg)`;
+        }, 100);
       });
     })();
 
