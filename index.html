@@ -246,32 +246,15 @@
 <!-- END: Navigation -->
 
   <!-- BEGIN: SVG Draw on Scroll Ribbon -->
-  <div class="absolute top-0 left-0 w-full h-[4000px] pointer-events-none z-0 overflow-hidden" style="opacity: 0.6;">
-    <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">
-      <defs>
-        <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-          <feMerge>
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-      <path id="scroll-ribbon" 
-            d="M 10 0 C 90 10, 90 25, 50 35 C 10 45, 10 60, 50 70 C 90 80, 90 95, 20 100" 
-            fill="none" 
-            stroke="#d4ff00" 
-            stroke-width="8" 
-            stroke-linecap="round" 
-            vector-effect="non-scaling-stroke" 
-            filter="url(#neon-glow)">
-      </path>
+  <div class="absolute top-0 left-0 w-full h-full pointer-events-none z-[-1] opacity-60">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full">
+      <path id="scroll-ribbon" d="M 80 0 C 10 30, 10 70, 80 100" fill="none" stroke="#d4ff00" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   </div>
   <!-- END: SVG Draw on Scroll Ribbon -->
 
 <!-- BEGIN: Hero Section -->
-<header class="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden"><div class="absolute left-8 top-32 bottom-8 z-[70] hidden lg:flex flex-col justify-between items-center">
+<header class="z-10 relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden"><div class="absolute left-8 top-32 bottom-8 z-[70] hidden lg:flex flex-col justify-between items-center">
     <div class="flex flex-col items-center">
       <div class="w-1.5 h-1.5 rounded-full bg-dark/40 mb-1"></div>
       <div class="w-px h-64 bg-dark/20"></div>
@@ -311,7 +294,7 @@
 </header>
 <!-- END: Hero Section -->
 <!-- BEGIN: Intro Section -->
-<section class="dark-section py-32 px-8 flex flex-col items-center justify-center text-center">
+<section class="z-10 relative dark-section py-32 px-8 flex flex-col items-center justify-center text-center">
 <div class="max-w-4xl mx-auto space-y-12 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-1000 ease-out">
 <h2 class="text-3xl md:text-5xl font-light leading-relaxed animate-fade-in-up animation-delay-600">
         I'm Fathi – an Electrical Engineer crafting smart, automated, and interconnected solutions that merge sensor technology with software intelligence.</h2>
@@ -328,7 +311,7 @@
 </section>
 <!-- END: Intro Section -->
 <!-- BEGIN: Profile & Stats -->
-<section class="py-24 px-8 max-w-7xl mx-auto relative">
+<section class="z-10 py-24 px-8 max-w-7xl mx-auto relative">
 <div class="flex flex-col md:flex-row items-center gap-16 mb-24">
 <div class="w-full md:w-1/2">
 <h3 class="text-3xl md:text-5xl font-light leading-tight mb-6">
@@ -355,7 +338,7 @@
 </section>
 <!-- END: Profile & Stats -->
 <!-- BEGIN: Expertise Section -->
-<section class="bg-gray-100 py-24 px-8 border-t border-gray-200 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+<section class="z-10 relative bg-gray-100 py-24 px-8 border-t border-gray-200 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-1000 ease-out">
 <div class="max-w-7xl mx-auto">
 <h2 class="text-4xl md:text-6xl font-light mb-20 max-w-3xl">
         Transforming engineering concepts into smart, automated solutions through hardware expertise and IoT innovation.
@@ -410,7 +393,7 @@
 </section>
 <!-- END: Expertise Section -->
 <!-- BEGIN: Works Section -->
-<section class="py-24 px-8 max-w-7xl mx-auto">
+<section class="z-10 relative py-24 px-8 max-w-7xl mx-auto">
 <h2 class="text-3xl md:text-5xl font-light mb-16 max-w-2xl">
       Discover my latest engineering projects and automated solutions that bring concepts to life.
     </h2>
@@ -455,7 +438,7 @@
 </section>
 <!-- END: Works Section -->
 <!-- BEGIN: Journey Section -->
-<section class="dark-section relative py-32 px-8 overflow-hidden">
+<section class="z-10 dark-section relative py-32 px-8 overflow-hidden">
 <div class="max-w-4xl mx-auto text-center relative z-10 mb-32">
 <h2 class="text-4xl md:text-6xl font-light leading-tight">Explore my journey and the experiences that shape my engineering career.</h2>
 </div>
@@ -516,7 +499,7 @@
 </section>
 <!-- END: Journey Section -->
 <!-- BEGIN: Marquee -->
-<section class="py-12 bg-light overflow-hidden">
+<section class="z-10 relative py-12 bg-light overflow-hidden">
   <div class="relative py-32 flex items-center justify-center min-h-[400px] w-full">
     <!-- Ribbon 1: Rotated Up -->
     <div class="absolute w-[200vw] py-8 bg-dark text-white z-20 shadow-2xl border-y border-white/10 flex items-center justify-center" style="left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(6deg);">
@@ -540,7 +523,7 @@
 </section>
 <!-- END: Marquee -->
 <!-- BEGIN: Footer -->
-<footer class="dark-section pt-24 pb-8 px-8 relative overflow-hidden">
+<footer class="z-10 dark-section pt-24 pb-8 px-8 relative overflow-hidden">
 <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between mb-32 z-10 relative">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full md:w-1/2">
 <div>
@@ -851,6 +834,7 @@
       // Initialize path styles
       path.style.strokeDasharray = pathLength;
       path.style.strokeDashoffset = pathLength;
+      path.style.transition = 'stroke-dashoffset 0.1s linear';
       
       window.addEventListener('scroll', () => {
         // Calculate scroll percentage
