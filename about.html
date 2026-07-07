@@ -629,6 +629,13 @@
       });
     })();
 
+      // Deteksi apakah halaman di-refresh oleh pengguna
+      const navEntries = performance.getEntriesByType("navigation");
+      if (navEntries.length > 0 && navEntries[0].type === "reload") {
+        // Jika di-refresh, hapus memori kunjungan agar animasi panjang diputar ulang
+        sessionStorage.removeItem('firstVisit');
+      }
+
       const isFirstVisit = !sessionStorage.getItem('firstVisit');
       
       function endPreloader() {
