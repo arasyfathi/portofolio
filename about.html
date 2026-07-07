@@ -70,6 +70,10 @@
 <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.5/build/spline-viewer.js"></script>
 </head>
 <body class="bg-brand-light text-brand-text font-sans antialiased">
+  <!-- BEGIN: Page Transition Curtain -->
+  <div id="page-transition" class="fixed inset-0 z-[9998] bg-[#131313] pointer-events-none transition-transform duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)] origin-bottom translate-y-0"></div>
+  <!-- END: Page Transition Curtain -->
+
   
 <!-- BEGIN: Navigation -->
 <nav id="main-nav" class="fixed top-0 inset-x-0 w-full max-w-[1920px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center z-50 mix-blend-difference text-white transition-all duration-500">
@@ -453,4 +457,48 @@
     });
   </script>
 
+<script>
+
+    // === Seamless Page Transition ===
+    (function() {
+      const curtain = document.getElementById('page-transition');
+      if (!curtain) return;
+
+      // Entrance Animation
+      // Wait a brief moment to ensure CSS transitions apply, then slide curtain away
+      setTimeout(() => {
+        curtain.classList.remove('translate-y-0');
+        // We slide it down to disappear
+        curtain.classList.add('translate-y-full');
+      }, 50);
+
+      // Exit Animation
+      const internalLinks = document.querySelectorAll('a[href="index.html"], a[href="about.html"], a[href="projects.html"]');
+      internalLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetUrl = link.getAttribute('href');
+          
+          // Close overlay menu if open
+          const overlayMenu = document.getElementById('overlay-menu');
+          if (overlayMenu && !overlayMenu.classList.contains('hidden')) {
+            overlayMenu.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+              overlayMenu.classList.add('hidden');
+            }, 500);
+          }
+
+          // Slide curtain back in
+          curtain.classList.remove('translate-y-full');
+          curtain.classList.add('translate-y-0');
+
+          // Navigate after animation finishes
+          setTimeout(() => {
+            window.location.href = targetUrl;
+          }, 800);
+        });
+      });
+    })();
+
+</script>
 </body></html>
