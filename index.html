@@ -338,7 +338,8 @@
 </section>
 <!-- END: Profile & Stats -->
 <!-- BEGIN: Expertise Section -->
-<section class="z-10 relative bg-gray-100 py-24 px-8 border-t border-gray-200 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-1000 ease-out" overflow-hidden>
+<section id="expertise-section" class="z-10 relative bg-gray-100 h-[200vh] border-t border-gray-200">
+  <div class="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden py-24 px-8 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-1000 ease-out">
 <div class="max-w-7xl mx-auto">
 <h2 class="text-4xl md:text-6xl font-light mb-20 max-w-3xl">
         Transforming engineering concepts into smart, automated solutions through hardware expertise and IoT innovation.
@@ -356,7 +357,7 @@
 <p class="text-gray-500 text-sm leading-relaxed"><span data-path-to-node="8,1,0,0" class="">Developing interconnected ecosystems using microcontrollers like ESP32 and platforms like Blynk for real-time remote monitoring and control</span><span data-path-to-node="8,1,0,1"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><source-footnote _nghost-ng-c3748162914="" class="ng-star-inserted"><sup _ngcontent-ng-c3748162914="" class="superscript"><!----></sup></source-footnote><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></span><span data-path-to-node="8,1,0,2" class="">.</span></p>
 </div>
 <!-- Service 2 -->
-<div class="bg-gray-200 p-8 border border-gray-200">
+<div class="bg-gray-200 p-8 border border-gray-200 hover:bg-gray-300 transition-colors w-[85vw] md:w-[45vw] lg:w-[calc(33.333vw-2rem)] flex-shrink-0">
 <div class="flex justify-between items-start mb-12">
 <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center">
 <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><rect height="7" width="7" x="3" y="3"></rect><rect height="7" width="7" x="14" y="3"></rect><rect height="7" width="7" x="14" y="14"></rect><rect height="7" width="7" x="3" y="14"></rect></svg>
@@ -391,7 +392,8 @@
 </div>
 </div>
 </section>
-<!-- END: Expertise Section -->
+  </div>
+  <!-- END: Expertise Section -->
 <!-- BEGIN: Works Section -->
 <section class="z-10 relative py-24 px-8 max-w-7xl mx-auto">
 <h2 class="text-3xl md:text-5xl font-light mb-16 max-w-2xl">
@@ -894,10 +896,10 @@
 </script>
 <script>
 
-    // === Horizontal Velocity Scroll on Expertise Grid ===
+    // === Sticky Horizontal Velocity Scroll on Expertise Grid ===
     (function() {
       const expertiseGrid = document.getElementById('expertise-grid');
-      const section = expertiseGrid ? expertiseGrid.closest('section') : null;
+      const section = document.getElementById('expertise-section');
       if (!expertiseGrid || !section) return;
       
       let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -907,17 +909,18 @@
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         const diff = currentScroll - lastScroll;
         
-        let skewDeg = diff * -0.1; // Negative to lean left when scrolling down
+        let skewDeg = diff * -0.1;
         skewDeg = Math.max(-10, Math.min(10, skewDeg));
         
         const rect = section.getBoundingClientRect();
         const winHeight = window.innerHeight;
         
-        // Progress of section scrolling
-        let progress = (winHeight - rect.top) / (winHeight + rect.height);
+        // Progress of sticky section
+        // 0 when top of section hits top of viewport
+        // 1 when bottom of section hits bottom of viewport
+        let progress = -rect.top / (rect.height - winHeight);
         progress = Math.max(0, Math.min(1, progress));
         
-        // Calculate max translation
         const parentWidth = expertiseGrid.parentElement.offsetWidth;
         const scrollWidth = expertiseGrid.scrollWidth;
         const maxTranslate = scrollWidth > parentWidth ? scrollWidth - parentWidth : 0;
