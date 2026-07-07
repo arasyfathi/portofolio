@@ -244,6 +244,32 @@
 
   
 <!-- END: Navigation -->
+
+  <!-- BEGIN: SVG Draw on Scroll Ribbon -->
+  <div class="absolute top-0 left-0 w-full h-[4000px] pointer-events-none z-0 overflow-hidden" style="opacity: 0.6;">
+    <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">
+      <defs>
+        <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <path id="scroll-ribbon" 
+            d="M 10 0 C 90 10, 90 25, 50 35 C 10 45, 10 60, 50 70 C 90 80, 90 95, 20 100" 
+            fill="none" 
+            stroke="#d4ff00" 
+            stroke-width="8" 
+            stroke-linecap="round" 
+            vector-effect="non-scaling-stroke" 
+            filter="url(#neon-glow)">
+      </path>
+    </svg>
+  </div>
+  <!-- END: SVG Draw on Scroll Ribbon -->
+
 <!-- BEGIN: Hero Section -->
 <header class="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden"><div class="absolute left-8 top-32 bottom-8 z-[70] hidden lg:flex flex-col justify-between items-center">
     <div class="flex flex-col items-center">
@@ -809,6 +835,34 @@
             window.location.href = targetUrl;
           }, 800);
         });
+      });
+    })();
+
+</script>
+<script>
+
+    // === SVG Draw on Scroll ===
+    (function() {
+      const path = document.getElementById('scroll-ribbon');
+      if (!path) return;
+      
+      const pathLength = path.getTotalLength();
+      
+      // Initialize path styles
+      path.style.strokeDasharray = pathLength;
+      path.style.strokeDashoffset = pathLength;
+      
+      window.addEventListener('scroll', () => {
+        // Calculate scroll percentage
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight;
+        const winHeight = window.innerHeight;
+        
+        const scrollPercent = scrollTop / (docHeight - winHeight);
+        
+        // The more we scroll down, the closer offset gets to 0
+        const drawLength = pathLength * scrollPercent;
+        path.style.strokeDashoffset = Math.max(0, pathLength - drawLength);
       });
     })();
 
